@@ -1,0 +1,89 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+<h1 class="h1">Introduction of Dynamic Programming</h1>
+<p>Dynamic Programming is the most powerful design technique for solving optimization problems.</p>
+<p>Divide &amp; Conquer algorithm partition the problem into disjoint subproblems solve the subproblems recursively and then combine their solution to solve the original problems.</p>
+<p>Dynamic Programming is used when the subproblems are not independent, e.g. when they share the same subproblems. In this case, divide and conquer may do more work than necessary, because it solves the same sub problem multiple times.</p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585400582088" data-refresh-time="1585400582091" data-timeout="12"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<p>Dynamic Programming solves each subproblems just once and stores the result in a table so that it can be repeatedly retrieved if needed again.</p>
+<p>Dynamic Programming is a <strong>Bottom-up approach-</strong> we solve all possible small problems and then combine to obtain solutions for bigger problems.</p>
+<p>Dynamic Programming is a paradigm of algorithm design in which an optimization problem is solved by a combination of achieving sub-problem solutions and appearing to the "<strong>principle of optimality</strong>".</p>
+
+<h2 class="h2">Characteristics of Dynamic Programming:</h2>
+<p>Dynamic Programming works when a problem has the following features:-</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/characteristics-of-dynamic-programming.png" alt="Characteristics of Dynamic Programming">
+<ul class="points">
+<li><strong>Optimal Substructure:</strong> If an optimal solution contains optimal sub solutions then a problem exhibits optimal substructure.</li>
+<li><strong>Overlapping subproblems:</strong> When a recursive algorithm would visit the same subproblems repeatedly, then a problem has overlapping subproblems.</li>
+</ul>
+<p>If a problem has optimal substructure, then we can recursively define an optimal solution. If a problem has overlapping subproblems, then we can improve on a recursive implementation by computing each subproblem only once.</p>
+<p>If a problem doesn't have optimal substructure, there is no basis for defining a recursive algorithm to find the optimal solutions. If a problem doesn't have overlapping sub problems, we don't have anything to gain by using dynamic programming.</p>
+<p>If the space of subproblems is enough (i.e. polynomial in the size of the input), dynamic programming can be much more efficient than recursion.</p>
+
+
+<h2 class="h2">Elements of Dynamic Programming</h2>
+<p>There are basically three elements that characterize a dynamic programming algorithm:-</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/elements-of-dynamic-programming.png" alt="Elements of Dynamic Programming">
+<ol class="points">
+<li><strong>Substructure:</strong> Decompose the given problem into smaller subproblems. Express the solution of the original problem in terms of the solution for smaller problems.</li>
+<li><strong>Table Structure:</strong> After solving the sub-problems, store the results to the sub problems in a table. This is done because subproblem solutions are reused many times, and we do not want to repeatedly solve the same problem over and over again.</li>
+<li><strong>Bottom-up Computation:</strong> Using table, combine the solution of smaller subproblems to solve larger subproblems and eventually arrives at a solution to complete problem.</li>
+</ol>
+
+<!--<p><strong>Note: Bottom-up means:-</strong></p>
+<ul class="points">
+<li>Start with smallest subproblems.</li>
+<li>Combining their solutions obtain the solution to sub-problems of increasing size.</li>
+<li>Until solving at the solution of the original problem.</li>
+</ul>-->
+
+<p class="pq"><strong>Note: Bottom-up means:-</strong></p>
+<ol class="points" type="i">
+<li>Start with smallest subproblems.</li>
+<li>Combining their solutions obtain the solution to sub-problems of increasing size.</li>
+<li>Until solving at the solution of the original problem.</li>
+</ol>
+
+<h2 class="h2">Components of Dynamic programming</h2>
+<img src="https://static.javatpoint.com/tutorial/daa/images/components-of-dynamic-programming.png" alt="Components of Dynamic Programming">
+<ol class="points">
+<li><strong>Stages:</strong> The problem can be divided into several subproblems, which are called stages. A stage is a small portion of a given problem. For example, in the shortest path problem, they were defined by the structure of the graph.</li>
+<li><strong>States:</strong> Each stage has several states associated with it. The states for the shortest path problem was the node reached.</li>
+<li><strong>Decision:</strong> At each stage, there can be multiple choices out of which one of the best decisions should be taken. The decision taken at every stage should be optimal; this is called a stage decision.</li>
+<li><strong>Optimal policy:</strong> It is a rule which determines the decision at each stage; a policy is called an optimal policy if it is globally optimal. This is known as Bellman principle of optimality.</li>
+<li>Given the current state, the optimal choices for each of the remaining states does not depend on the previous states or decisions. In the shortest path problem, it was not necessary to know how we got a node only that we did.</li>
+<li>There exist a recursive relationship that identify the optimal decisions for stage j, given that stage j+1, has already been solved.</li>
+<li>The final stage must be solved by itself.</li>
+</ol>
+<h2 class="h2">Development of Dynamic Programming Algorithm</h2>
+<p>It can be broken into four steps:</p>
+<ol class="points">
+<li>Characterize the structure of an optimal solution.</li>
+<li>Recursively defined the value of the optimal solution. Like Divide and Conquer, divide the problem into two or more optimal parts recursively. This helps to determine what the solution will look like.</li>
+<li>Compute the value of the optimal solution from the bottom up (starting with the smallest subproblems)</li>
+<li>Construct the optimal solution for the entire problem form the computed values of smaller subproblems.</li>
+</ol>
+<h2 class="h2">Applications of dynamic programming</h2>
+<ol class="points">
+<li>0/1 knapsack problem</li>
+<li>Mathematical optimization problem</li>
+<li>All pair Shortest path problem</li>
+<li>Reliability design problem</li>
+<li>Longest common subsequence (LCS)</li>
+<li>Flight control and robotics control</li>
+<li>Time-sharing: It schedules the job to maximize CPU usage</li>
+</ol>
+
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

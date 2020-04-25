@@ -1,0 +1,110 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+
+<h1 class="h1">Recurrence Relation</h1>
+<p>A recurrence is an equation or inequality that describes a function in terms of its values on smaller inputs. To solve a Recurrence Relation means to obtain a function defined on the natural numbers that satisfy the recurrence.</p>
+<p><strong>For Example</strong>, the Worst Case Running Time T(n) of the MERGE SORT Procedures is described by the recurrence.</p>
+<div class="codeblock"><pre>T (n) = ? (1) if n=1
+ 2T<img src="https://static.javatpoint.com/tutorial/daa/images/daa-recurrence-relation.png" style="margin:0 0 -15px 0;" alt="DAA Recurrence Relation"> + ? (n) if n&gt;1
+</pre></div>
+<p>There are four methods for solving Recurrence:</p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585395922106" data-refresh-time="1585395922108" data-timeout="8"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<ol class="points">
+<li><a href="#substitution-method">Substitution Method</a></li>
+<li><a href="#iteration-method">Iteration Method</a></li>
+<li><a href="daa-recursion-tree-method">Recursion Tree Method</a></li>
+<li><a href="daa-master-method">Master Method</a></li>
+</ol>
+<hr>
+
+
+<h2 class="h2" id="substitution-method">1. Substitution Method:</h2>
+<p>The Substitution Method Consists of two main steps:</p>
+<ol class="points">
+<li>Guess the Solution.</li>
+<li>Use the mathematical induction to find the boundary condition and shows that the guess is correct.</li>
+</ol>
+<p><strong>For Example1</strong> Solve the equation by Substitution Method.</p>
+<div class="codeblock"><pre>	T (n) = T<img src="https://static.javatpoint.com/tutorial/daa/images/daa-recurrence-relation.png" style="margin:0 0 -15px 0;" alt="DAA Recurrence Relation"> + n
+</pre></div>
+<p>We have to show that it is asymptotically bound by O (log n).</p>
+<p><strong>Solution:</strong> 
+</p><div class="codeblock3"><pre>For T (n) = O (log n)
+</pre></div>
+<p>We have to show that for some constant c </p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>T&nbsp;(n)&nbsp;=c&nbsp;logn.&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">   T (n) =c logn.
+</textarea></div>
+<p>Put this in given Recurrence Equation.</p>
+<div class="codeblock"><pre>	T (n) =c log<img src="https://static.javatpoint.com/tutorial/daa/images/daa-recurrence-relation.png" style="margin:0 0 -15px 0;" alt="DAA Recurrence Relation">+ 1
+			=c log<img src="https://static.javatpoint.com/tutorial/daa/images/daa-recurrence-relation.png" style="margin:0 0 -15px 0;" alt="DAA Recurrence Relation">+ 1 = c logn-clog<sub>2</sub> 2+1
+			=c logn for c=1
+Thus <strong>T (n) =O logn</strong>.
+</pre></div>
+<p><strong>Example2</strong> Consider the Recurrence</p>
+<div class="codeblock"><pre>T (n) = 2T<img src="https://static.javatpoint.com/tutorial/daa/images/daa-recurrence-relation.png" style="margin:0 0 -15px 0;" alt="DAA Recurrence Relation">+ n n&gt;1
+</pre></div>
+<p>Find an Asymptotic bound on T.</p>
+<p><strong>Solution:</strong> 
+</p><div class="codeblock3"><pre>We guess the solution is O (n (logn)).Thus for constant 'c'.
+ T (n) =c n logn
+Put this in given Recurrence Equation.
+Now,
+  T (n) =2c<img src="https://static.javatpoint.com/tutorial/daa/images/daa-recurrence-relation.png" style="margin:0 0 -15px 0;" alt="DAA Recurrence Relation">log <img src="https://static.javatpoint.com/tutorial/daa/images/daa-recurrence-relation.png" style="margin:0 0 -15px 0;" alt="DAA Recurrence Relation">+n
+      =cnlogn-cnlog2+n
+      =cn logn-n (clog2-1)
+      =cn logn for (c=1)
+Thus <strong>T (n) = O (n logn)</strong>.
+</pre></div>
+<hr>
+
+<h2 class="h2" id="iteration-method">2. Iteration Methods</h2>
+<p>It means to expand the recurrence and express it as a summation of terms of n and initial condition.</p>
+<p><strong>Example1:</strong> Consider the Recurrence</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>T&nbsp;(n)&nbsp;=&nbsp;</span><span class="number">1</span><span>&nbsp;&nbsp;</span><span class="keyword">if</span><span>&nbsp;n=</span><span class="number">1</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;2T&nbsp;(n-<span class="number">1</span><span>)&nbsp;</span><span class="keyword">if</span><span>&nbsp;n&gt;</span><span class="number">1</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">T (n) = 1  if n=1
+      = 2T (n-1) if n&gt;1
+</textarea></div>
+<p><strong>Solution:</strong></p>
+<div class="codeblock3"><pre>  
+T (n) = 2T (n-1)
+      = 2[2T (n-2)] = 2<sup>2</sup>T (n-2)
+      = 4[2T (n-3)] = 2<sup>3</sup>T (n-3)
+      = 8[2T (n-4)] = 2<sup>4</sup>T (n-4)   (Eq.1)
+
+Repeat the procedure for i times
+
+T (n) = 2<sup>i</sup> T (n-i)
+Put n-i=1 or i= n-1 in    (Eq.1)
+T (n) = 2<sup>n-1</sup> T (1)
+      = 2<sup>n-1</sup> .1    {T (1) =1 .....given}
+      = 2<sup>n-1</sup> 
+</pre></div>
+<p><strong>Example2:</strong> Consider the Recurrence</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>T&nbsp;(n)&nbsp;=&nbsp;T&nbsp;(n-</span><span class="number">1</span><span>)&nbsp;+</span><span class="number">1</span><span>&nbsp;and&nbsp;T&nbsp;(</span><span class="number">1</span><span>)&nbsp;=&nbsp;&nbsp;?&nbsp;(</span><span class="number">1</span><span>).&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">T (n) = T (n-1) +1 and T (1) = 	? (1).
+</textarea></div>
+<p><strong>Solution:</strong></p>
+<div class="codeblock3"><pre> T (n) = T (n-1) +1
+       = (T (n-2) +1) +1 = (T (n-3) +1) +1+1
+       = T (n-4) +4 = T (n-5) +1+4
+       = T (n-5) +5= T (n-k) + k
+Where k = n-1
+   T (n-k) = T (1) = ? (1)
+   T (n) = ? (1) + (n-1) = 1+n-1=n= ? (n).
+</pre></div>
+
+<hr>
+
+<br><br>
+
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

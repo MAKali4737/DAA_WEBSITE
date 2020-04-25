@@ -1,0 +1,38 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+<h1 class="h1">Traveling-salesman Problem</h1>
+<p>In the traveling salesman Problem, a salesman must visits n cities. We can say that salesman wishes to make a tour or Hamiltonian cycle, visiting each city exactly once and finishing at the city he starts from. There is a non-negative cost c (i, j) to travel from the city i to city j. The goal is to find a tour of minimum cost. We assume that every two cities are connected. Such problems are called Traveling-salesman problem (TSP).</p>
+<p>We can model the cities as a complete graph of n vertices, where each vertex represents a city.</p>
+<p>It can be shown that TSP is NPC.</p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585402494657"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<p>If we assume the cost function c satisfies the triangle inequality, then we can use the following approximate algorithm.</p>
+<h2 class="h2">Triangle inequality</h2>
+<p>Let u, v, w be any three vertices, we have</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/traveling-salesman-problem.png" alt="Traveling-salesman Problem">
+<p>One important observation to develop an approximate solution is if we remove an edge from H*, the tour becomes a spanning tree.</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>Approx-TSP&nbsp;(G=&nbsp;(V,&nbsp;E))&nbsp;&nbsp;&nbsp;</span></span></li><li class=""><span>{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;<span class="number">1</span><span>.&nbsp;Compute&nbsp;a&nbsp;MST&nbsp;T&nbsp;of&nbsp;G;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;<span class="number">2</span><span>.&nbsp;Select&nbsp;any&nbsp;vertex&nbsp;r&nbsp;is&nbsp;the&nbsp;root&nbsp;of&nbsp;the&nbsp;tree;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;<span class="number">3</span><span>.&nbsp;Let&nbsp;L&nbsp;be&nbsp;the&nbsp;list&nbsp;of&nbsp;vertices&nbsp;visited&nbsp;in&nbsp;a&nbsp;preorder&nbsp;tree&nbsp;walk&nbsp;of&nbsp;T;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;<span class="number">4</span><span>.&nbsp;Return&nbsp;the&nbsp;Hamiltonian&nbsp;cycle&nbsp;H&nbsp;that&nbsp;visits&nbsp;the&nbsp;vertices&nbsp;in&nbsp;the&nbsp;order&nbsp;L;&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol></div><textarea name="code" class="java" style="display: none;">Approx-TSP (G= (V, E)) 
+{
+  1. Compute a MST T of G;
+  2. Select any vertex r is the root of the tree;
+  3. Let L be the list of vertices visited in a preorder tree walk of T;
+  4. Return the Hamiltonian cycle H that visits the vertices in the order L;
+}
+</textarea></div>
+<p><strong>Traveling-salesman Problem</strong></p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/traveling-salesman-problem2.png" alt="Traveling-salesman Problem">
+<p>Intuitively, Approx-TSP first makes a full walk of MST T, which visits each edge exactly two times. To create a Hamiltonian cycle from the full walk, it bypasses some vertices (which corresponds to making a shortcut)</p>
+
+
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

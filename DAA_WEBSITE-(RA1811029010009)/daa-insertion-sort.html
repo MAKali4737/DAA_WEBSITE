@@ -1,0 +1,137 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+<h1 class="h1">Insertion Sort </h1>
+<p>It is a very simple method to sort the number in an increasing or decreasing order. </p>
+<h3 class="h3">It has various advantages:</h3>
+<ol class="points">
+<li>It is simple to implement.</li>
+<li>It is efficient on small datasets.</li>
+<li>It is stable (does not change the relative order of elements with equal keys)</li>
+<li>It is in-place (only requires a constant amount O (1) of extra memory space).</li>
+<li>It is an online algorithm, in that it can sort a list as it receives it.</li>
+</ol>
+<div class="codeblock"><pre><strong>ALGORITHM: INSERTION SORT (A)</strong>
+1. For k ? 2  to length [A]
+2. Do key ? A[k]
+3. i=k-1
+4. while i&gt;0 and A[i]&gt;key
+5. do A[i+1] ? A[i]
+6. i=i-1
+7. A[i+1] ? key
+</pre></div>
+<h2 class="h2">Analysis:</h2>
+<ol class="points">
+<li><strong>Input:</strong> n elements are given.</li>
+<li><strong>Output:</strong> the number of comparisons required to make sorting.</li>
+<li><strong>Logic:</strong> If we have n elements in insertion sort, then n-1 passes are required to find a sorted array. </li>
+</ol>
+<div class="codeblock"><pre> In pass 1: no comparison is required
+ In pass 2:  1 comparison is required
+ In pass 3: 2 comparisons are required
+............................................................................
+...............................................................................
+ In pass n: n-1 comparisons are required 
+ Total comparisons: T (n) = 1+2+3+...........+ n-1
+                          = <img src="https://static.javatpoint.com/tutorial/daa/images/daa-insertion-sort.png" style="margin:0 0 -15px 0;" alt="DAA Insertion Sort">
+                          = o (n<sup>2</sup>)
+    <strong>Therefore complexity is of order n<sup>2</sup></strong> 
+</pre></div>
+<h3 class="h3">Example:</h3>
+<p>Illustrate the operation of INSERTION SORT on the array A = (4, 15, 7, 18, and 16).</p>
+<h3 class="h3">Solution:</h3>
+<p><strong>A [] =</strong></p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585396249433"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<table class="alt">
+<tbody><tr>
+	<td>4</td>
+	<td>15</td>
+	<td>7</td>
+	<td>18</td>
+	<td>16</td>
+</tr>
+</tbody></table>
+<p><strong>For j=2 to 5</strong></p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>&nbsp;J=</span><span class="number">2</span><span>,&nbsp;key=A&nbsp;[</span><span class="number">2</span><span>]&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Key=<span class="number">15</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>I=<span class="number">2</span><span>-</span><span class="number">1</span><span>=</span><span class="number">1</span><span>,&nbsp;i=</span><span class="number">1</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>While&nbsp;i&gt;<span class="number">0</span><span>&nbsp;and&nbsp;A&nbsp;[</span><span class="number">1</span><span>]&gt;</span><span class="number">15</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>A&nbsp;Condition&nbsp;<span class="keyword">false</span><span>,&nbsp;so&nbsp;no&nbsp;change&nbsp;&nbsp;</span></span></li><li class=""><span>Now=<span class="number">3</span><span>,&nbsp;key=A&nbsp;[</span><span class="number">3</span><span>]&nbsp;=</span><span class="number">7</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>I=<span class="number">3</span><span>-</span><span class="number">1</span><span>=</span><span class="number">2</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>I=<span class="number">2</span><span>,&nbsp;key=</span><span class="number">7</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>While&nbsp;i&gt;<span class="number">0</span><span>&nbsp;and&nbsp;A&nbsp;[</span><span class="number">2</span><span>]&gt;key&nbsp;&nbsp;&nbsp;</span></span></li><li class=""><span>Condition&nbsp;is&nbsp;<span class="keyword">true</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>So&nbsp;A&nbsp;[<span class="number">2</span><span>+</span><span class="number">1</span><span>]&nbsp;?&nbsp;A&nbsp;[</span><span class="number">2</span><span>]&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;[<span class="number">3</span><span>]&nbsp;?&nbsp;A&nbsp;[</span><span class="number">2</span><span>]&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;"> J=2, key=A [2]
+        Key=15
+I=2-1=1, i=1
+While i&gt;0 and A [1]&gt;15
+A Condition false, so no change
+Now=3, key=A [3] =7
+I=3-1=2
+I=2, key=7
+While i&gt;0 and A [2]&gt;key 
+Condition is true
+So A [2+1] ? A [2]
+      A [3] ? A [2]
+</textarea></div>
+
+<p><strong>i.e.</strong></p>
+<table class="alt">
+<tbody><tr>
+	<td>4</td>
+	<td></td>
+	<td>15</td>
+	<td>18</td>
+	<td>16</td>
+</tr>
+</tbody></table>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>and&nbsp;i=</span><span class="number">2</span><span>-</span><span class="number">1</span><span>=</span><span class="number">1</span><span>,&nbsp;i=</span><span class="number">1</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">while</span><span>&nbsp;i&gt;</span><span class="number">0</span><span>&nbsp;and&nbsp;A&nbsp;[</span><span class="number">1</span><span>]&gt;key&nbsp;&nbsp;</span></span></li><li class="alt"><span>A&nbsp;Condition&nbsp;<span class="keyword">false</span><span>.&nbsp;So&nbsp;no&nbsp;change&nbsp;&nbsp;</span></span></li><li class=""><span>Then&nbsp;A&nbsp;[<span class="number">1</span><span>+</span><span class="number">1</span><span>]&nbsp;?&nbsp;key&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;[<span class="number">2</span><span>]&nbsp;?&nbsp;</span><span class="number">7</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">and i=2-1=1, i=1
+while i&gt;0 and A [1]&gt;key
+A Condition false. So no change
+Then A [1+1] ? key
+    A [2] ? 7
+</textarea></div>
+
+<p><strong>That is</strong></p>
+<table class="alt">
+<tbody><tr>
+	<td>4</td>
+	<td>7</td>
+	<td>15</td>
+	<td>18</td>
+	<td>16</td>
+</tr>
+</tbody></table>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>For&nbsp;j=</span><span class="number">4</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>Key=A&nbsp;[<span class="number">4</span><span>]&nbsp;&nbsp;</span></span></li><li class="alt"><span>Key&nbsp;=&nbsp;<span class="number">18</span><span>,&nbsp;i=</span><span class="number">3</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>Now,&nbsp;<span class="keyword">while</span><span>&nbsp;</span><span class="number">3</span><span>&gt;</span><span class="number">0</span><span>&nbsp;and&nbsp;A&nbsp;[</span><span class="number">3</span><span>]&gt;</span><span class="number">18</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>The&nbsp;Condition&nbsp;is&nbsp;<span class="keyword">false</span><span>,&nbsp;No&nbsp;change.&nbsp;&nbsp;</span></span></li><li class=""><span>Similarly,&nbsp;j=<span class="number">5</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Key=A&nbsp;[<span class="number">5</span><span>]&nbsp;&nbsp;</span></span></li><li class=""><span>So&nbsp;key=<span class="number">16</span><span>,&nbsp;i=</span><span class="number">4</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>Now&nbsp;<span class="keyword">while</span><span>&nbsp;</span><span class="number">4</span><span>&gt;</span><span class="number">0</span><span>&nbsp;and&nbsp;A&nbsp;[</span><span class="number">4</span><span>]&gt;</span><span class="number">16</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>Condition&nbsp;is&nbsp;<span class="keyword">true</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;So&nbsp;A&nbsp;[<span class="number">5</span><span>]&nbsp;=</span><span class="number">16</span><span>&nbsp;and&nbsp;i=</span><span class="number">4</span><span>-</span><span class="number">1</span><span>=</span><span class="number">3</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>Now&nbsp;<span class="keyword">while</span><span>&nbsp;</span><span class="number">3</span><span>&gt;</span><span class="number">0</span><span>&nbsp;and&nbsp;A&nbsp;[</span><span class="number">3</span><span>]&gt;</span><span class="number">16</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>Condition&nbsp;is&nbsp;<span class="keyword">false</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>So&nbsp;A&nbsp;[<span class="number">3</span><span>+</span><span class="number">1</span><span>]&nbsp;=A&nbsp;[</span><span class="number">4</span><span>]&nbsp;=</span><span class="number">16</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">For j=4
+Key=A [4]
+Key = 18, i=3
+Now, while 3&gt;0 and A [3]&gt;18
+The Condition is false, No change.
+Similarly, j=5    
+      Key=A [5]
+So key=16, i=4
+Now while 4&gt;0 and A [4]&gt;16
+Condition is true
+ So A [5] =16 and i=4-1=3
+Now while 3&gt;0 and A [3]&gt;16
+Condition is false
+So A [3+1] =A [4] =16
+</textarea></div>
+
+<p><strong>And the sorted array is:</strong></p>
+<table class="alt">
+<tbody><tr>
+	<td><strong>4</strong></td>
+	<td><strong>7</strong></td>
+	<td><strong>15</strong></td>
+	<td><strong>16</strong></td>
+	<td><strong>18</strong></td>
+</tr>
+</tbody></table>
+
+<hr>
+
+<br><br>
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

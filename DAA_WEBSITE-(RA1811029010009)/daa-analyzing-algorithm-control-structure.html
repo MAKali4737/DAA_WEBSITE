@@ -1,0 +1,130 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+
+<h1 class="h1">Analyzing Algorithm Control Structure </h1>
+<p>To analyze a programming code or algorithm, we must notice that each instruction affects the overall performance of the algorithm and therefore, each instruction must be analyzed separately to analyze overall performance. However, there are some algorithm control structures which are present in each programming code and have a specific asymptotic analysis.</p>
+<p>Some Algorithm Control Structures are:</p>
+<ol class="points">
+<li>Sequencing</li>
+<li>If-then-else</li>
+<li>for loop</li>
+<li>While loop</li>
+</ol>
+<hr>
+
+<h3 class="h3">1. Sequencing:</h3>
+<p>Suppose our algorithm consists of two parts A and B. A takes time t<sub>A</sub> and B takes time t<sub>B</sub> for computation. The total computation "t<sub>A</sub> + t<sub>B</sub>" is according to the sequence rule. According to maximum rule, this computation time is (max (t<sub>A</sub>,t<sub>B</sub>)).</p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585395829589"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<p><strong>Example:</strong></p>
+<div class="codeblock"><pre>Suppose t<sub>A</sub> =O (n) and t<sub>B</sub> = ? (n<sup>2</sup>). 
+Then, the  total computation time can be calculated as
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-analyzing-algorithm-control-structure-total-computation.png" alt="DAA Analyzing Algorithm Control Structure">
+Computation Time = t<sub>A</sub> + t<sub>B</sub>
+ = (max (t<sub>A</sub>,t<sub>B</sub>)
+ = (max (O (n), ? (n<sup>2</sup>)) = ? (n<sup>2</sup>)
+</pre></div>
+ 
+<h3 class="h3">2. If-then-else:</h3>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-analyzing-algorithm-control-structure.png" alt="DAA Analyzing Algorithm Control Structure">
+<br>
+<p>The total time computation is according to the condition rule-"if-then-else." According to the maximum rule, this computation time is max (t<sub>A</sub>,t<sub>B</sub>). </p>
+<p><strong>Example:</strong> 
+</p><div class="codeblock"><pre>Suppose t<sub>A</sub> = O (n<sup>2</sup>) and t<sub>B</sub> = ? (n<sup>2</sup>)
+Calculate the total computation time for the following:
+
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-analyzing-algorithm-control-structure2.png" alt="DAA Analyzing Algorithm Control Structure">
+
+Total Computation = (max (t<sub>A</sub>,t<sub>B</sub>))
+                  = max (O (n<sup>2</sup>), ? (n<sup>2</sup>) = ? (n<sup>2</sup>)
+</pre></div>
+<h3 class="h3">3. For loop:</h3>
+<p>The general format of for loop is:</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>For&nbsp;(initialization;&nbsp;condition;&nbsp;updation)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>Statement(s);&nbsp;&nbsp;</span></li></ol></div><textarea name="code" class="java" style="display: none;">  For (initialization; condition; updation)
+{
+		Statement(s);
+}
+</textarea></div>
+
+<h2 class="h2">Complexity of for loop:</h2>
+<p>The outer loop executes N times. Every time the outer loop executes, the inner loop executes M times. As a result, the statements in the <strong>inner</strong> loop execute a total of N * M times. Thus, the total complexity for the two loops is O (N2)</p>
+<p>Consider the following loop:</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span class="keyword">for</span><span>&nbsp;i&nbsp;?&nbsp;</span><span class="number">1</span><span>&nbsp;to&nbsp;n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P&nbsp;(i)&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;}&nbsp;&nbsp;</span></li></ol></div><textarea name="code" class="java" style="display: none;">for i ? 1 to n    
+ {
+		 P (i)
+ }
+</textarea></div>
+<p>If the computation time t<sub>i</sub> for ( P<sub>I</sub>) various as a function of "i", then the total computation time for the loop is given not by a multiplication but by a sum i.e.</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>For&nbsp;i&nbsp;?&nbsp;</span><span class="number">1</span><span>&nbsp;to&nbsp;n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P&nbsp;(i)&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;}&nbsp;&nbsp;</span></li></ol></div><textarea name="code" class="java" style="display: none;">For i ? 1 to n    
+ {
+		    P (i)
+ }
+</textarea></div>
+<p>Takes <img src="https://static.javatpoint.com/tutorial/daa/images/complexity-of-for-loop.png" style="margin:0px 0px -10px 0px" alt="DAA Analyzing Algorithm Control Structure"></p>
+<p>If the algorithms consist of nested "for" loops, then the total computation time is</p>
+<div class="codeblock"><pre>For i ? 1 to n
+ {
+      For j ?  1 to n       <img src="https://static.javatpoint.com/tutorial/daa/images/complexity-of-for-loop2.png" style="margin:0px 0px -10px 0px" alt="DAA Analyzing Algorithm Control Structure">
+    {
+      P (ij)
+    }
+ }  
+</pre></div>
+<p><strong>Example:</strong>
+</p><p>Consider the following "for" loop, Calculate the total computation time for the following:</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>For&nbsp;i&nbsp;?&nbsp;</span><span class="number">2</span><span>&nbsp;to&nbsp;n-</span><span class="number">1</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For&nbsp;j&nbsp;?&nbsp;<span class="number">3</span><span>&nbsp;to&nbsp;i&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sum&nbsp;?&nbsp;Sum+A&nbsp;[i]&nbsp;[j]&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li></ol></div><textarea name="code" class="java" style="display: none;">For i ? 2 to n-1
+	{
+		For j ? 3 to i
+	     {
+                       Sum ? Sum+A [i] [j]
+                 }
+            }
+</textarea></div>
+<p><strong>Solution:</strong></p>
+<p>The total Computation time is:</p>
+<p><img src="https://static.javatpoint.com/tutorial/daa/images/complexity-of-for-loop3.png" alt="DAA Analyzing Algorithm Control Structure"></p>
+<h3 class="h3">4. While loop:</h3>
+<p>The Simple technique for analyzing the loop is to determine the function of variable involved whose value decreases each time around. Secondly, for terminating the loop, it is necessary that value must be a positive integer. By keeping track of how many times the value of function decreases, one can obtain the number of repetition of the loop. The other approach for analyzing "while" loop is to treat them as recursive algorithms.</p>
+<h2 class="h4">Algorithm:</h2>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span class="number">1</span><span>.&nbsp;[Initialize]&nbsp;Set&nbsp;k:&nbsp;=</span><span class="number">1</span><span>,&nbsp;LOC:&nbsp;=</span><span class="number">1</span><span>&nbsp;and&nbsp;MAX:&nbsp;=&nbsp;DATA&nbsp;[</span><span class="number">1</span><span>]&nbsp;&nbsp;</span></span></li><li class=""><span><span class="number">2</span><span>.&nbsp;Repeat&nbsp;steps&nbsp;</span><span class="number">3</span><span>&nbsp;and&nbsp;</span><span class="number">4</span><span>&nbsp;</span><span class="keyword">while</span><span>&nbsp;K=N&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="number">3</span><span>.&nbsp;&nbsp;</span><span class="keyword">if</span><span>&nbsp;MAX&lt;DATA&nbsp;[k],then:&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;Set&nbsp;LOC:&nbsp;=&nbsp;K&nbsp;and&nbsp;MAX:&nbsp;=&nbsp;DATA&nbsp;[k]&nbsp;&nbsp;</span></li><li class="alt"><span><span class="number">4</span><span>.&nbsp;Set&nbsp;k:&nbsp;=&nbsp;k+</span><span class="number">1</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;[End&nbsp;of&nbsp;step&nbsp;<span class="number">2</span><span>&nbsp;loop]&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="number">5</span><span>.&nbsp;Write:&nbsp;LOC,&nbsp;MAX&nbsp;&nbsp;</span></span></li><li class=""><span><span class="number">6</span><span>.&nbsp;EXIT&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">1. [Initialize] Set k: =1, LOC: =1 and MAX: = DATA [1]
+2. Repeat steps 3 and 4 while K=N
+3.  if MAX&lt;DATA [k],then:
+	Set LOC: = K and MAX: = DATA [k]
+4. Set k: = k+1
+   [End of step 2 loop]
+5. Write: LOC, MAX
+6. EXIT
+</textarea></div>
+<p><strong>Example:</strong>
+</p><p>The running time of algorithm array Max of computing the maximum element in an array of n integer is O (n).</p>
+<p><strong>Solution:</strong></p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>&nbsp;&nbsp;&nbsp;array&nbsp;Max&nbsp;(A,&nbsp;n)&nbsp;&nbsp;</span></span></li><li class=""><span><span class="number">1</span><span>.&nbsp;Current&nbsp;max&nbsp;?&nbsp;A&nbsp;[</span><span class="number">0</span><span>]&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="number">2</span><span>.&nbsp;For&nbsp;i&nbsp;?&nbsp;&nbsp;</span><span class="number">1</span><span>&nbsp;to&nbsp;n-</span><span class="number">1</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="number">3</span><span>.&nbsp;</span><span class="keyword">do</span><span>&nbsp;</span><span class="keyword">if</span><span>&nbsp;current&nbsp;max&nbsp;&lt;&nbsp;A&nbsp;[i]&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="number">4</span><span>.&nbsp;then&nbsp;&nbsp;current&nbsp;max&nbsp;?&nbsp;A&nbsp;[i]&nbsp;&nbsp;</span></span></li><li class=""><span><span class="number">5</span><span>.&nbsp;</span><span class="keyword">return</span><span>&nbsp;current&nbsp;max.&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">   array Max (A, n)
+1. Current max ? A [0]
+2. For i ?  1 to n-1
+3. do if current max &lt; A [i]
+4. then  current max ? A [i]
+5. return current max.
+</textarea></div>
+<p>The number of primitive operation t (n) executed by this algorithm is at least.</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span class="number">2</span><span>&nbsp;+&nbsp;</span><span class="number">1</span><span>&nbsp;+&nbsp;n&nbsp;+</span><span class="number">4</span><span>&nbsp;(n-</span><span class="number">1</span><span>)&nbsp;+&nbsp;</span><span class="number">1</span><span>=5n&nbsp;&nbsp;</span></span></li><li class=""><span><span class="number">2</span><span>&nbsp;+&nbsp;</span><span class="number">1</span><span>&nbsp;+&nbsp;n&nbsp;+&nbsp;</span><span class="number">6</span><span>&nbsp;(n-</span><span class="number">1</span><span>)&nbsp;+&nbsp;</span><span class="number">1</span><span>=7n-</span><span class="number">2</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">2 + 1 + n +4 (n-1) + 1=5n
+2 + 1 + n + 6 (n-1) + 1=7n-2
+</textarea></div>
+<p>The best case T(n) =5n occurs when A [0] is the maximum element. The worst case T(n) = 7n-2 occurs when element are sorted in increasing order.</p>
+<p>We may, therefore, apply the big-Oh definition with c=7 and n<sub>0</sub>=1 and conclude the running time of this is O (n).</p>
+
+<hr>
+
+<br><br>
+
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

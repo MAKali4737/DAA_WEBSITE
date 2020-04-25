@@ -1,0 +1,88 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+
+<h1 class="h1">Master Method</h1>
+<p>The Master Method is used for solving the following types of recurrence</p>
+<p>T (n) = a T<img src="https://static.javatpoint.com/tutorial/daa/images/daa-master-method.png" style="margin:5px 4px -15px 0;" alt="DAA Master Method">+ f (n) with a=1 and b=1 be constant &amp; f(n) be a function and <img style="margin:5px 4px -15px 0;" src="https://static.javatpoint.com/tutorial/daa/images/daa-master-method2.png" alt="DAA Master Method">can be interpreted as </p>
+<p>Let T (n) is defined on non-negative integers by the recurrence.</p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585396033946" data-refresh-time="1585396033949" data-timeout="9"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<div class="codeblock"><pre> T (n) = a T<img src="https://static.javatpoint.com/tutorial/daa/images/daa-master-method.png" style="margin:0 0 -15px 0;" alt="DAA Master Method">+ f (n)
+</pre></div>
+<p>In the function to the analysis of a recursive algorithm, the constants and function take on the following significance:</p>
+<ul class="points">
+<li>n is the size of the problem. </li>
+<li>a is the number of subproblems in the recursion.  </li>
+<li>n/b is the size of each subproblem. (Here it is assumed that all subproblems are essentially the same size.)</li>  
+<li>f (n) is the sum of the work done outside the recursive calls, which includes the sum of dividing the problem and the sum of combining the solutions to the subproblems.</li>
+<li>It is not possible always bound the function according to the requirement, so we make three cases which will tell us what kind of bound we can apply on the function.</li>
+</ul>
+<h2 class="h2">Master Theorem:</h2>
+<p>It is possible to complete an asymptotic tight bound in these three cases:</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-master-method3.png" alt="DAA Master Method">
+<p><strong>Case1:</strong> If f (n) = <img src="https://static.javatpoint.com/tutorial/daa/images/daa-master-method4.png" style="margin:0 0 -15px 0;" alt="DAA Master Method"> for some constant e &gt;0, then it follows that: </p>
+<div class="codeblock"><pre>T (n) = T <img src="https://static.javatpoint.com/tutorial/daa/images/daa-master-method5.png" style="margin:0 0 -15px 0;" alt="DAA Master Method">
+</pre></div>
+<p><strong>Example:</strong></p>
+<div class="codeblock"><pre>T (n) = 8 T <img src="https://static.javatpoint.com/tutorial/daa/images/daa-master-method6.png" style="margin:0 0 -15px 0;" alt="DAA Master Method"> apply master theorem on it.
+</pre></div>
+<p><strong>Solution:</strong></p>
+<div class="codeblock3"><pre>Compare T (n) = 8 T <img src="https://static.javatpoint.com/tutorial/daa/images/daa-master-method6.png" style="margin:0 0 -15px 0;" alt="DAA Master Method"> with 
+ T (n) = a T <img src="https://static.javatpoint.com/tutorial/daa/images/daa-master-method7.png" style="margin:0 0 -15px 0;" alt="DAA Master Method">
+ a = 8, b=2, f (n) = 1000 n<sup>2</sup>, log<sub>b</sub>a = log<sub>2</sub>8 = 3
+ Put all the values in: f (n) = <img src="https://static.javatpoint.com/tutorial/daa/images/daa-master-method8.png" style="margin:0 0 -15px 0;" alt="DAA Master Method">
+     1000 n<sup>2</sup> = O (n<sup>3-e</sup> ) 
+     If we choose e=1, we get: 1000 n<sup>2</sup> = O (n<sup>3-1</sup>) = O (n<sup>2</sup>)
+</pre></div>
+<p>Since this equation holds, the first case of the master theorem applies to the given recurrence relation, thus resulting in the conclusion:</p>
+<div class="codeblock3"><pre>T (n) = T <img src="https://static.javatpoint.com/tutorial/daa/images/daa-master-method9.png" style="margin:0 0 -15px 0;" alt="DAA Master Method">
+   Therefore: T (n) = T (n<sup>3</sup>) 
+</pre></div>
+<p><strong>Case 2:</strong> If it is true, for some constant k = 0 that: </p>
+<div class="codeblock"><pre>F (n) = T <img src="https://static.javatpoint.com/tutorial/daa/images/daa-master-method10.png" style="margin:0 0 -15px 0;" alt="DAA Master Method"> then it follows that: T (n) = T <img src="https://static.javatpoint.com/tutorial/daa/images/daa-master-method11.png" style="margin:0 0 -15px 0;" alt="DAA Master Method">
+</pre></div>
+<p><strong>Example:</strong></p>
+<div class="codeblock"><pre>T (n) = 2 <img src="https://static.javatpoint.com/tutorial/daa/images/daa-master-method12.png" style="margin:0 0 -15px 0;" alt="DAA Master Method">, solve the recurrence by using the master method.
+As compare the given problem with T (n) = a T<img src="https://static.javatpoint.com/tutorial/daa/images/daa-master-method13.png" style="margin:0 0 -15px 0;" alt="DAA Master Method"> a = 2, b=2, k=0, f (n) = 10n, log<sub>b</sub>a = log<sub>2</sub>2 =1 
+Put all the values in f (n) =T <img src="https://static.javatpoint.com/tutorial/daa/images/daa-master-method14.png" style="margin:0 0 -15px 0;" alt="DAA Master Method">, we will get 
+	10n = T (n<sup>1</sup>) = T (n) which is true.
+<strong>Therefore:</strong> T (n) = T <img src="https://static.javatpoint.com/tutorial/daa/images/daa-master-method15.png" style="margin:0 0 -15px 0;" alt="DAA Master Method">
+      = T (n log n)
+</pre></div>
+<p><strong>Case 3:</strong> If  it is true f(n) = O <img src="https://static.javatpoint.com/tutorial/daa/images/daa-master-method16.png" style="margin:0 0 -15px 0;" alt="DAA Master Method"> for some constant e &gt;0 and it also true that: a f <img src="https://static.javatpoint.com/tutorial/daa/images/daa-master-method17.png" style="margin:0 0 -15px 0;" alt="DAA Master Method"> for some constant c&lt;1 for large value of n ,then : </p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>T&nbsp;(n)&nbsp;=&nbsp;T((f&nbsp;(n))&nbsp;&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">T (n) = T((f (n)) 
+</textarea></div>
+<p><strong>Example:</strong> Solve the recurrence relation:</p>
+<div class="codeblock"><pre>T (n) = 2 <img src="https://static.javatpoint.com/tutorial/daa/images/daa-master-method18.png" style="margin:0 0 -15px 0;" alt="DAA Master Method">
+</pre></div>
+<p><strong>Solution:</strong></p>
+<div class="codeblock"><pre>Compare the given problem with T (n) = a T <img src="https://static.javatpoint.com/tutorial/daa/images/daa-master-method19.png" style="margin:0 0 -15px 0;" alt="DAA Master Method">
+a= 2, b =2, f (n) = n<sup>2</sup>, log<sub>b</sub>a = log<sub>2</sub>2 =1 
+Put all the values in f (n) = O <img src="https://static.javatpoint.com/tutorial/daa/images/daa-master-method20.png" style="margin:0 0 -15px 0;" alt="DAA Master Method"> ..... (Eq. 1)
+If we insert all the value in (Eq.1), we will get 
+  n<sup>2</sup> = O(n<sup>1+e</sup>) put e =1, then the equality will hold.
+  n<sup>2</sup> = O(n<sup>1+1</sup>) = O(n<sup>2</sup>)
+Now we will also check the second condition:
+  2 <img src="https://static.javatpoint.com/tutorial/daa/images/daa-master-method21.png" style="margin:0 0 -15px 0;" alt="DAA Master Method">
+If we will choose c =1/2, it is true:
+  <img src="https://static.javatpoint.com/tutorial/daa/images/daa-master-method22.png" style="margin:0 0 -15px 0;" alt="DAA Master Method">  ? n =1 
+So it follows: T (n) = T ((f (n))
+    T (n) = T(n<sup>2</sup>)
+</pre></div>
+
+<hr>
+
+<br><br>
+
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

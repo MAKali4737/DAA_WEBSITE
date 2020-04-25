@@ -1,0 +1,186 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+
+<h1 class="h1">Lower Bound Theory</h1>
+<p>Lower Bound Theory Concept is based upon the calculation of minimum time that is required to execute an algorithm is known as a lower bound theory or Base Bound Theory.</p>
+<p>Lower Bound Theory uses a number of methods/techniques to find out the lower bound.</p>
+<p><strong>Concept/Aim:</strong> The main aim is to calculate a minimum number of comparisons required to execute an algorithm.</p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585399283226" data-refresh-time="1585399283227" data-timeout="9"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+
+<h2 class="h2">Techniques:</h2>
+<p>The techniques which are used by lower Bound Theory are:</p>
+<ol class="points">
+<li>Comparisons Trees.</li>
+<li>Oracle and adversary argument</li>
+<li>State Space Method</li>
+</ol>
+<h3 class="h3">1. Comparison trees: </h3>
+<p>In a comparison sort, we use only comparisons between elements to gain order information about an input sequence (a1; a2......an).</p>
+<p><strong>Given a<sub>i</sub>,a<sub>j</sub> from (a<sub>1</sub>, a<sub>2</sub>.....a<sub>n</sub>)We Perform One of the Comparisons</strong></p>
+<ul class="points">
+<li>a<sub>i</sub> &lt; a<sub>j</sub> &nbsp; &nbsp; &nbsp; less than</li>
+<li>a<sub>i</sub> = a<sub>j</sub> &nbsp; &nbsp; &nbsp; less than or equal to</li>
+<li>a<sub>i</sub> &gt; a<sub>j</sub> &nbsp; &nbsp; &nbsp; greater than</li>
+<li>a<sub>i</sub> = a<sub>j</sub> &nbsp; &nbsp; &nbsp; greater than or equal to</li>
+<li>a<sub>i</sub> = a<sub>j</sub> &nbsp; &nbsp; &nbsp; equal to</li>
+</ul>
+<p>To determine their relative order, if we assume all elements are distinct, then we just need to consider  a<sub>i</sub> = a<sub>j</sub> '=' is excluded &amp;, =,=,&gt;,&lt; are equivalent.</p>
+<p>Consider sorting three numbers a1, a2, and a3. There are 3! = 6 possible combinations: </p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>(a1,&nbsp;a2,&nbsp;a3),&nbsp;(a1,&nbsp;a3,&nbsp;a2),&nbsp;&nbsp;</span></span></li><li class=""><span>(a2,&nbsp;a1,&nbsp;a3),&nbsp;(a2,&nbsp;a3,&nbsp;a1)&nbsp;&nbsp;</span></li><li class="alt"><span>(a3,&nbsp;a1,&nbsp;a2),&nbsp;(a3,&nbsp;a2,&nbsp;a1)&nbsp;&nbsp;</span></li></ol></div><textarea name="code" class="java" style="display: none;"> (a1, a2, a3), (a1, a3, a2),
+ (a2, a1, a3), (a2, a3, a1)
+ (a3, a1, a2), (a3, a2, a1)
+</textarea></div>
+<p>The Comparison based algorithm defines a decision tree.</p>
+<p><strong>Decision Tree:</strong> A decision tree is a full binary tree that shows the comparisons between elements that are executed by an appropriate sorting algorithm operating on an input of a given size. Control, data movement, and all other conditions of the algorithm are ignored.</p>
+<p>In a decision tree, there will be an array of length n.</p>
+<p>So, total leaves will be n! (I.e. total number of comparisons)</p>
+<p>If tree height is h, then surely</p>
+<div class="codeblock"><pre>    n! =2<sup>n</sup> (tree will be binary)
+</pre></div>
+<p>Taking an Example of comparing a1, a2, and a3.</p>
+<p>Left subtree will be true condition i.e. a<sub>i</sub> = a<sub>j</sub></p>
+<p>Right subtree will be false condition i.e. a<sub>i</sub> &gt;a<sub>j</sub></p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-lower-bound-theory.png" alt="DAA Lower Bound Theory">
+<p class="center"><strong>Fig: Decision Tree</strong></p>
+<p>So from above, we got </p>
+<div class="codeblock"><pre>N! =2<sup>n</sup>   
+</pre></div>
+<p>Taking Log both sides</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-lower-bound-theory2.png" alt="DAA Lower Bound Theory">
+<h3 class="h3">Comparison tree for Binary Search: </h3>
+<p><strong>Example:</strong> Suppose we have a list of items according to the following Position:</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span class="number">1</span><span>,</span><span class="number">2</span><span>,</span><span class="number">3</span><span>,</span><span class="number">4</span><span>,</span><span class="number">5</span><span>,</span><span class="number">6</span><span>,</span><span class="number">7</span><span>,</span><span class="number">8</span><span>,</span><span class="number">9</span><span>,</span><span class="number">10</span><span>,</span><span class="number">11</span><span>,</span><span class="number">12</span><span>,</span><span class="number">13</span><span>,</span><span class="number">14</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">1,2,3,4,5,6,7,8,9,10,11,12,13,14
+</textarea></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-lower-bound-theory3.png" alt="DAA Lower Bound Theory">
+<p><strong>And the last midpoint is:</strong></p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span class="number">2</span><span>,&nbsp;&nbsp;</span><span class="number">4</span><span>,&nbsp;&nbsp;</span><span class="number">6</span><span>,&nbsp;&nbsp;</span><span class="number">8</span><span>,&nbsp;&nbsp;</span><span class="number">10</span><span>,&nbsp;</span><span class="number">12</span><span>,&nbsp;</span><span class="number">14</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">2,	4,	6,	8,	10,	12,	14
+</textarea></div>
+<p>Thus, we will consider all the midpoints and we will make a tree of it by having stepwise midpoints.	</p>
+<p>The Bold letters are Mid-Points Here</p>
+<p>According to Mid-Point, the tree will be:</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-lower-bound-theory4.png" alt="DAA Lower Bound Theory">
+<p><strong>Step1:</strong> Maximum number of nodes up to k level of the internal node is 2<sup>k</sup>-1</p>
+<p><strong>For Example</strong></p>
+<div class="codeblock"><pre> 2<sup>k</sup>-1
+ 2<sup>3</sup>-1= 8-1=7
+Where k = level=3
+</pre></div>
+<p><strong>Step2:</strong> Maximum number of internal nodes in the comparisons tree is n!</p>
+<h4 class="n">Note: Here Internal Nodes are Leaves.</h4>
+<p><strong>Step3:</strong> From Condition1 &amp; Condition 2 we get</p>
+<div class="codeblock"><pre>N! = 2<sup>k</sup>-1
+ 14 &lt; 15
+ Where N = Nodes
+</pre></div>
+<p><strong>Step4:</strong> Now, n+1 = 2<sup>k</sup></p>
+<p>Here, Internal Nodes will always be less than 2<sup>k</sup> in the Binary Search.</p>
+<p><strong>Step5:</strong></p>
+<div class="codeblock"><pre>n+1&lt;= 2<sup>k</sup>
+   Log (n+1) = k log 2
+ k &gt;=<img src="https://static.javatpoint.com/tutorial/daa/images/daa-lower-bound-theory5.png" style="margin:5px 4px -15px 0;" alt="DAA Lower Bound Theory"> 
+  k &gt;=log<sub>2</sub>(n+1)
+</pre></div>
+<p><strong>Step6:</strong></p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>T&nbsp;(n)&nbsp;=&nbsp;k&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;"> T (n) = k
+</textarea></div>
+<p><strong>Step7:</strong></p>
+<div class="codeblock"><pre>T (n) &gt;=log<sub>2</sub>(n+1)
+</pre></div>
+<p>Here, the minimum number of Comparisons to perform a task of the search of n terms using Binary Search </p>
+<hr>
+
+<h3 class="h3">2. Oracle and adversary argument:</h3>
+<p>Another technique for obtaining lower bounds consists of making use of an "oracle." </p>
+<p>Given some model of estimation such as comparison trees, the oracle tells us the outcome of each comparison.</p> 
+<p>In order to derive a good lower bound, the oracle efforts it's finest to cause the algorithm to work as hard as it might.</p> 
+<p>It does this by deciding as the outcome of the next analysis, the result which matters the most work to be needed to determine the final answer. </p>
+<p>And by keeping step of the work that is finished, a worst-case lower bound for the problem can be derived.</p>
+<p><strong>Example: (Merging Problem)</strong> given the sets A (1: m) and B (1: n), where the information in A and in B are sorted. Consider lower bounds for algorithms combining these two sets to give an individual sorted set. </p>
+<p>Consider that all of the m+n elements are specific and A (1) &lt; A (2) &lt; ....&lt; A (m) and B (1) &lt; B (2) &lt; ....&lt; B (n).</p>
+<p>Elementary combinatory tells us that there are C ((m+n), n)) ways that the A's and B's may merge together while still preserving the ordering within A and B. </p>
+<p>Thus, if we need comparison trees as our model for combining algorithms, then there will be C ((m+n), n)) external nodes and therefore at least log C ((m+n), m) comparisons are needed by any comparison-based merging algorithm. </p>
+<p>If we let MERGE (m, n) be the minimum number of comparisons used to merge m items with n items then we have the inequality</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>Log&nbsp;C&nbsp;((m+n),&nbsp;m)&nbsp;MERGE&nbsp;(m,&nbsp;n)&nbsp;m+n-</span><span class="number">1</span><span>.&nbsp;&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">Log C ((m+n), m) MERGE (m, n) m+n-1. 
+</textarea></div>
+<p>The upper bound and lower bound can get promptly far apart as m gets much smaller than n.</p>
+<hr>
+
+<h3 class="h3">3. State Space Method: </h3>
+<p>1. State Space Method is a set of rules that show the possible states (n-tuples) that an algorithm can assume from a given state of a single comparison.</p>
+<p>2. Once the state transitions are given, it is possible to derive lower bounds by arguing that the finished state cannot be reached using any fewer transitions.</p>
+<p>3. Given n distinct items, find winner and loser.</p>
+<p>4. Aim: When state changed count it that is the aim of State Space Method.</p>
+<p>5. In this approach, we will count the number of comparison by counting the number of changes in state.</p>
+<p>6. Analysis of the problem to find out the smallest and biggest items by using the state space method.</p>
+<p>7. State: It is a collection of attributes.  </p>
+<p>8. Through this we sort out two types of Problems:</p>
+<ol class="points">
+<li>Find the largest &amp; smallest element from an array of elements.</li>
+<li>To find out largest &amp; second largest elements from an array of an element.</li>
+</ol>
+<p>9. For the largest item, we need 7 comparisons and what will be the second largest item?</p>
+<div class="codeblock"><pre>Now we count those teams who lose the match with team A 
+    Teams are: B, D, and E
+So the total no of comparisons are: 7
+Let n is the total number of items, then
+    Comparisons = n-1 (to find the biggest item) 
+No of Comparisons to find out the 2<sup>nd</sup> biggest item = log<sub>2</sub>n-1
+</pre></div>
+<p>10. In this <strong>no of comparisons</strong> are equal to the <strong>number of changes of states</strong> during the execution of the algorithm.</p>
+<p><strong>Example:</strong> State (A, B, C, D)</p>
+<ol class="pointsu">
+<li>No of items that can never be compared.</li>
+<li>No of items that win but never lost (ultimate winner).</li>
+<li>No of items that lost but never win (ultimate loser)</li>
+<li>No of items who sometimes lost &amp; sometimes win.</li>
+</ol>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-lower-bound-theory6.png" alt="DAA Lower Bound Theory">
+<p>Firstly, A, B compare out or match between them. A wins and in C, D.C wins and so on. We can assume that B wins and so on. We can assume that B wins in place of A it can be anything depending on our self.</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-lower-bound-theory7.png" alt="DAA Lower Bound Theory">
+<p>In Phase-1 there are 4 states<br> 
+If the team is 8 then 4 states<br> 
+As if n team the n/2 states.</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-lower-bound-theory8.png" alt="DAA Lower Bound Theory">
+<p>4 is Constant in C-State as B, D, F, H are lost teams that never win.</p>
+<p>Thus there are 3 states in Phase-2,<br>
+If n is 8 then states are 3<br>
+If n teams that are <img src="https://static.javatpoint.com/tutorial/daa/images/daa-lower-bound-theory11.png" style="margin:5px 4px -15px 0;" alt="DAA Lower Bound Theory">states.</p>
+<p><strong>Phase-3:</strong> This is a Phase in which teams which come under C-State are considered and there will be matches between them to find out the team which is never winning at all.</p>
+<p>In this Structure, we are going to move upward for denoting who is not winning after the match.</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-lower-bound-theory9.png" alt="DAA Lower Bound Theory">
+<p>Here H is the team which is never winning at all. By this, we fulfill our second aim to.</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-lower-bound-theory10.png" alt="DAA Lower Bound Theory">
+<p>Thus there are 3 states in Phase -3<br> 
+If n teams that are <img src="https://static.javatpoint.com/tutorial/daa/images/daa-lower-bound-theory11.png" style="margin:5px 4px -15px 0;" alt="DAA Lower Bound Theory"> states</p>
+<h3 class="n">Note: the total of all states value is always equal to 'n'.</h3>
+<p>Thus, by adding all phase's states we will get:-</p>
+<p><strong>Phase1 + Phase 2 + Phase 3</strong></p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-lower-bound-theory12.png" alt="DAA Lower Bound Theory">
+<p>Suppose we have 8 teams then<img src="https://static.javatpoint.com/tutorial/daa/images/daa-lower-bound-theory13.png" style="margin:5px 4px -15px 0;" alt="DAA Lower Bound Theory"> states are there (as minimum) to find out which one is never wins team.</p>
+<p>Thus, Equation is:</p>
+<p><img src="https://static.javatpoint.com/tutorial/daa/images/daa-lower-bound-theory14.png" alt="DAA Lower Bound Theory"></p>
+<p>Lower bound (L (n)) is a property of the particular issue i.e. the sorting problem, matrix multiplication not of any particular algorithm solving that problem.</p>
+<p>Lower bound theory says that no calculation can carry out the activity in less than that of (L (n)) times the units for arbitrary inputs i.e. that for every comparison based sorting algorithm must take at least <strong>L (n) </strong> time in the worst case.</p>
+<p>L (n) is the base overall conceivable calculation which is greatest finished.</p>
+<p><strong>Trivial lower bounds</strong> are utilized to yield the bound best alternative is to count the number of elements in the problems input that must be prepared and the number of output items that need to be produced.</p>
+<p><strong>The lower bound theory</strong> is the method that has been utilized to establish the given algorithm in the most efficient way which is possible. This is done by discovering a function <strong>g (n) </strong> that is a lower bound on the time that any algorithm must take to solve the given problem. Now if we have an algorithm whose computing time is the same order as <strong>g (n) </strong>, then we know that asymptotically we cannot do better.</p>
+<p>If <strong>f (n) </strong> is the time for some algorithm, then we write <strong>f (n) = O (g (n)) </strong> to mean that <strong>g (n) </strong> is the <strong>lower bound of f (n) </strong>. This equation can be formally written, if there exists positive constants <strong>c</strong> and <strong>n0</strong> such that <strong>|f (n)| &gt;= c|g (n)| </strong> for all <strong>n &gt; n0</strong>. In addition for developing lower bounds within the constant factor, we are more conscious of the fact to determine more exact bounds whenever this is possible.</p>
+<p>Deriving good <strong>lower bounds</strong> is more challenging than arrange efficient algorithms. This happens because a lower bound states a fact about all possible algorithms for solving a problem. Generally, we cannot enumerate and analyze all these algorithms, so lower bound proofs are often hard to obtain.</p>
+
+<hr>
+
+<br><br>
+
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

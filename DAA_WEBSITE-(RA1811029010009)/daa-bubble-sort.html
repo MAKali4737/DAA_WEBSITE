@@ -1,0 +1,199 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+
+<h1 class="h1">Bubble Sort </h1>
+<p>Bubble Sort also known as Exchange Sort, is a simple sorting algorithm. It works by repeatedly stepping throughout the list to be sorted, comparing two items at a time and swapping them if they are in the wrong order. The pass through the list is duplicated until no swaps are desired, which means the list is sorted. </p>
+<p>This is the easiest method among all sorting algorithms.</p>
+<div class="codeblock"><pre><strong>BUBBLE SORT (A)</strong>
+1. for i ? 1 to length [A]
+2. for k ? length [A] down to i+1
+3. if A[k] &lt;A[k-1]
+4. exchange (A[k], A [k-1])
+</pre></div>
+<h2 class="h2">Analysis:</h2>
+<ol class="points">
+<li><strong>Input:</strong> n elements are given.</li>
+<li><strong>Output:</strong> the number of comparisons required to make sorting.</li>
+<li><strong>Logic:</strong> If we have n elements in bubble sort, then n-1 passes are required to find a  sorted array.</li>
+</ol>
+<div class="codeblock"><pre>  In pass 1: n-1 comparisons are required
+  In pass 2: n-2 comparisons are required
+  In pass 3: n-3 comparisons are required
+ ............................................................................
+ ...............................................................................
+  In pass n-1: 1 comparisons is required 
+  Total comparisons: T (n) = (n-1) + (n-2) +...........+ 1
+                           = <img src="https://static.javatpoint.com/tutorial/daa/images/daa-bubble-sort.png" style="margin:0 0 -15px 0;" alt="DAA Bubble Sort">
+                           = o (n<sup>2</sup>)
+   <strong>Therefore complexity is of order n<sup>2</sup></strong> 
+</pre></div>
+<h3 class="h3">Example:</h3>
+<p>Unsorted List:  A = {7, 2, 1, 4, 5, 9, 6}</p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585396077279"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<p><strong>i.e., A [] =</strong></p>
+<table class="alt">
+<tbody><tr>
+	<td>7</td>
+	<td>2</td>
+	<td>1</td>
+	<td>4</td>
+	<td>3</td>
+	<td><strong>6</strong></td>
+	<td><strong>9</strong></td>
+</tr>
+</tbody></table>
+<br>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>Here&nbsp;length&nbsp;[A]&nbsp;=</span><span class="number">7</span><span>&nbsp;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;i=<span class="number">1</span><span>&nbsp;to&nbsp;</span><span class="number">7</span><span>&nbsp;and&nbsp;j=</span><span class="number">7</span><span>&nbsp;to&nbsp;</span><span class="number">2</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li><li class="alt"><span>i=<span class="number">1</span><span>,&nbsp;j=</span><span class="number">7</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>A&nbsp;[<span class="number">7</span><span>]&nbsp;=</span><span class="number">6</span><span>&nbsp;and&nbsp;A&nbsp;[</span><span class="number">6</span><span>]&nbsp;=</span><span class="number">9</span><span>.&nbsp;So&nbsp;A&nbsp;[</span><span class="number">7</span><span>]&nbsp;&lt;A&nbsp;[</span><span class="number">6</span><span>]&nbsp;&nbsp;</span></span></li><li class="alt"><span>Now&nbsp;Exchange&nbsp;(A&nbsp;[<span class="number">7</span><span>],&nbsp;A&nbsp;[</span><span class="number">6</span><span>])&nbsp;&nbsp;</span></span></li><li class=""><span>Now,&nbsp;i=<span class="number">1</span><span>,&nbsp;j=</span><span class="number">6</span><span>&nbsp;then&nbsp;A&nbsp;[</span><span class="number">6</span><span>]&nbsp;=</span><span class="number">6</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;[<span class="number">5</span><span>]&nbsp;=&nbsp;</span><span class="number">3</span><span>&nbsp;and&nbsp;A&nbsp;[</span><span class="number">5</span><span>]&nbsp;&lt;&nbsp;A&nbsp;[</span><span class="number">6</span><span>]&nbsp;&nbsp;</span></span></li><li class=""><span>Now,&nbsp;i=<span class="number">1</span><span>,&nbsp;j=</span><span class="number">5</span><span>&nbsp;then&nbsp;A&nbsp;[</span><span class="number">5</span><span>]&nbsp;=&nbsp;</span><span class="number">3</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;[<span class="number">4</span><span>]&nbsp;=&nbsp;</span><span class="number">4</span><span>&nbsp;and&nbsp;A&nbsp;[</span><span class="number">5</span><span>]&nbsp;&lt;&nbsp;A&nbsp;[</span><span class="number">4</span><span>]&nbsp;&nbsp;</span></span></li><li class=""><span>So,&nbsp;exchange&nbsp;(A&nbsp;[<span class="number">5</span><span>],&nbsp;A&nbsp;[</span><span class="number">4</span><span>])&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">Here length [A] =7 
+ i=1 to 7 and j=7 to 2			
+i=1, j=7
+A [7] =6 and A [6] =9. So A [7] &lt;A [6]
+Now Exchange (A [7], A [6])
+Now, i=1, j=6 then A [6] =6
+		A [5] = 3 and A [5] &lt; A [6]
+Now, i=1, j=5 then A [5] = 3
+		A [4] = 4 and A [5] &lt; A [4]
+So, exchange (A [5], A [4])
+</textarea></div>
+<p><strong>And A [] =</strong></p>
+<table class="alt">
+<tbody><tr>
+	<td>7</td>
+	<td>2</td>
+	<td>1</td>
+	<td><strong>3</strong></td>
+	<td><strong>4</strong></td>
+	<td>6</td>
+	<td>9</td>
+</tr>
+</tbody></table>
+<br>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>Now,&nbsp;i=</span><span class="number">1</span><span>,&nbsp;j=</span><span class="number">4</span><span>&nbsp;then&nbsp;A&nbsp;[</span><span class="number">4</span><span>]&nbsp;=</span><span class="number">3</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;[<span class="number">3</span><span>]&nbsp;=&nbsp;</span><span class="number">1</span><span>&nbsp;and&nbsp;A&nbsp;[</span><span class="number">4</span><span>]&nbsp;&gt;&nbsp;A&nbsp;[</span><span class="number">3</span><span>]&nbsp;&nbsp;</span></span></li><li class="alt"><span>Now,&nbsp;i=<span class="number">1</span><span>,&nbsp;j=</span><span class="number">3</span><span>&nbsp;then&nbsp;A&nbsp;[</span><span class="number">3</span><span>]&nbsp;=&nbsp;</span><span class="number">1</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;[<span class="number">2</span><span>]&nbsp;=&nbsp;</span><span class="number">2</span><span>&nbsp;and&nbsp;A&nbsp;[</span><span class="number">3</span><span>]&nbsp;&lt;&nbsp;A&nbsp;[</span><span class="number">2</span><span>]&nbsp;&nbsp;</span></span></li><li class="alt"><span>So,&nbsp;exchange&nbsp;(A&nbsp;[<span class="number">3</span><span>],&nbsp;A&nbsp;[</span><span class="number">2</span><span>])&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">Now, i=1, j=4 then A [4] =3
+		A [3] = 1 and A [4] &gt; A [3]
+Now, i=1, j=3 then A [3] = 1
+		A [2] = 2 and A [3] &lt; A [2]
+So, exchange (A [3], A [2])
+</textarea></div>
+<p><strong>Then A [] =</strong></p>
+<table class="alt">
+<tbody><tr>
+	<td>7</td>
+	<td><strong>1</strong></td>
+	<td><strong>2</strong></td>
+	<td>3</td>
+	<td>4</td>
+	<td>6</td>
+	<td>9</td>
+</tr>
+</tbody></table>
+<br>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>Now,&nbsp;i=</span><span class="number">2</span><span>,&nbsp;j-</span><span class="number">2</span><span>&nbsp;then&nbsp;A&nbsp;[</span><span class="number">2</span><span>]&nbsp;=</span><span class="number">1</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;[<span class="number">1</span><span>]&nbsp;=</span><span class="number">7</span><span>&nbsp;and&nbsp;A&nbsp;[</span><span class="number">2</span><span>]&nbsp;&lt;A&nbsp;[</span><span class="number">1</span><span>]&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;So,&nbsp;exchange&nbsp;(A&nbsp;[<span class="number">2</span><span>],&nbsp;A&nbsp;[</span><span class="number">1</span><span>])&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">Now, i=2, j-2 then A [2] =1
+		A [1] =7 and A [2] &lt;A [1]
+	So, exchange (A [2], A [1])
+</textarea></div>	
+<p><strong>Then A [] =</strong></p>
+<table class="alt">
+<tbody><tr>
+	<td><strong>1</strong></td>
+	<td><strong>7</strong></td>
+	<td>2</td>
+	<td>3</td>
+	<td>4</td>
+	<td>6</td>
+	<td>9</td>
+</tr>
+</tbody></table>
+<br>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>Now,&nbsp;i=</span><span class="number">1</span><span>,&nbsp;j=</span><span class="number">7</span><span>&nbsp;then&nbsp;A&nbsp;[</span><span class="number">7</span><span>]&nbsp;=</span><span class="number">9</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;[<span class="number">6</span><span>]&nbsp;=</span><span class="number">6</span><span>&nbsp;and&nbsp;A&nbsp;[</span><span class="number">7</span><span>]&nbsp;&gt;&nbsp;A&nbsp;[</span><span class="number">6</span><span>],&nbsp;No&nbsp;Exchange&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;Similarly,&nbsp;i=<span class="number">2</span><span>,&nbsp;j=</span><span class="number">6</span><span>,&nbsp;</span><span class="number">5</span><span>,&nbsp;</span><span class="number">4</span><span>.&nbsp;&nbsp;No&nbsp;change.&nbsp;&nbsp;</span></span></li><li class=""><span>Then&nbsp;i&nbsp;=&nbsp;<span class="number">2</span><span>,&nbsp;j=</span><span class="number">3</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;[<span class="number">3</span><span>]&nbsp;=&nbsp;</span><span class="number">2</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;[<span class="number">2</span><span>]&nbsp;=&nbsp;</span><span class="number">7</span><span>&nbsp;and&nbsp;A&nbsp;[</span><span class="number">3</span><span>]&nbsp;&lt;&nbsp;A&nbsp;[</span><span class="number">2</span><span>]&nbsp;&nbsp;</span></span></li><li class="alt"><span>So,&nbsp;exchange&nbsp;(A&nbsp;[<span class="number">3</span><span>],&nbsp;A&nbsp;[</span><span class="number">2</span><span>])&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">Now, i=1, j=7 then A [7] =9
+				A [6] =6 and A [7] &gt; A [6], No Exchange
+	Similarly, i=2, j=6, 5, 4.	No change.
+Then i = 2, j=3
+	A [3] = 2
+		A [2] = 7 and A [3] &lt; A [2]
+So, exchange (A [3], A [2])
+</textarea></div>
+<p><strong>And A [] =</strong></p>
+<table class="alt">
+<tbody><tr>
+	<td>1</td>
+	<td><strong>2</strong></td>
+	<td><strong>7</strong></td>
+	<td>3</td>
+	<td>4</td>
+	<td>6</td>
+	<td>9</td>
+</tr>
+</tbody></table>
+<br>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>Now,&nbsp;i=</span><span class="number">3</span><span>,&nbsp;j=</span><span class="number">5</span><span>,&nbsp;</span><span class="number">6</span><span>,&nbsp;</span><span class="number">7</span><span>&nbsp;No&nbsp;change&nbsp;&nbsp;</span></span></li><li class=""><span>Then&nbsp;i=<span class="number">3</span><span>,&nbsp;j=</span><span class="number">4</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;[<span class="number">4</span><span>]&nbsp;=&nbsp;</span><span class="number">3</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;[<span class="number">3</span><span>]&nbsp;=&nbsp;</span><span class="number">7</span><span>&nbsp;&nbsp;&nbsp;and&nbsp;A&nbsp;[</span><span class="number">4</span><span>]&nbsp;&lt;&nbsp;A&nbsp;[</span><span class="number">3</span><span>]&nbsp;&nbsp;</span></span></li><li class="alt"><span>So,&nbsp;exchange&nbsp;(A&nbsp;[<span class="number">4</span><span>],&nbsp;A&nbsp;[</span><span class="number">3</span><span>])&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">Now, i=3, j=5, 6, 7 No change
+Then i=3, j=4
+	A [4] = 3
+		A [3] = 7   and A [4] &lt; A [3]
+So, exchange (A [4], A [3])
+</textarea></div>
+<p><strong>Then A [] =</strong></p>
+<table class="alt">
+<tbody><tr>
+	<td>1</td>
+	<td>2</td>
+	<td><strong>3</strong></td>
+	<td><strong>7</strong></td>
+	<td>4</td>
+	<td>6</td>
+	<td>9</td>
+</tr>
+</tbody></table>
+<br>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>Now,&nbsp;i=</span><span class="number">4</span><span>,&nbsp;j=&nbsp;</span><span class="number">6</span><span>,&nbsp;</span><span class="number">7</span><span>&nbsp;No&nbsp;change&nbsp;&nbsp;</span></span></li><li class=""><span>Now,&nbsp;i=<span class="number">4</span><span>,&nbsp;j=</span><span class="number">5</span><span>&nbsp;then&nbsp;A&nbsp;[</span><span class="number">5</span><span>]&nbsp;=&nbsp;</span><span class="number">4</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;[<span class="number">4</span><span>]&nbsp;=&nbsp;</span><span class="number">7</span><span>&nbsp;and&nbsp;A&nbsp;[</span><span class="number">5</span><span>]&nbsp;&lt;&nbsp;A&nbsp;[</span><span class="number">4</span><span>]&nbsp;&nbsp;</span></span></li><li class=""><span>So&nbsp;exchange&nbsp;(A&nbsp;[<span class="number">5</span><span>],&nbsp;A&nbsp;[</span><span class="number">4</span><span>])&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">Now, i=4, j= 6, 7 No change
+Now, i=4, j=5 then A [5] = 4
+		A [4] = 7 and A [5] &lt; A [4]
+So exchange (A [5], A [4])
+</textarea></div>
+<p><strong>And A [] = </strong></p>
+<table class="alt">
+<tbody><tr>
+	<td>1</td>
+	<td>2</td>
+	<td>3</td>
+	<td><strong>4</strong></td>
+	<td><strong>7</strong></td>
+	<td>6</td>
+	<td>9</td>
+</tr>
+</tbody></table>
+<br>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>Now,&nbsp;i=</span><span class="number">5</span><span>,&nbsp;j=&nbsp;</span><span class="number">6</span><span>,&nbsp;</span><span class="number">7</span><span>&nbsp;No&nbsp;change&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;Now,&nbsp;i=<span class="number">5</span><span>,&nbsp;j=</span><span class="number">6</span><span>&nbsp;then&nbsp;A&nbsp;[</span><span class="number">6</span><span>]&nbsp;=&nbsp;</span><span class="number">6</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;[<span class="number">5</span><span>]&nbsp;=&nbsp;</span><span class="number">7</span><span>&nbsp;&nbsp;&nbsp;and&nbsp;A&nbsp;[</span><span class="number">6</span><span>]&nbsp;&lt;&nbsp;A&nbsp;[</span><span class="number">5</span><span>]&nbsp;&nbsp;</span></span></li><li class=""><span>So&nbsp;exchange&nbsp;(A&nbsp;[<span class="number">6</span><span>],&nbsp;A&nbsp;[</span><span class="number">5</span><span>])&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">Now, i=5, j= 6, 7 No change
+    Now, i=5, j=6 then A [6] = 6
+		A [5] = 7&nbsp;&nbsp;&nbsp;and A [6] &lt; A [5]
+So exchange (A [6], A [5])
+</textarea></div>
+<p><strong>And A [] =</strong></p>
+<table class="alt">
+<tbody><tr>
+	<td><strong>1</strong></td>
+	<td><strong>2</strong></td>
+	<td><strong>3</strong></td>
+	<td><strong>4</strong></td>
+	<td><strong>6</strong></td>
+	<td><strong>7</strong></td>
+	<td><strong>9</strong></td>
+</tr>
+</tbody></table>
+<p>is the sorted array.</p>
+
+<hr>
+
+<br><br>
+
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

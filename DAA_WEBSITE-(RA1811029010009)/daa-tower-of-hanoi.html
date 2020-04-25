@@ -1,0 +1,90 @@
+<div class="onlycontentinner">
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+<h1 class="h1">Tower of Hanoi</h1>
+<p>1. It is a classic problem where you try to move all the disks from one peg to another peg using only three pegs.</p>
+<p>2. Initially, all of the disks are stacked on top of each other with larger disks under the smaller disks.</p>
+<p>3. You may move the disks to any of three pegs as you attempt to relocate all of the disks, but you cannot place the larger disks over smaller disks and only one disk can be transferred at a time.</p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585396696679" data-refresh-time="1585396696680" data-timeout="12"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<p>This problem can be easily solved by Divide &amp; Conquer algorithm</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-tower-of-hanoi.png" alt="DAA Tower of Hanoi">
+<p>In the above 7 step all the disks from peg A will be transferred to C given Condition:</p>
+<ol class="points">
+<li>Only one disk will be shifted at a time.</li>
+<li>Smaller disk can be placed on larger disk.</li>
+</ol>
+<p>Let T (n) be the total time taken to move n disks from peg A to peg C</p>
+<ol class="points">
+<li>Moving n-1 disks from the first peg to the second peg. This can be done in T (n-1) steps.</li>
+<li>Moving larger disks from the first peg to the third peg will require first one step.</li>
+<li>Recursively moving n-1 disks from the second peg to the third peg will require again T (n-1) step.</li>
+</ol>
+<p>So, total time taken T (n) = T (n-1)+1+ T(n-1)</p>
+<p><strong>Relation formula for Tower of Hanoi is:</strong></p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-tower-of-hanoi2.png" alt="DAA Tower of Hanoi">
+<p><strong>We get,</strong></p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-tower-of-hanoi3.png" alt="DAA Tower of Hanoi">
+<p>It is a Geometric Progression Series with common ratio, r=2<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; First term, a=1(2<sup>0</sup>)</p>  
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-tower-of-hanoi4.png" alt="DAA Tower of Hanoi">	   
+<p>B equation is the required complexity of technique tower of Hanoi when we have to move n disks from one peg to another.</p>
+<p>T (3) = 2<sup>3</sup>- 1<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = 8 - 1 = <strong>7 Ans</strong></p>
+<p>[As in concept we have proved that there will be 7 steps now proved by general equation]</p>
+<h3 class="h3">Program of Tower of Hanoi:</h3>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-cpp" start="1"><li class="alt"><span><span class="preprocessor">#include&lt;stdio.h&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">void</span><span>&nbsp;towers(</span><span class="datatypes">int</span><span>,&nbsp;</span><span class="datatypes">char</span><span>,&nbsp;</span><span class="datatypes">char</span><span>,&nbsp;</span><span class="datatypes">char</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;<span class="datatypes">int</span><span>&nbsp;main()&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span><span>&nbsp;num;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf&nbsp;(<span class="string">"Enter&nbsp;the&nbsp;number&nbsp;of&nbsp;disks&nbsp;:&nbsp;"</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf&nbsp;(<span class="string">"%d"</span><span>,&nbsp;&amp;num);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf&nbsp;(<span class="string">"The&nbsp;sequence&nbsp;of&nbsp;moves&nbsp;involved&nbsp;in&nbsp;the&nbsp;Tower&nbsp;of&nbsp;Hanoi&nbsp;are&nbsp;:\n"</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;towers&nbsp;(num,&nbsp;<span class="string">'A'</span><span>,&nbsp;</span><span class="string">'C'</span><span>,&nbsp;</span><span class="string">'B'</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;0;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">void</span><span>&nbsp;towers(&nbsp;</span><span class="datatypes">int</span><span>&nbsp;num,&nbsp;</span><span class="datatypes">char</span><span>&nbsp;from&nbsp;peg,&nbsp;</span><span class="datatypes">char</span><span>&nbsp;topeg,&nbsp;</span><span class="datatypes">char</span><span>&nbsp;auxpeg)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(num&nbsp;==&nbsp;1)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf&nbsp;(<span class="string">"\n&nbsp;Move&nbsp;disk&nbsp;1&nbsp;from&nbsp;peg&nbsp;%c&nbsp;to&nbsp;peg&nbsp;%c"</span><span>,&nbsp;from&nbsp;peg,&nbsp;topeg);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;Towers&nbsp;(num&nbsp;-&nbsp;1,&nbsp;from&nbsp;peg,&nbsp;auxpeg,&nbsp;topeg);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;Printf&nbsp;(<span class="string">"\n&nbsp;Move&nbsp;disk&nbsp;%d&nbsp;from&nbsp;peg&nbsp;%c&nbsp;to&nbsp;peg&nbsp;%c"</span><span>,&nbsp;num,&nbsp;from&nbsp;peg,&nbsp;topeg);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;Towers&nbsp;(num&nbsp;-&nbsp;1,&nbsp;auxpeg,&nbsp;topeg,&nbsp;from&nbsp;peg);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;}&nbsp;&nbsp;</span></li></ol></div><textarea name="code" class="cpp" style="display: none;">#include&lt;stdio.h&gt;
+void towers(int, char, char, char);
+ int main()
+ {
+       int num;
+       printf ("Enter the number of disks : ");
+        scanf ("%d", &amp;num);
+      printf ("The sequence of moves involved in the Tower of Hanoi are :\n");
+      towers (num, 'A', 'C', 'B');
+      return 0;
+ 
+}
+     void towers( int num, char from peg, char topeg, char auxpeg)
+ {
+           if (num == 1)
+ {
+       printf ("\n Move disk 1 from peg %c to peg %c", from peg, topeg);
+           return;
+ }
+   Towers (num - 1, from peg, auxpeg, topeg);
+    Printf ("\n Move disk %d from peg %c to peg %c", num, from peg, topeg);
+   Towers (num - 1, auxpeg, topeg, from peg);
+ }
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre>Enter the number of disks: 3
+The sequence of moves involved in the Tower of Hanoi is
+Move disk 1 from peg A to peg C
+Move disk 2 from peg A to peg B
+Move disk 1 from peg C to peg B
+Move disk 3 from peg A to peg C
+Move disk 1 from peg B to peg A
+Move disk 2 from peg B to peg C
+Move disk 1 from peg A to peg
+</pre></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-tower-of-hanoi5.png" alt="DAA Tower of Hanoi">
+
+<hr>
+
+<br><br>
+
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>
+
+

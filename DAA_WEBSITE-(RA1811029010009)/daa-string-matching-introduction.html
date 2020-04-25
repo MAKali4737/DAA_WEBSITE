@@ -1,0 +1,40 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+
+<h1 class="h1">The Naive String Matching Algorithm</h1>
+<p>The naïve approach tests all the possible placement of Pattern P [1.......m] relative to text T [1......n]. We try shift s = 0, 1.......n-m, successively and for each shift s. Compare T [s+1.......s+m] to P [1......m].</p>
+<p>The naïve algorithm finds all valid shifts using a loop that checks the condition P [1.......m] = T [s+1.......s+m] for each of the n - m +1 possible value of s.</p>
+<div class="codeblock"><pre><strong>NAIVE-STRING-MATCHER (T, P)</strong>
+ 1. n ? length [T]
+ 2. m ? length [P]
+ 3. for s ? 0 to n -m
+ 4. do if P [1.....m] = T [s + 1....s + m]
+ 5. then print "Pattern occurs with shift" s
+</pre></div>
+<p><strong>Analysis:</strong> This for loop from 3 to 5 executes for n-m + 1(we need at least m characters at the end) times and in iteration we are doing m comparisons. So the total complexity is O (n-m+1).</p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585402569902" data-refresh-time="1585402569904" data-timeout="8"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<h3 class="h3">Example:</h3>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>Suppose&nbsp;T&nbsp;=&nbsp;</span><span class="number">1011101110</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P&nbsp;=&nbsp;<span class="number">111</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Find&nbsp;all&nbsp;the&nbsp;Valid&nbsp;Shift&nbsp;&nbsp;</span></li></ol></div><textarea name="code" class="java" style="display: none;">Suppose T = 1011101110
+        P = 111
+       Find all the Valid Shift
+</textarea></div>		
+<p><strong>Solution:</strong></p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/naive-string-matching-algorithm.png" alt="Naive String Matching Algorithm"><br>
+<img src="https://static.javatpoint.com/tutorial/daa/images/naive-string-matching-algorithm2.png" alt="Naive String Matching Algorithm"><br>
+<img src="https://static.javatpoint.com/tutorial/daa/images/naive-string-matching-algorithm2-2.png" alt="Naive String Matching Algorithm"><br>
+<img src="https://static.javatpoint.com/tutorial/daa/images/naive-string-matching-algorithm3.png" alt="Naive String Matching Algorithm"><br>
+
+
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

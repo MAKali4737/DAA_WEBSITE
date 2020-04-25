@@ -1,0 +1,52 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+
+<h1 class="h1">Binary Search </h1>
+<p>1. In Binary Search technique, we search an element in a sorted array by recursively dividing the interval in half.</p>
+<p>2. Firstly, we take the whole array as an interval.</p>
+<p>3. If the Pivot Element (the item to be searched) is less than the item in the middle of the interval, We discard the second half of the list and recursively repeat the process for the first half of the list by calculating the new middle and last element.</p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585396504844" data-refresh-time="1585396504846" data-timeout="12"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<p>4. If the Pivot Element (the item to be searched) is greater than the item in the middle of the interval, we discard the first half of the list and work recursively on the second half by calculating the new beginning and middle element. </p>
+<p>5. Repeatedly, check until the value is found or interval is empty.</p>
+<h3 class="h2">Analysis:</h3>
+<ol class="points">
+<li><strong>Input:</strong> an array A of size n, already sorted in the ascending or descending order.</li>
+<li><strong>Output:</strong> analyze to search an element item in the sorted array of size n.</li>
+<li><strong>Logic:</strong> Let T (n) = number of comparisons of an item with n elements in a sorted array.</li>
+</ol>
+<ul class="points">
+<li>Set BEG = 1 and END = n</li>
+<li>Find mid =<img src="https://static.javatpoint.com/tutorial/daa/images/daa-binary-search.png" style="margin:5px 4px -15px 0px" alt="Binary Search"></li>
+<li>Compare the search item with the mid item.</li>
+</ul>
+<p><strong>Case 1:</strong> item = A[mid], then LOC = mid, but it the best case and T (n) = 1</p>
+<p><strong>Case 2:</strong> item ?A [mid], then we will split the array into two equal parts of size <img src="https://static.javatpoint.com/tutorial/daa/images/daa-binary-search1.png" style="margin:5px 4px -15px 0px" alt="Binary Search">.</p>
+<p>And again find the midpoint of the half-sorted array and compare with search element.</p>
+<p>Repeat the same process until a search element is found.</p>
+<p>T (n) = <img src="https://static.javatpoint.com/tutorial/daa/images/daa-binary-search-2.png" style="margin:5px 4px -17px 0px" alt="Binary Search"> ...... (Equation 1)</p>
+
+<p>{Time to compare the search element with mid element, then with half of the selected half part of array}</p>
+<p><img src="https://static.javatpoint.com/tutorial/daa/images/daa-binary-search-3.png" alt="Binary Search"></p>
+
+<p>At least there will be only one term left that's why that term will compare out, and only one comparison be done that's why <img src="https://static.javatpoint.com/tutorial/daa/images/daa-binary-search-4.png" style="margin:5px 4px -50px 0px" alt="Binary Search"></p>
+<br>
+<p><strong>Is the last term of the equation and it will be equal to 1</strong></p>
+<p><img src="https://static.javatpoint.com/tutorial/daa/images/daa-binary-search-5.png" alt="Binary Search"></p>
+
+<hr>
+
+<br><br>
+
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

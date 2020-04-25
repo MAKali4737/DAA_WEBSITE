@@ -1,0 +1,95 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+
+<h1 class="h1">Methods of Hashing</h1>
+<p>There are two main methods used to implement hashing:</p>
+<ol class="points">
+<li>Hashing with Chaining</li>
+<li>Hashing with open addressing</li>
+</ol>
+
+<h2 class="h2">1. Hashing with Chaining</h2>
+<p>In Hashing with Chaining, the element in S is stored in Hash table T [0...m-1] of size m, where m is somewhat larger than n, the size of S. The hash table is said to have m slots. Associated with the hashing scheme is a hash function h which is mapping from U to {0...m-1}.Each key k ?S is stored in location T [h (k)], and we say that k is hashed into slot h (k). If more than one key in S hashed into the same slot then we have a <strong>collision</strong>.</p>
+<p>In such case, all keys that hash into the same slot are placed in a linked list associated with that slot, this linked list is called the chain at slot. The load factor of a hash table is defined to be ?=n/m it represents the average number of keys per slot. We typically operate in the range m=?(n), so ? is usually a constant generally ?&lt;1.</p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585400006304" data-refresh-time="1585400031142" data-timeout="87"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/hashing-with-chaining.png" alt="DAA Hashing Method">
+<h3 class="h3">Collision Resolution by Chaining:</h3>
+<p>In chaining, we place all the elements that hash to the same slot into the same linked list, As fig shows that Slot j contains a pointer to the head of the list of all stored elements that hash to j ; if there are no such elements, slot j contains NIL.</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/collision-resolution-by-chaining.png" alt="DAA Hashing Method">
+<p class="center"><strong>Fig: Collision resolution by chaining. </strong></p>
+<p>Each hash-table slot T [j] contains a linked list of all the keys whose hash value is j. </p>
+<p><strong>For example</strong>, h (k1) = h (k4) and h (k5) = h (k7) =h (K2). The linked list can be either singly or doubly linked; we show it as doubly linked because deletion is faster that way.</p>
+<h3 class="h3">Analysis of Hashing with Chaining:</h3>
+<p>Given a hash table T with m slots that stores n elements, we define the load factors a for T as  n/m  that is the average number of elements stored in a chain. The worst case running time for searching is thus ?(n) plus the time to compute the hash function- no better than if we used one linked list for all the elements. Clearly, hash tables are not used for their worst-case performance.</p>
+<p>The average performance of hashing depends on how well the hash function h distributes the set of keys to be stored among the m slots, on the average.</p>
+<p><strong>Example:</strong> let us consider the insertion of elements 5, 28, 19,15,20,33,12,17,10 into a chained hash table. Let us suppose the hash table has 9 slots and the hash function be h (k) =k mod 9.</p>
+<p><strong>Solution:</strong> The initial state of chained-hash table</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/initial-state-of-chained-hash-table.png" alt="DAA Hashing Method">
+<p><strong>Insert 5:</strong></p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>h&nbsp;(</span><span class="number">5</span><span>)&nbsp;=&nbsp;</span><span class="number">5</span><span>&nbsp;mod&nbsp;</span><span class="number">9</span><span>&nbsp;=</span><span class="number">5</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">h (5) = 5 mod 9 =5
+</textarea></div>
+<p>Create a linked list for T [5] and store value 5 in it.</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/initial-state-of-chained-hash-table2.png" alt="DAA Hashing Method">
+<p>Similarly, insert 28. h (28) = 28 mod 9 =1. Create a Linked List for T [1] and store value 28 in it. Now insert 19 h (19) = 19 mod 9 = 1. Insert value 19 in the slot T [1] at the beginning of the linked-list.</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/initial-state-of-chained-hash-table3.png" alt="DAA Hashing Method">
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>Now&nbsp;insert&nbsp;h&nbsp;</span><span class="number">15</span><span>,&nbsp;h&nbsp;(</span><span class="number">15</span><span>)&nbsp;=&nbsp;</span><span class="number">15</span><span>&nbsp;mod&nbsp;</span><span class="number">9</span><span>&nbsp;=&nbsp;</span><span class="number">6</span><span>.&nbsp;Create&nbsp;a&nbsp;link&nbsp;list&nbsp;</span><span class="keyword">for</span><span>&nbsp;T&nbsp;[</span><span class="number">6</span><span>]&nbsp;and&nbsp;store&nbsp;value&nbsp;</span><span class="number">15</span><span>&nbsp;in&nbsp;it.&nbsp;&nbsp;</span></span></li><li class=""><span>Similarly,&nbsp;insert&nbsp;<span class="number">20</span><span>,&nbsp;h&nbsp;(</span><span class="number">20</span><span>)&nbsp;=&nbsp;</span><span class="number">20</span><span>&nbsp;mod&nbsp;</span><span class="number">9</span><span>&nbsp;=&nbsp;</span><span class="number">2</span><span>&nbsp;in&nbsp;T&nbsp;[</span><span class="number">2</span><span>].&nbsp;&nbsp;</span></span></li><li class="alt"><span>Insert&nbsp;<span class="number">33</span><span>,&nbsp;h&nbsp;(</span><span class="number">33</span><span>)&nbsp;=&nbsp;</span><span class="number">33</span><span>&nbsp;mod&nbsp;</span><span class="number">9</span><span>&nbsp;=&nbsp;</span><span class="number">6</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>In&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&nbsp;linked&nbsp;list&nbsp;T&nbsp;[<span class="number">6</span><span>].&nbsp;Then,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;Insert&nbsp;<span class="number">12</span><span>,&nbsp;h&nbsp;(</span><span class="number">12</span><span>)&nbsp;=&nbsp;</span><span class="number">12</span><span>&nbsp;mod&nbsp;</span><span class="number">9</span><span>&nbsp;=&nbsp;</span><span class="number">3</span><span>&nbsp;in&nbsp;T&nbsp;[</span><span class="number">3</span><span>].&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;Insert&nbsp;<span class="number">17</span><span>,&nbsp;h&nbsp;(</span><span class="number">17</span><span>)&nbsp;=&nbsp;</span><span class="number">17</span><span>&nbsp;mod&nbsp;</span><span class="number">9</span><span>&nbsp;=&nbsp;</span><span class="number">8</span><span>&nbsp;in&nbsp;T&nbsp;[</span><span class="number">8</span><span>].&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;Insert&nbsp;<span class="number">10</span><span>,&nbsp;h&nbsp;(</span><span class="number">10</span><span>)&nbsp;=&nbsp;</span><span class="number">10</span><span>&nbsp;mod&nbsp;</span><span class="number">9</span><span>&nbsp;=&nbsp;</span><span class="number">1</span><span>&nbsp;in&nbsp;T&nbsp;[</span><span class="number">1</span><span>].&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">Now insert h 15, h (15) = 15 mod 9 = 6. Create a link list for T [6] and store value 15 in it.
+Similarly, insert 20, h (20) = 20 mod 9 = 2 in T [2].
+Insert 33, h (33) = 33 mod 9 = 6
+In the beginning of the linked list T [6]. Then,
+  Insert 12, h (12) = 12 mod 9 = 3 in T [3].
+    Insert 17, h (17) = 17 mod 9 = 8 in T [8].
+    Insert 10, h (10) = 10 mod 9 = 1 in T [1].
+</textarea></div>
+<p>Thus the chained- hash- table after inserting key 10 is</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/initial-state-of-chained-hash-table4.png" alt="DAA Hashing Method">
+
+<h2 class="h2">2. Hashing with Open Addressing</h2>
+<p>In Open Addressing, all elements are stored in hash table itself. That is, each table entry consists of a component of the dynamic set or NIL. When searching for an item, we consistently examine table slots until either we find the desired object or we have determined that the element is not in the table. Thus, in open addressing, the load factor a can never exceed 1.</p>
+<p>The advantage of open addressing is that it avoids Pointer. In this, we compute the sequence of slots to be examined. The extra memory freed by not sharing pointers provides the hash table with a larger number of slots for the same amount of memory, potentially yielding fewer collision and faster retrieval.</p>
+<p>The process of examining the location in the hash table is called Probing.</p>
+<p>Thus, the hash function becomes</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>h&nbsp;:&nbsp;U&nbsp;x&nbsp;{</span><span class="number">0</span><span>,</span><span class="number">1</span><span>,....m-</span><span class="number">1</span><span>}&nbsp;&nbsp;?&nbsp;&nbsp;{</span><span class="number">0</span><span>,</span><span class="number">1</span><span>,....,m-</span><span class="number">1</span><span>}.&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">h : U x {0,1,....m-1}  ?  {0,1,....,m-1}.  
+</textarea></div>
+<p>With open addressing, we require that for every key k, the probe sequence </p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>{h,&nbsp;(k,&nbsp;</span><span class="number">0</span><span>),&nbsp;h&nbsp;(k,&nbsp;</span><span class="number">1</span><span>)....h&nbsp;(k,&nbsp;m-</span><span class="number">1</span><span>)}&nbsp;&nbsp;</span></span></li><li class=""><span>Be&nbsp;a&nbsp;Permutation&nbsp;of&nbsp;(<span class="number">0</span><span>,&nbsp;</span><span class="number">1</span><span>......&nbsp;m-</span><span class="number">1</span><span>)&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">{h, (k, 0), h (k, 1)....h (k, m-1)}
+Be a Permutation of (0, 1...... m-1)
+</textarea></div>
+<p>The HASH-INSERT procedure takes as input a hash table T and a key k</p>
+<div class="codeblock"><pre><strong>HASH-INSERT (T, k)</strong>
+ 1. i ? 0
+ 2. repeat j ? h (k, i)
+ 3. if T [j] = NIL
+ 4. then T [j] ? k
+ 5. return j
+ 6. else ? i= i +1
+ 7. until i=m
+ 8. error "hash table overflow"
+</pre></div>
+<p>The procedure HASH-SEARCH takes as input a hash table T and a key k, returning j if it finds that slot j contains key k or NIL if key k is not present in table T.</p>
+<div class="codeblock"><pre><strong>HASH-SEARCH.T (k)</strong>
+ 1. i ? 0
+ 2. repeat j ? h (k, i)
+ 3. if T [j] =j
+ 4. then return j
+ 5. i ? i+1
+ 6. until T [j] = NIL or i=m
+ 7. return NIL
+</pre></div>
+
+
+<hr>
+
+<br><br>
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

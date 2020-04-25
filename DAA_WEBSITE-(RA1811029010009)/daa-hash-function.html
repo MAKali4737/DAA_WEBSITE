@@ -1,0 +1,70 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+<h1 class="h1">Hash Function</h1>
+<p>Hash Function is used to index the original value or key and then used later each time the data associated with the value or key is to be retrieved. Thus, hashing is always a one-way operation. There is no need to "reverse engineer" the hash function by analyzing the hashed values.</p>
+
+<h2 class="h2">Characteristics of Good Hash Function: </h2>
+<ol class="points">
+<li>The hash value is fully determined by the data being hashed.</li>
+<li>The hash Function uses all the input data.</li>
+<li>The hash function "uniformly" distributes the data across the entire set of possible hash values.</li>
+<li>The hash function generates complicated hash values for similar strings.</li>
+</ol>
+
+<h2 class="h2">Some Popular Hash Function is:</h2>
+<h3 class="h3">1. Division Method:</h3>
+<p>Choose a number m smaller than the number of n of keys in k (The number m is usually chosen to be a prime number or a number without small divisors, since this frequently a minimum number of collisions).</p>
+<p>The hash function is:</p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585400134872" data-refresh-time="1585400137852" data-timeout="113"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/hash-function.png" alt="DAA Hash Function">
+<p><strong>For Example:</strong> if the hash table has size m = 12 and the key is k = 100, then h (k) = 4. Since it requires only a single division operation, hashing by division is quite fast.</p>
+<h3 class="h3">2. Multiplication Method:</h3>
+<p>The multiplication method for creating hash functions operates in two steps. First, we multiply the key k by a constant A in the range 0 &lt; A &lt; 1 and extract the fractional part of kA. Then, we increase this value by m and take the floor of the result.</p>
+<p>The hash function is:</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/hash-function2.png" alt="DAA Hash Function">
+<p>Where "k A mod 1" means the fractional part of k A, that is, k A -?k A?.</p>
+<h3 class="h3">3. Mid Square Method:</h3>
+<p>The key k is squared. Then function H is defined by</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>H&nbsp;(k)&nbsp;=&nbsp;L&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">H (k) = L
+</textarea></div>
+<p>Where L is obtained by deleting digits from both ends of k<sup>2</sup>. We emphasize that the same position of k<sup>2</sup> must be used for all of the keys.</p>
+<h3 class="h3">4. Folding Method:</h3>
+<p>The key k is partitioned into a number of parts k<sub>1</sub>, k<sub>2</sub>.... k<sub>n</sub> where each part except possibly the last, has the same number of digits as the required address.</p>
+<p>Then the parts are added together, ignoring the last carry.</p>
+<div class="codeblock"><pre>H (k) = k<sup>1</sup>+ k<sup>2</sup>+.....+k<sup>n</sup>
+</pre></div>
+<p><strong>Example:</strong> Company has 68 employees, and each is assigned a unique four- digit employee number. Suppose L consist of 2- digit addresses: 00, 01, and 02....99. We apply the above hash functions to each of the following employee numbers:</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span class="number">3205</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="number">7148</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="number">2345</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">3205,		7148,		2345
+</textarea></div>
+<p><strong>(a) Division Method:</strong> Choose a Prime number m close to 99, such as m =97, Then</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>H&nbsp;(</span><span class="number">3205</span><span>)&nbsp;=&nbsp;</span><span class="number">4</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H&nbsp;(</span><span class="number">7148</span><span>)&nbsp;=&nbsp;</span><span class="number">67</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H&nbsp;(</span><span class="number">2345</span><span>)&nbsp;=&nbsp;</span><span class="number">17</span><span>.&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">H (3205) = 4,		H (7148) = 67,			H (2345) = 17.
+</textarea></div>
+<p>That is dividing 3205 by 17 gives a remainder of 4, dividing 7148 by 97 gives a remainder of 67, dividing 2345 by 97 gives a remainder of 17. </p>
+<p><strong>(b) Mid-Square Method: </strong></p>
+<div class="codeblock"><pre>k = 3205       7148       2345
+k<sup>2</sup>= 10272025   51093904   5499025
+h (k) = 72     93         99
+</pre></div>
+<p>Observe that fourth &amp; fifth digits, counting from right are chosen for hash address.</p>
+<p><strong>(c) Folding Method:</strong> Divide the key k into 2 parts and adding yields the following hash address:</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>H&nbsp;(</span><span class="number">3205</span><span>)&nbsp;=&nbsp;</span><span class="number">32</span><span>&nbsp;+&nbsp;</span><span class="number">50</span><span>&nbsp;=&nbsp;</span><span class="number">82</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H&nbsp;(</span><span class="number">7148</span><span>)&nbsp;=&nbsp;</span><span class="number">71</span><span>&nbsp;+&nbsp;</span><span class="number">84</span><span>&nbsp;=&nbsp;</span><span class="number">55</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>H&nbsp;(<span class="number">2345</span><span>)&nbsp;=&nbsp;</span><span class="number">23</span><span>&nbsp;+&nbsp;</span><span class="number">45</span><span>&nbsp;=&nbsp;</span><span class="number">68</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">H (3205) = 32 + 50 = 82		H (7148) = 71 + 84 = 55
+H (2345) = 23 + 45 = 68
+</textarea></div>
+
+
+
+<hr>
+
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

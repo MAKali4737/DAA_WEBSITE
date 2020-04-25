@@ -1,0 +1,170 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+
+<h1 class="h1">Quick sort</h1>
+<p>It is an algorithm of Divide &amp; Conquer type. </p>
+<p><strong>Divide:</strong> Rearrange the elements and split arrays into two sub-arrays and an element in between search that each element in left sub array is less than or equal to the average element and each element in the right sub- array is larger than the middle element.</p>
+<p><strong>Conquer:</strong> Recursively, sort two sub arrays.</p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585399184430" data-refresh-time="1585399184432" data-timeout="9"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<p><strong>Combine:</strong> Combine the already sorted array.</p>
+<h2 class="h3">Algorithm: </h2>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>QUICKSORT&nbsp;(array&nbsp;A,&nbsp;</span><span class="keyword">int</span><span>&nbsp;m,&nbsp;</span><span class="keyword">int</span><span>&nbsp;n)&nbsp;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;<span class="number">1</span><span>&nbsp;</span><span class="keyword">if</span><span>&nbsp;(n&nbsp;&gt;&nbsp;m)&nbsp;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;<span class="number">2</span><span>&nbsp;then&nbsp;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;<span class="number">3</span><span>&nbsp;i&nbsp;?&nbsp;a&nbsp;random&nbsp;index&nbsp;from&nbsp;[m,n]&nbsp;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;<span class="number">4</span><span>&nbsp;swap&nbsp;A&nbsp;[i]&nbsp;with&nbsp;A[m]&nbsp;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;<span class="number">5</span><span>&nbsp;o&nbsp;?&nbsp;PARTITION&nbsp;(A,&nbsp;m,&nbsp;n)&nbsp;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;<span class="number">6</span><span>&nbsp;QUICKSORT&nbsp;(A,&nbsp;m,&nbsp;o&nbsp;-&nbsp;</span><span class="number">1</span><span>)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;<span class="number">7</span><span>&nbsp;QUICKSORT&nbsp;(A,&nbsp;o&nbsp;+&nbsp;</span><span class="number">1</span><span>,&nbsp;n)&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">QUICKSORT (array A, int m, int n) 
+ 1 if (n &gt; m) 
+ 2 then 
+ 3 i ? a random index from [m,n] 
+ 4 swap A [i] with A[m] 
+ 5 o ? PARTITION (A, m, n) 
+ 6 QUICKSORT (A, m, o - 1)
+ 7 QUICKSORT (A, o + 1, n)
+</textarea></div>
+
+<h2 class="h2">Partition Algorithm:</h2>
+<p>Partition algorithm rearranges the sub arrays in a place.</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>PARTITION&nbsp;(array&nbsp;A,&nbsp;</span><span class="keyword">int</span><span>&nbsp;m,&nbsp;</span><span class="keyword">int</span><span>&nbsp;n)&nbsp;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;<span class="number">1</span><span>&nbsp;x&nbsp;?&nbsp;A[m]&nbsp;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;<span class="number">2</span><span>&nbsp;o&nbsp;?&nbsp;m&nbsp;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;<span class="number">3</span><span>&nbsp;</span><span class="keyword">for</span><span>&nbsp;p&nbsp;?&nbsp;m&nbsp;+&nbsp;</span><span class="number">1</span><span>&nbsp;to&nbsp;n&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;<span class="number">4</span><span>&nbsp;</span><span class="keyword">do</span><span>&nbsp;</span><span class="keyword">if</span><span>&nbsp;(A[p]&nbsp;&lt;&nbsp;x)&nbsp;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;<span class="number">5</span><span>&nbsp;then&nbsp;o&nbsp;?&nbsp;o&nbsp;+&nbsp;</span><span class="number">1</span><span>&nbsp;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;<span class="number">6</span><span>&nbsp;swap&nbsp;A[o]&nbsp;with&nbsp;A[p]&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;<span class="number">7</span><span>&nbsp;swap&nbsp;A[m]&nbsp;with&nbsp;A[o]&nbsp;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;<span class="number">8</span><span>&nbsp;</span><span class="keyword">return</span><span>&nbsp;o&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">PARTITION (array A, int m, int n) 
+ 1 x ? A[m] 
+ 2 o ? m 
+ 3 for p ? m + 1 to n
+ 4 do if (A[p] &lt; x) 
+ 5 then o ? o + 1 
+ 6 swap A[o] with A[p]
+ 7 swap A[m] with A[o] 
+ 8 return o
+</textarea></div>
+<p><strong>Figure: shows the execution trace partition algorithm</strong></p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-quick-sort-partition-algorithm.png" alt="DAA Quick sort">
+
+<h3 class="h3">Example of Quick Sort: </h3>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span class="number">44</span><span>&nbsp;&nbsp;</span><span class="number">33</span><span>&nbsp;&nbsp;</span><span class="number">11</span><span>&nbsp;&nbsp;</span><span class="number">55</span><span>&nbsp;&nbsp;</span><span class="number">77</span><span>&nbsp;&nbsp;</span><span class="number">90</span><span>&nbsp;&nbsp;</span><span class="number">40</span><span>&nbsp;&nbsp;</span><span class="number">60</span><span>&nbsp;&nbsp;</span><span class="number">99</span><span>&nbsp;&nbsp;</span><span class="number">22</span><span>&nbsp;&nbsp;</span><span class="number">88</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">  44	33	11	55	77	90	40	60	99	22	88	
+</textarea></div>
+<p>Let <strong>44</strong> be the <strong>Pivot</strong> element and scanning done from right to left</p>
+<p>Comparing <strong>44</strong> to the right-side elements, and if right-side elements are <strong>smaller</strong> than <strong>44</strong>, then swap it. As <strong>22</strong> is smaller than <strong>44</strong> so swap them.</p>
+<div class="codeblock"><pre>  <strong>22</strong>	33	11	55	77	90	40	60	99	<strong>44</strong>	88	
+</pre></div>
+<p>Now comparing <strong>44</strong> to the left side element and the element must be <strong>greater</strong> than 44 then swap them. As <strong>55</strong> are greater than <strong>44</strong> so swap them.</p>
+<div class="codeblock"><pre>22	33	11	<strong>44</strong>	77	90	40	60	99	<strong>55</strong>	88
+</pre></div>
+<p>Recursively, repeating steps 1 &amp; steps 2 until we get two lists one left from pivot element <strong>44</strong> &amp; one right from pivot element.</p>
+<div class="codeblock"><pre>22	33	11	<strong>40</strong>	77	90	<strong>44</strong>	60	99	55	88
+</pre></div>
+<p><strong>Swap with 77:</strong></p>
+<div class="codeblock"><pre>22	33	11	40	<strong>44</strong>	90	<strong>77</strong>	60	99	55	88
+</pre></div>
+<p>Now, the element on the right side and left side are greater than and smaller than <strong>44</strong> respectively.</p>
+<p><strong>Now we get two sorted lists:</strong></p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/two-sorted-lists.png" alt="DAA Quick sort">
+<p>And these sublists are sorted under the same process as above done.</p>
+<p>These two sorted sublists side by side.</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/two-sorted-sub-lists.png" alt="DAA Quick sort">
+<br>
+<img src="https://static.javatpoint.com/tutorial/daa/images/two-first-sorted-list.png" alt="DAA Quick sort">
+
+<h3 class="h3">Merging Sublists:</h3>
+<img src="https://static.javatpoint.com/tutorial/daa/images/two-merging-sub-list.png" alt="DAA Quick sort">
+
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SORTED LISTS</strong>	</p>
+<p><strong>Worst Case Analysis:</strong> It is the case when items are already in sorted form and we try to sort them again. This will takes lots of time and space.</p>
+<h3 class="h3">Equation:</h3>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>T&nbsp;(n)&nbsp;=T(</span><span class="number">1</span><span>)+T(n-</span><span class="number">1</span><span>)+n&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">T (n) =T(1)+T(n-1)+n
+</textarea></div>
+<p><strong>T (1)</strong> is time taken by pivot element.</p>
+<p><strong>T (n-1)</strong> is time taken by remaining element except for pivot element.</p>
+<p><strong>N:</strong> the number of comparisons required to identify the exact position of itself (every element)</p>
+<p>If we compare first element pivot with other, then there will be 5 comparisons.</p>
+<p>It means there will be n comparisons if there are n items.</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/sorted-lists.png" alt="DAA Quick sort">
+
+<h3 class="h3">Relational Formula for Worst Case:</h3>
+<img src="https://static.javatpoint.com/tutorial/daa/images/relational-formula-for-worst-case.png" alt="DAA Quick sort">
+<h3 class="n">Note: for making T (n-4) as T (1) we will put (n-1) in place of '4' and if <br>
+We put (n-1) in place of 4 then we have to put (n-2) in place of 3 and (n-3) <br>
+In place of 2 and so on.</h3>
+<p>T(n)=(n-1) T(1) + T(n-(n-1))+(n-(n-2))+(n-(n-3))+(n-(n-4))+n<br>
+T (n) = (n-1) T (1) + T (1) + 2 + 3 + 4+............n<br>
+T (n) = (n-1) T (1) +T (1) +2+3+4+...........+n+1-1</p>
+<p>[Adding 1 and subtracting 1 for making AP series]</p>
+<p>T (n) = (n-1) T (1) +T (1) +1+2+3+4+........ + n-1<br>
+T (n) = (n-1) T (1) +T (1) + <img src="https://static.javatpoint.com/tutorial/daa/images/relational-formula-for-worst-case2.png" style="margin:5px 4px -15px 0;" alt="DAA Quick sort">-1</p>
+<p><strong>Stopping Condition: T (1) =0</strong></p>
+<p>Because at last there is only one element left and no comparison is required.</p>
+<p>T (n) = (n-1) (0) +0+<img src="https://static.javatpoint.com/tutorial/daa/images/relational-formula-for-worst-case2.png" style="margin:5px 4px -15px 0;" alt="DAA Quick sort">-1</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/relational-formula-for-worst-case3.png" alt="DAA Quick sort">
+<p><strong>Worst Case Complexity of Quick Sort is T (n) =O (n<sup>2</sup>)</strong></p>
+<h3 class="h3">Randomized Quick Sort [Average Case]:</h3>
+<p>Generally, we assume the first element of the list as the pivot element. In an average Case, the number of chances to get a pivot element is equal to the number of items.</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>Let&nbsp;total&nbsp;time&nbsp;taken&nbsp;=T&nbsp;(n)&nbsp;&nbsp;</span></span></li><li class=""><span>For&nbsp;eg:&nbsp;In&nbsp;a&nbsp;given&nbsp;list&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;p&nbsp;<span class="number">1</span><span>,&nbsp;&nbsp;&nbsp;p&nbsp;</span><span class="number">2</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;p&nbsp;</span><span class="number">3</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;p&nbsp;</span><span class="number">4</span><span>............pn&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;If&nbsp;p&nbsp;<span class="number">1</span><span>&nbsp;is&nbsp;the&nbsp;pivot&nbsp;list&nbsp;then&nbsp;we&nbsp;have&nbsp;</span><span class="number">2</span><span>&nbsp;lists.&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I.e.&nbsp;T&nbsp;(<span class="number">0</span><span>)&nbsp;and&nbsp;T&nbsp;(n-</span><span class="number">1</span><span>)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;If&nbsp;p2&nbsp;is&nbsp;the&nbsp;pivot&nbsp;list&nbsp;then&nbsp;we&nbsp;have&nbsp;<span class="number">2</span><span>&nbsp;lists.&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I.e.&nbsp;T&nbsp;(<span class="number">1</span><span>)&nbsp;and&nbsp;T&nbsp;(n-</span><span class="number">2</span><span>)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;p&nbsp;<span class="number">1</span><span>,&nbsp;&nbsp;&nbsp;p&nbsp;</span><span class="number">2</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;p&nbsp;</span><span class="number">3</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;p&nbsp;</span><span class="number">4</span><span>............pn&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;If&nbsp;p3&nbsp;is&nbsp;the&nbsp;pivot&nbsp;list&nbsp;then&nbsp;we&nbsp;have&nbsp;<span class="number">2</span><span>&nbsp;lists.&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;I.e.&nbsp;T&nbsp;(<span class="number">2</span><span>)&nbsp;and&nbsp;T&nbsp;(n-</span><span class="number">3</span><span>)&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;p&nbsp;<span class="number">1</span><span>,&nbsp;&nbsp;&nbsp;p&nbsp;</span><span class="number">2</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;p&nbsp;</span><span class="number">3</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;p&nbsp;</span><span class="number">4</span><span>............p&nbsp;n&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">Let total time taken =T (n)
+For eg: In a given list
+   p 1,   p 2,    p 3,    p 4............pn
+  If p 1 is the pivot list then we have 2 lists.
+     I.e. T (0) and T (n-1)
+  If p2 is the pivot list then we have 2 lists.
+        I.e. T (1) and T (n-2)
+   p 1,   p 2,    p 3,    p 4............pn
+ If p3 is the pivot list then we have 2 lists.
+  I.e. T (2) and T (n-3)
+    p 1,   p 2,    p 3,    p 4............p n
+</textarea></div>
+<p>So in general if we take the <strong>Kth</strong> element to be the pivot element.</p>
+<p><strong>Then,</strong></p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/randomized-quick-sort.png" alt="DAA Quick sort">
+<p>Pivot element will do n comparison and we are doing average case so,</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/randomized-quick-sort2.png" alt="DAA Quick sort">
+<p><strong>So Relational Formula for Randomized Quick Sort is:</strong></p>
+<div class="codeblock"><pre>
+<img src="https://static.javatpoint.com/tutorial/daa/images/randomized-quick-sort3.png" alt="DAA Quick sort">
+    = n+1 +<img src="https://static.javatpoint.com/tutorial/daa/images/randomized-quick-sort4.png" style="margin:5px 4px -15px 0;" alt="DAA Quick sort">(T(0)+T(1)+T(2)+...T(n-1)+T(n-2)+T(n-3)+...T(0))<br>
+    = n+1 +<img src="https://static.javatpoint.com/tutorial/daa/images/randomized-quick-sort4.png" style="margin:5px 4px -15px 0;" alt="DAA Quick sort">x2 (T(0)+T(1)+T(2)+...T(n-2)+T(n-1))
+
+</pre></div>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>n&nbsp;T&nbsp;(n)&nbsp;=&nbsp;n&nbsp;(n+</span><span class="number">1</span><span>)&nbsp;+</span><span class="number">2</span><span>&nbsp;&nbsp;(T(</span><span class="number">0</span><span>)+T(</span><span class="number">1</span><span>)+T(</span><span class="number">2</span><span>)+...T(n-</span><span class="number">1</span><span>)........eq&nbsp;</span><span class="number">1</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">n T (n) = n (n+1) +2  (T(0)+T(1)+T(2)+...T(n-1)........eq 1
+</textarea></div>
+<p>Put n=n-1 in eq 1</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>(n&nbsp;-</span><span class="number">1</span><span>)&nbsp;T&nbsp;(n-</span><span class="number">1</span><span>)&nbsp;=&nbsp;(n-</span><span class="number">1</span><span>)&nbsp;n+</span><span class="number">2</span><span>&nbsp;(T(</span><span class="number">0</span><span>)+T(</span><span class="number">1</span><span>)+T(</span><span class="number">2</span><span>)+...T(n-</span><span class="number">2</span><span>)......eq2&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">(n -1) T (n-1) = (n-1) n+2 (T(0)+T(1)+T(2)+...T(n-2)......eq2
+</textarea></div>
+<p>From eq1 and eq 2</p>
+<p>n T (n) - (n-1) T (n-1)= n(n+1)-n(n-1)+2 (T(0)+T(1)+T(2)+?T(n-2)+T(n-1))-2(T(0)+T(1)+T(2)+...T(n-2))<br>
+n T(n)- (n-1) T(n-1)= n[n+1-n+1]+2T(n-1)<br>
+n T(n)=[2+(n-1)]T(n-1)+2n<br>
+n T(n)= n+1 T(n-1)+2n</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/randomized-quick-sort5.png" alt="DAA Quick sort">
+<p>Put n=n-1 in eq 3</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/randomized-quick-sort6.png" alt="DAA Quick sort">
+<p>Put 4 eq in 3 eq</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/randomized-quick-sort7.png" alt="DAA Quick sort">
+<p>Put n=n-2 in eq 3</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/randomized-quick-sort8.png" alt="DAA Quick sort">
+<p>Put 6 eq in 5 eq</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/randomized-quick-sort9.png" alt="DAA Quick sort">
+<p>Put n=n-3 in eq 3</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/randomized-quick-sort10.png" alt="DAA Quick sort">
+<p>Put 8 eq in 7 eq</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/randomized-quick-sort11.png" alt="DAA Quick sort">
+<br>
+<img src="https://static.javatpoint.com/tutorial/daa/images/randomized-quick-sort12.png" alt="DAA Quick sort">
+<p>From 3eq, 5eq, 7eq, 9 eq we get</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/randomized-quick-sort13.png" alt="DAA Quick sort">
+<br>
+<img src="https://static.javatpoint.com/tutorial/daa/images/randomized-quick-sort14.png" alt="DAA Quick sort">
+<p>From 10 eq</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/randomized-quick-sort15.png" alt="DAA Quick sort">
+<p>Multiply and divide the last term by 2</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/randomized-quick-sort16.png" alt="DAA Quick sort">
+<p><strong>Is the average case complexity of quick sort for sorting n elements.</strong></p>
+<p><strong>3. Quick Sort [Best Case]:</strong> In any sorting, best case is the only case in which we don't make any comparison between elements that is only done when we have only one element to sort.</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/randomized-quick-sort17.png" alt="DAA Quick sort">
+
+<hr>
+\
+<br><br>
+\
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

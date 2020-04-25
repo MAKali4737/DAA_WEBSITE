@@ -1,0 +1,54 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+<h1 class="h1">Hamiltonian Circuit Problems</h1>
+<p>Given a graph G = (V, E) we have to find the Hamiltonian Circuit using Backtracking approach. We start our search from any arbitrary vertex say 'a.' This vertex 'a' becomes the root of our implicit tree. The first element of our partial solution is the first intermediate vertex of the Hamiltonian Cycle that is to be constructed. The next adjacent vertex is selected by alphabetical order. If at any stage any arbitrary vertex makes a cycle with any vertex other than vertex 'a' then we say that <strong>dead end</strong> is reached. In this case, we backtrack one step, and again the search begins by selecting another vertex and backtrack the element from the partial; solution must be removed. The search using backtracking is successful if a Hamiltonian Cycle is obtained.</p>
+<p><strong>Example:</strong> Consider a graph G = (V, E) shown in fig. we have to find a Hamiltonian circuit using Backtracking method.</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/hamiltonian-circuit-problems.png" alt="Hamiltonian Circuit Problems">
+<br>
+<p><strong>Solution:</strong> Firstly, we start our search with vertex 'a.' this vertex 'a' becomes the root of our implicit tree.</p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585401646312"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/hamiltonian-circuit-problems2.png" alt="Hamiltonian Circuit Problems">
+<br>
+<p>Next, we choose vertex 'b' adjacent to 'a' as it comes first in lexicographical order (b, c, d).  </p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/hamiltonian-circuit-problems3.png" alt="Hamiltonian Circuit Problems">
+<br>
+<p>Next, we select 'c' adjacent to 'b.'</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/hamiltonian-circuit-problems4.png" alt="Hamiltonian Circuit Problems">
+<br>
+<p>Next, we select 'd' adjacent to 'c.'</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/hamiltonian-circuit-problems5.png" alt="Hamiltonian Circuit Problems">
+<br>
+<p>Next, we select 'e' adjacent to 'd.'</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/hamiltonian-circuit-problems6.png" alt="Hamiltonian Circuit Problems">
+<br>
+<p>Next, we select vertex 'f' adjacent to 'e.' The vertex adjacent to 'f' is d and e, but they have already visited. Thus, we get the dead end, and we backtrack one step and remove the vertex 'f' from partial solution. </p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/hamiltonian-circuit-problems7.png" alt="Hamiltonian Circuit Problems">
+<br>
+<p>From backtracking, the vertex adjacent to 'e' is b, c, d, and f from which vertex 'f' has already been checked, and b, c, d have already visited. So, again we backtrack one step. Now, the vertex adjacent to d are e, f from which e has already been checked, and adjacent of 'f' are d and e. If 'e' vertex, revisited them we get a dead state. So again we backtrack one step.</p>
+<p>Now, adjacent to c is 'e' and adjacent to 'e' is 'f' and adjacent to 'f' is 'd' and adjacent to 'd' is 'a.' Here, we get the Hamiltonian Cycle as all the vertex other than the start vertex 'a' is visited only once. (a - b - c - e - f -d - a).</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/hamiltonian-circuit-problems8.png" alt="Hamiltonian Circuit Problems">
+<br>
+<img src="https://static.javatpoint.com/tutorial/daa/images/hamiltonian-circuit-problems9.png" alt="Hamiltonian Circuit Problems">
+<br>
+<p><strong>Again Backtrack</strong></p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/hamiltonian-circuit-problems10.png" alt="Hamiltonian Circuit Problems">
+<br>
+<p>Here we have generated one Hamiltonian circuit, but another Hamiltonian circuit can also be obtained by considering another vertex.</p>
+
+
+<br><br>
+
+
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

@@ -1,0 +1,87 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+<h1 class="h1">Merge Sort</h1>
+<p>It closely follows the divide &amp; Conquers paradigm.</p>
+<p>Conceptually, it works as follows:</p>
+<ol class="points">
+<li><strong>Divide:</strong> Divide the unsorted list into two sublists of about half the size.
+</li><li><strong>Conquer:</strong> Sort each of the two sublists recursively until we have list sizes of length 1, in which case the list items are returned.</li>
+<li><strong>Combine:</strong> Join the two sorted Sub lists back into one sorted list.</li>
+</ol>
+<p>The Main purpose is to sort the unsorted list in nondecreasing order.</p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585396558790" data-refresh-time="1585396558792" data-timeout="8"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<div class="codeblock"><pre><strong>ALGORITHM-MERGE SORT</strong>
+1. If p&lt;r
+2. Then q ? ( p+ r)/2
+3. MERGE-SORT (A, p, q)
+4. MERGE-SORT ( A, q+1,r)
+5. MERGE ( A, p, q ,r)
+</pre></div>
+<p><strong>The following figure illustrates the dividing (splitting) procedure.</strong></p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-merge-sort.png" alt="DAA Merge Sort">
+<div class="codeblock"><pre><strong>FUNCTIONS: MERGE (A, p, q, r)</strong>
+1. n 1 = q-p+1
+2. n 2= r-q
+3. create arrays [1.....n 1 + 1] and R [ 1.....n 2 +1 ]
+4. for i ? 1 to n 1
+5. do [i] ? A [ p+ i-1]
+6. for j ? 1 to n2
+7. do R[j] ? A[ q + j]
+8. L [n 1+ 1] ? 8
+9. R[n 2+ 1] ? 8 
+10. I ? 1
+11. J ? 1
+12. For k ? p to r
+13. Do if L [i] = R[j]
+14. then A[k] ? L[ i]
+15. i ? i +1
+16. else A[k] ? R[j]
+17. j ? j+1
+</pre></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-merge-sort2.png" alt="DAA Merge Sort">
+<p>In this method, we split the given list into two halves. Then recursively analyzing merge sort and dividing. We get many sorted lists.</p>
+<p>At last, we combine the sorted lists.</p>
+<h2 class="h3">Analysis of Merge Sort:</h2>
+<p>Let T (n) be the total time taken in Merge Sort</p>
+<ol class="points">
+<li>Sorting two halves will be taken at the most 2T <img src="https://static.javatpoint.com/tutorial/daa/images/daa-merge-sort3.png" style="margin:5px 4px -15px 0px" alt="DAA Merge Sort">time</li>
+<li>When we merge the sorted lists, we have a total n-1 comparison because the last element which will be left will just need to be copied down in the combined list and there will be no comparison. </li>
+</ol>
+<p>So, the relational formula becomes</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-merge-sort4.png" alt="DAA Merge Sort">
+<p>But we ignore '-1' because the element will take some time to be copied in merge lists.</p>
+<p>So T (n) = 2T<img src="https://static.javatpoint.com/tutorial/daa/images/daa-merge-sort5.png" style="margin:5px 4px -15px 0px" alt="DAA Merge Sort"> + n.........equation 1</p>
+<h4 class="n">Note: Stopping Condition T (1) =0 because at last there will be only 1 element left which need to be copied and there will be no comparison.</h4>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-merge-sort6.png" alt="DAA Merge Sort">
+<p>Put 2 equation in 1 equation </p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-merge-sort7.png" alt="DAA Merge Sort">
+<p>Putting 4 equation in 3 equation</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-merge-sort8.png" alt="DAA Merge Sort">
+<p><strong>From Stopping Condition:</strong></p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-merge-sort9.png" alt="DAA Merge Sort">
+<p>Apply log both sides:</p>
+<p>log n=log<sub>2</sub>i<br>
+logn= i log2 <br>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-merge-sort11.png" style="margin:5px 4px -15px 0px" alt="DAA Merge Sort">=i<br>
+<br>
+log<sub>2</sub>n=i</p>
+<p>From 6 equation</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-merge-sort12.png" alt="DAA Merge Sort">
+
+<hr>
+
+<br><br>
+
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

@@ -1,0 +1,189 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+
+<h1 class="h1">Binary Search Trees</h1>
+<p>A Binary Search tree is organized in a Binary Tree. Such a tree can be defined by a linked data structure in which a particular node is an object. In addition to a key field, each node contains field left, right, and p that point to the nodes corresponding to its left child, its right child, and its parent, respectively. If a child or parent is missing, the appropriate field contains the value NIL. The root node is the only node in the tree whose parent field is Nil.</p>
+<h2 class="h2">Binary Search Tree Property</h2>
+<p>Let x be a node in a binary search tree.</p>
+<ul class="points">
+<li>If y is a node in the left subtree of x, then key [y] =key [k].</li>
+<li>If z is a node in the right subtree of x, then key [x] = key [y].</li>
+</ul>
+<img src="https://static.javatpoint.com/tutorial/daa/images/binary-search-trees.png" alt="DAA Binary Search Trees">
+<p>In this tree key [x] = 15</p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585400495663" data-refresh-time="1585400495666" data-timeout="9"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<ul class="points">
+<li>If y is a node in the left subtree of x, then key [y] = 5.</li>
+</ul>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>i.e.&nbsp;key&nbsp;[y]&nbsp;=&nbsp;key[x].&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">   i.e. key [y] = key[x].
+</textarea></div>		
+<ul class="points">
+<li>If y is a node in the right subtree of x, then key [y] = 20.</li>
+</ul>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>i.e.&nbsp;key&nbsp;[x]&nbsp;=&nbsp;key[y].&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">   i.e. key [x] = key[y].
+</textarea></div>
+<h2 class="h2">Traversal in Binary Search Trees:</h2>
+<p><strong>1. In-Order-Tree-Walk (x):</strong> Always prints keys in binary search tree in sorted order.</p>
+<div class="codeblock"><pre><strong>INORDER-TREE-WALK (x)</strong> - Running time is ?(n)
+ 1. If x ? NIL.
+ 2. then INORDER-TREE-WALK (left [x])
+ 3. print key [x]
+ 4. INORDER-TREE-WALK (right [x])
+</pre></div>
+<p><strong>2. PREORDER-TREE-WALK (x):</strong> In which we visit the root node before the nodes in either subtree.</p>
+<div class="codeblock"><pre><strong>PREORDER-TREE-WALK (x):</strong> 
+ 1. If x ? NIL.
+ 2. then print key [x]
+ 3. PREORDER-TREE-WALK (left [x]).
+ 4. PREORDER-TREE-WALK (right [x]).
+</pre></div>
+<p><strong>3. POSTORDER-TREE-WALK (x):</strong> In which we visit the root node after the nodes in its subtree.</p>
+<div class="codeblock"><pre><strong>POSTORDER-TREE-WALK (x): </strong>
+ 1. If x ? NIL.
+ 2. then POSTORDER-TREE-WALK (left [x]).
+ 3. POSTORDER-TREE-WALK (right [x]).
+ 4. print key [x]
+</pre></div>
+<h2 class="h2">Querying a Binary Search Trees:</h2>
+<p><strong>1. Searching:</strong> The TREE-SEARCH (x, k) algorithm searches the tree node at x for a node whose key value equal to k. It returns a pointer to the node if it exists otherwise NIL.</p>
+<div class="codeblock"><pre><strong>TREE-SEARCH (x, k)</strong>
+ 1. If x = NIL or k = key [x].
+ 2. then return x.
+ 3. If k &lt; key [x].
+ 4. then return TREE-SEARCH (left [x], k)
+ 5. else return TREE-SEARCH (right [x], k)
+</pre></div>
+<p>Clearly, this algorithm runs in O (h) time where h is the height of the tree. The iterative version of the above algorithm is very easy to implement </p>
+<div class="codeblock"><pre><strong>ITERATIVE-TREE- SEARCH (x, k)</strong>
+ 1. while x ? NIL and k ? key [k].
+ 2. do if k &lt; key [x].
+ 3. then x ? left [x].
+ 4. else x ? right [x].
+ 5. return x.
+</pre></div>
+<p><strong>2. Minimum and Maximum:</strong> An item in a binary search tree whose key is a minimum can always be found by following left child pointers from the root until a NIL is encountered. The following procedure returns a pointer to the minimum element in the subtree rooted at a given node x.</p>
+<div class="codeblock"><pre><strong>TREE- MINIMUM (x)</strong>
+ 1. While left [x] ? NIL.
+ 2. do x?left [x].
+ 3. return x.
+</pre></div>
+<div class="codeblock"><pre><strong>TREE-MAXIMUM (x)</strong>
+ 1. While left [x] ? NIL
+ 2. do x?right [x].
+ 3. return x.
+</pre></div>
+<p><strong>3. Successor and predecessor:</strong> Given a node in a binary search tree, sometimes we used to find its successor in the sorted form determined by an in order tree walk. If all keys are specific, the successor of a node x is the node with the smallest key greater than key[x]. The structure of a binary search tree allows us to rule the successor of a node without ever comparing keys. The following action returns the successor of a node x in a binary search tree if it exists, and NIL if x has the greatest key in the tree:</p>
+<div class="codeblock"><pre><strong>TREE SUCCESSOR (x)</strong>
+ 1. If right [x] ? NIL.
+ 2. Then return TREE-MINIMUM (right [x]))
+ 3. y?p [x]
+ 4. While y ? NIL and x = right [y]
+ 5. do x?y
+ 6. y?p[y]
+ 7. return y.
+</pre></div>
+<p>The code for TREE-SUCCESSOR is broken into two cases. If the right subtree of node x is nonempty, then the successor of x is just the leftmost node in the right subtree, which we find in line 2 by calling TREE-MINIMUM (right [x]). On the other hand, if the right subtree of node x is empty and x has a successor y, then y is the lowest ancestor of x whose left child is also an ancestor of x. To find y, we quickly  go up the tree from x until we encounter a node that is the left child of its parent; lines 3-7 of TREE-SUCCESSOR handle this case.</p>
+<p>The running time of TREE-SUCCESSOR on a tree of height h is O (h) since we either follow a simple path up the tree or follow a simple path down the tree. The procedure TREE-PREDECESSOR, which is symmetric to TREE-SUCCESSOR, also runs in time O (h).</p>
+<p><strong>4. Insertion in Binary Search Tree:</strong> To insert a new value into a binary search tree T, we use the procedure TREE-INSERT. The procedure takes a node ´ for which key [z] = v, left [z] NIL, and right [z] = NIL. It modifies T and some of the attributes of z in such a way that it inserts into an appropriate position in the tree.</p>
+<div class="codeblock"><pre><strong>TREE-INSERT (T, z)</strong>
+ 1. y ?NIL.
+ 2. x?root [T]
+ 3. while x ? NIL.
+ 4. do y?x
+ 5. if key [z]&lt; key [x]
+ 6. then x?left [x].
+ 7. else x?right [x].
+ 8. p [z]?y
+ 9. if y = NIL.
+ 10. then root [T]?z
+ 11. else if key [z] &lt; key [y]
+ 12. then left [y]?z
+</pre></div>
+<p><strong>For Example:</strong></p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/binary-search-trees2.png" alt="DAA Binary Search Trees">
+<p class="center"><strong>Fig:</strong> Working of TREE-INSERT</p>
+<p>Suppose we want to insert an item with key 13 into a Binary Search Tree.</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>&nbsp;&nbsp;x&nbsp;=&nbsp;</span><span class="number">1</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;y&nbsp;=&nbsp;<span class="number">1</span><span>&nbsp;as&nbsp;x&nbsp;?&nbsp;NIL.&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;Key&nbsp;[z]&nbsp;&lt;&nbsp;key&nbsp;[x]&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="number">13</span><span>&nbsp;&lt;&nbsp;not&nbsp;equal&nbsp;to&nbsp;</span><span class="number">12</span><span>.&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;x&nbsp;?right&nbsp;[x].&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;x&nbsp;?<span class="number">3</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>Again&nbsp;x&nbsp;?&nbsp;NIL&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;y&nbsp;?<span class="number">3</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;key&nbsp;[z]&nbsp;&lt;&nbsp;key&nbsp;[x]&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="number">13</span><span>&nbsp;&lt;&nbsp;</span><span class="number">18</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;x?left&nbsp;[x]&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;x?<span class="number">6</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>Again&nbsp;x&nbsp;?&nbsp;NIL,&nbsp;y?<span class="number">6</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;<span class="number">13</span><span>&nbsp;&lt;&nbsp;</span><span class="number">15</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;x?left&nbsp;[x]&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;x?NIL&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;p&nbsp;[z]?<span class="number">6</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">  x = 1
+  y = 1 as x ? NIL.
+  Key [z] &lt; key [x]
+      13 &lt; not equal to 12.
+  x ?right [x].
+  x ?3
+Again x ? NIL
+  y ?3
+  key [z] &lt; key [x]
+      13 &lt; 18
+  x?left [x]
+  x?6
+Again x ? NIL, y?6
+  13 &lt; 15
+  x?left [x]
+  x?NIL
+  p [z]?6
+</textarea></div>
+<p>Now our node z will be either left or right child of its parent (y).</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>key&nbsp;[z]&nbsp;&lt;&nbsp;key&nbsp;[y]&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;<span class="number">13</span><span>&nbsp;&lt;&nbsp;</span><span class="number">15</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>Left&nbsp;[y]&nbsp;?&nbsp;z&nbsp;&nbsp;</span></li><li class=""><span>Left&nbsp;[<span class="number">6</span><span>]&nbsp;?&nbsp;z&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">  key [z] &lt; key [y]
+     13 &lt; 15
+  Left [y] ? z
+  Left [6] ? z
+</textarea></div>
+<p>So, insert a node in the left of node index at 6.</p>
+<p><strong>5. Deletion in Binary Search Tree:</strong> When Deleting a node from a tree it is essential that any relationships, implicit in the tree can be maintained. The deletion of nodes from a binary search tree will be considered: </p>
+<p>There are three distinct cases:</p>
+<ol class="points">
+<li><strong>Nodes with no children:</strong> This case is trivial. Simply set the parent's pointer to the node to be deleted to nil and delete the node.</li>
+<li><strong>Nodes with one child:</strong> When z has no left child then we replace z by its right child which may or may not be NIL. And when z has no right child, then we replace z with its right child.</li>
+<li><strong>Nodes with both Childs:</strong> When z has both left and right child. We find  z's successor y, which lies in right z's right subtree and has no left child (the successor of z will be a node with minimum value its right subtree and so it has no left child).
+<ul class="points">
+<li>If y is z's right child, then we replace z.</li>
+<li>Otherwise, y lies within z's right subtree but not z's right child. In this case, we first replace z by its own right child and the replace z by y.</li>
+</ul>
+</li>
+</ol>
+<div class="codeblock"><pre><strong>TREE-DELETE (T, z)</strong>
+ 1. If left [z] = NIL or right [z] = NIL.
+ 2. Then y ? z
+ 3. Else y  ? TREE- SUCCESSOR (z)
+ 4. If left [y] ? NIL.
+ 5. Then x ? left [y]
+ 6. Else x ? right [y]
+ 7. If x ?NIL
+ 8. Then p[x] ? p [y]
+ 9. If p[y] = NIL.
+ 10. Then root [T] ? x
+ 11. Else if y = left [p[y]]
+ 12. Then left [p[y]] ? x
+ 13. Else right [p[y]] ? y
+ 14. If y ? z.
+ 15. Then key [z] ? key [y]
+ 16. If y has other fields, copy them, too.
+ 17. Return y
+</pre></div>
+<p>The Procedure runs in O (h) time on a tree of height h.</p>
+<p><strong>For Example:</strong> Deleting a node z from a binary search tree. Node z may be the root, a left child of node q, or a right child of q.</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/binary-search-trees3.png" alt="DAA Binary Search Trees">
+<p class="center">Z has the only right child.</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/binary-search-trees4.png" alt="DAA Binary Search Trees">
+<p class="center">Z has the only left child. We replace z by l.</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/binary-search-trees5.png" alt="DAA Binary Search Trees">
+<p>Node z has two children; its left child is node l, its right child is its successor y, and y's right child is node x. We replace z by y, updating y's left child to become l, but leaving x as y's right child.</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/binary-search-trees6.png" alt="DAA Binary Search Trees">
+<p>Node z has two children (left child l and right child r), and its successor y ? r lies within the subtree rooted at r. We replace y with its own right child x, and we set y to be r's parent. Then, we set y to be q's child and the parent of l.</p>
+
+<hr>
+
+<br><br>
+
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

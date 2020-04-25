@@ -1,0 +1,132 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+<h1 class="h1">Selection Sort </h1>
+<p>The selection sort enhances the bubble sort by making only a single swap for each pass through the rundown. Indorder to do this, a selection sort searches for the biggest value as it makes a pass and, after finishing the pass, places it in the best possible area. Similarly as with a bubble sort, after the first pass, the biggest item is in the right place. After the second pass, the following biggest is set up. This procedure proceeds and requires n-1 goes to sort n item, since the last item must be set up after the (n-1) st pass.</p>
+<div class="codeblock"><pre><strong>ALGORITHM: SELECTION SORT (A)</strong>
+1. k ? length [A]
+2. for j ?1 to n-1
+3. smallest ?  j
+4. for I ? j + 1 to k
+5. if A [i] &lt; A [ smallest]
+6. then smallest ?  i
+7. exchange (A [j], A [smallest])
+</pre></div>
+<h2 class="h2">Analysis:</h2>
+<ol class="points">
+<li><strong>Input:</strong> n elements are given.</li>
+<li><strong>Output:</strong> the number of comparisons required to make sorting.</li>
+<li><strong>Logic:</strong> If we have n elements in selection sort, then n-1 passes are required to find a sorted array. </li>
+</ol>
+<div class="codeblock"><pre> In pass 1: n-1 comparisons are required
+ In pass 2:  n-2 comparisons are required
+ In pass 3: n-3 comparisons are required
+............................................................................
+...............................................................................
+ In pass n-1: 1 comparison is required 
+ Total comparisons: T (n) = (n-1) + (n-2) + (n-3) +........+ 1
+                          = <img src="https://static.javatpoint.com/tutorial/daa/images/daa-selection-sort.png" style="margin:0 0 -15px 0;" alt="DAA Selection Sort">
+                          = o (n<sup>2</sup>)
+	<strong>Therefore complexity is of order n<sup>2</sup> </strong>
+</pre></div>
+<h3 class="h3">Example:</h3>
+<p>Sort the following array using selection sort: A [] = (7, 4, 3, 6, 5).</p>
+<p><strong>A [] = </strong></p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585396134671"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<table class="alt">
+<tbody><tr>
+	<td><strong>7</strong></td>
+	<td><strong>4</strong></td>
+	<td><strong>3</strong></td>
+	<td><strong>6</strong></td>
+	<td><strong>5</strong></td>
+</tr>
+</tbody></table>
+<h4 class="h4">1 Iteration:</h4>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>Smallest&nbsp;=</span><span class="number">7</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="number">4</span><span>&nbsp;&lt;&nbsp;</span><span class="number">7</span><span>,&nbsp;smallest&nbsp;=&nbsp;</span><span class="number">4</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="number">3</span><span>&nbsp;&lt;&nbsp;</span><span class="number">4</span><span>,&nbsp;smallest&nbsp;=&nbsp;</span><span class="number">3</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;<span class="number">6</span><span>&nbsp;&gt;&nbsp;</span><span class="number">3</span><span>,&nbsp;smallest&nbsp;=&nbsp;</span><span class="number">3</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;<span class="number">5</span><span>&nbsp;&gt;&nbsp;</span><span class="number">3</span><span>,&nbsp;smallest&nbsp;=&nbsp;</span><span class="number">3</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">Smallest =7
+      4 &lt; 7, smallest = 4
+      3 &lt; 4, smallest = 3
+   6 &gt; 3, smallest = 3
+   5 &gt; 3, smallest = 3
+</textarea></div>
+<p><strong>Swap 7 and 3	</strong></p>
+<table class="alt">
+<tbody><tr>
+	<td><strong>3</strong></td>
+	<td>4</td>
+	<td><strong>7</strong></td>
+	<td>6</td>
+	<td>5</td>
+</tr>
+</tbody></table>
+<h4 class="h4">2<sup>nd</sup> iteration:</h4>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>Smallest&nbsp;=&nbsp;</span><span class="number">4</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="number">4</span><span>&nbsp;&lt;&nbsp;</span><span class="number">7</span><span>,&nbsp;smallest&nbsp;=&nbsp;</span><span class="number">4</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="number">4</span><span>&nbsp;&lt;&nbsp;</span><span class="number">6</span><span>,&nbsp;smallest&nbsp;=&nbsp;</span><span class="number">4</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="number">4</span><span>&nbsp;&lt;&nbsp;</span><span class="number">5</span><span>,&nbsp;smallest&nbsp;=&nbsp;</span><span class="number">4</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">Smallest = 4
+4 &lt; 7, smallest = 4
+4 &lt; 6, smallest = 4
+4 &lt; 5, smallest = 4
+</textarea></div>
+<p><strong>No Swap</strong></p>
+<table class="alt">
+<tbody><tr>
+	<td>3</td>
+	<td>4</td>
+	<td>7</td>
+	<td>6</td>
+	<td>5</td>
+</tr>
+</tbody></table>
+<h4 class="h4">3<sup>rd</sup> iteration:</h4>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>Smallest&nbsp;=&nbsp;</span><span class="number">7</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="number">6</span><span>&nbsp;&lt;&nbsp;</span><span class="number">7</span><span>,&nbsp;smallest&nbsp;=&nbsp;</span><span class="number">6</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="number">5</span><span>&nbsp;&lt;&nbsp;</span><span class="number">7</span><span>,&nbsp;smallest&nbsp;=&nbsp;</span><span class="number">5</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">Smallest = 7
+6 &lt; 7, smallest = 6
+5 &lt; 7, smallest = 5
+</textarea></div>
+<p><strong>Swap 7 and 5</strong></p>
+<table class="alt">
+<tbody><tr>
+	<td>3</td>
+	<td>4</td>
+	<td><strong>5</strong></td>
+	<td>6</td>
+	<td><strong>7</strong></td>
+</tr>
+</tbody></table>
+<h4 class="h4">4<sup>th</sup> iteration:</h4>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>Smallest&nbsp;=&nbsp;</span><span class="number">6</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="number">6</span><span>&lt;&nbsp;</span><span class="number">7</span><span>,&nbsp;smallest&nbsp;=&nbsp;</span><span class="number">6</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">Smallest = 6
+6&lt; 7, smallest = 6
+</textarea></div>
+<p><strong>No Swap</strong></p>
+<table class="alt">
+<tbody><tr>
+	<td>3</td>
+	<td>4</td>
+	<td>5</td>
+	<td>6</td>
+	<td>7</td>
+</tr>
+</tbody></table>
+<p><strong>Finally, the sorted list is: </strong></p>
+<table class="alt">
+<tbody><tr>
+	<td>3</td>
+	<td>4</td>
+	<td>5</td>
+	<td>6</td>
+	<td>7</td>
+</tr>
+</tbody></table>
+
+<hr>
+
+<br><br>
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

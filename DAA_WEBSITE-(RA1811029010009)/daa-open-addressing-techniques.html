@@ -1,0 +1,191 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+
+<h1 class="h1">Open Addressing Techniques</h1>
+<p>Three techniques are commonly used to compute the probe sequence required for open addressing: </p>
+<ol class="points">
+<li>Linear Probing.</li>
+<li>Quadratic Probing.</li>
+<li>Double Hashing.</li>
+</ol>
+
+<h2 class="h2">1. Linear Probing:</h2>
+<p>It is a Scheme in Computer Programming for resolving collision in hash tables. </p>
+<p>Suppose a new record R with key k is to be added to the memory table T but that the memory locations with the hash address H (k). H is already filled.</p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585400098546" data-refresh-time="1585400098549" data-timeout="9"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<p>Our natural key to resolve the collision is to crossing R to the first available location following T (h). We assume that the table T with m location is circular, so that T [i] comes after T [m].</p>
+<p>The above collision resolution is called "Linear Probing".</p>
+<p>Linear probing is simple to implement, but it suffers from an issue known as primary clustering. Long runs of occupied slots build up, increasing the average search time. Clusters arise because an empty slot proceeded by i full slots gets filled next with probability (i + 1)/m. Long runs of occupied slots tend to get longer, and the average search time increases.</p>
+<p>Given an ordinary hash function h': U {0, 1...m-1}, the method of linear probing uses the hash function.</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>h&nbsp;(k,&nbsp;i)&nbsp;=&nbsp;(h'&nbsp;(k)&nbsp;+&nbsp;i)&nbsp;mod&nbsp;m&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">    h (k, i) = (h' (k) + i) mod m
+</textarea></div>
+<p>Where 'm' is the size of hash table and h' (k) = k mod m. for i=0, 1....m-1.</p>
+<p>Given key k, the first slot is T [h' (k)]. We next slot T [h' (k) +1] and so on up to the slot T [m-1]. Then we wrap around to slots T [0], T [1]....until finally slot T [h' (k)-1]. Since the initial probe position dispose of the entire probe sequence, only m distinct probe sequences are used with linear probing.</p>
+<p><strong>Example:</strong> Consider inserting the keys 24, 36, 58,65,62,86 into a hash table of size m=11 using linear probing, consider the primary hash function is h' (k) = k mod m.</p>
+<p><strong>Solution:</strong> Initial state of hash table</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/linear-probing.png" alt="DAA Open Addressing Techniques">
+<div class="codeblock"><pre><strong>Insert 24.</strong> We know h (k, i) = [h' (k) + i] mod m
+Now h (24, 0) = [24 mod 11 + 0] mod 11
+		= (2+0) mod 11 = 2 mod 11 = 2
+Since T [2] is free, insert key 24 at this place.
+
+<strong>Insert 36.</strong> Now h (36, 0) = [36 mod 11 + 0] mod 11
+		= [3+0] mod 11 = 3
+Since T [3] is free, insert key 36 at this place.
+
+<strong>Insert 58.</strong> Now h (58, 0) = [58 mod 11 +0] mod 11
+		= [3+0] mod 11 =3
+Since T [3] is not free, so the next sequence is 	
+	h (58, 1) = [58 mod 11 +1] mod 11
+		= [3+1] mod 11= 4 mod 11=4
+T [4] is free; Insert key 58 at this place.
+
+<strong>Insert 65.</strong> Now h (65, 0) = [65 mod 11 +0] mod 11
+		= (10 +0) mod 11= 10
+T [10] is free. Insert key 65 at this place.
+
+<strong>Insert 62.</strong> Now h (62, 0) = [62 mod 11 +0] mod 11
+		= [7 + 0] mod 11 = 7
+T [7] is free. Insert key 62 at this place.
+
+<strong>Insert 86.</strong> Now h (86, 0) = [86 mod 11 + 0] mod 11
+		= [9 + 0] mod 11 = 9
+T [9] is free. Insert key 86 at this place.
+ Thus,
+</pre></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/linear-probing2.png" alt="DAA Open Addressing Techniques">
+<h2 class="h2">2. Quadratic Probing:</h2>
+<p>Suppose a record R with key k has the hash address H (k) = h then instead of searching the location with addresses h, h+1, and h+ 2...We linearly search the locations with addresses </p>
+<div class="codeblock"><pre>h, h+1, h+4, h+9...h+i<sup>2</sup>
+</pre></div>
+<p>Quadratic Probing uses a hash function of the form </p>
+<div class="codeblock"><pre>h (k,i) = (h' (k) + c<sub>1</sub>i + c<sub>2</sub>i<sup>2</sup>) mod m
+</pre></div>
+<p>Where (as in linear probing) h' is an auxiliary hash function c<sub>1</sub> and c<sub>2</sub> ?0 are auxiliary constants and i=0, 1...m-1. The initial position is T [h' (k)]; later position probed is offset by the amount that depend in a quadratic manner on the probe number i. </p>
+<p><strong>Example:</strong> Consider inserting the keys 74, 28, 36,58,21,64 into a hash table of size m =11 using quadratic probing with c<sub>1</sub>=1 and c<sub>2</sub>=3. Further consider that the primary hash function is h' (k) = k mod m.</p>
+<p><strong>Solution:</strong> For Quadratic Probing, we have</p>
+<div class="codeblock"><pre>h (k, i) = [k mod m +c<sub>1</sub>i +c<sub>2</sub> i<sup>2</sup>) mod m
+</pre></div>
+<br>
+<img src="https://static.javatpoint.com/tutorial/daa/images/quadratic-probing.png" alt="DAA Open Addressing Techniques">
+<p>This is the initial state of hash table</p>
+<div class="codeblock"><pre>Here c<sub>1</sub>= 1 and c<sub>2</sub>=3
+     h (k, i) = [k mod m + i + 3i<sup>2</sup> ] mod m
+<strong>Insert 74.</strong>
+	
+      h (74,0)= (74 mod 11+0+3x0) mod 11
+	      = (8 +0+0) mod 11 = 8
+T [8] is free; insert the key 74 at this place.
+
+<strong>Insert 28.</strong>
+
+     h (28, 0) = (28 mod 11 + 0 + 3 x 0) mod 11
+               = (6 +0 + 0) mod 11 = 6.
+T [6] is free; insert key 28 at this place.
+
+<strong>Insert 36.</strong>
+
+	h (36, 0) = (36 mod 11 + 0 + 3 x 0) mod 11
+		  = (3 + 0+0) mod 11=3
+T [3] is free; insert key 36 at this place.
+     
+<strong>Insert 58.</strong>
+
+	h (58, 0) = (58 mod 11 + 0 + 3 x 0) mod 11
+	          = (3 + 0 + 0) mod 11 = 3
+T [3] is not free, so next probe sequence is computed as 
+	h (59, 1) = (58 mod 11 + 1 + 3 x1<sup>2</sup>) mod 11
+                  = (3 + 1 + 3) mod 11
+		  =7 mod 11= 7
+T [7] is free; insert key 58 at this place.
+
+<strong>Insert 21.</strong>
+
+	h (21, 0) = (21 mod 11 + 0 + 3 x 0)
+		  = (10 + 0) mod 11 = 10
+T [10] is free; insert key 21 at this place.
+
+	Insert 64.
+
+	h (64, 0) = (64 mod 11 + 0 + 3 x 0)
+		  = (9 + 0+ 0) mod 11 = 9.
+T [9] is free; insert key 64 at this place.
+</pre></div>
+<p>Thus, after inserting all keys, the hash table is</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/quadratic-probing2.png" alt="DAA Open Addressing Techniques">
+<h2 class="h2">3. Double Hashing:</h2>
+<p>Double Hashing is one of the best techniques available for open addressing because the permutations produced have many of the characteristics of randomly chosen permutations. </p>
+<p>Double hashing uses a hash function of the form</p>
+<div class="codeblock"><pre>h (k, i) = (h<sub>1</sub>(k) + i h<sub>2</sub> (k)) mod m
+</pre></div>
+<p>Where  h<sub>1</sub> and h<sub>2</sub> are auxiliary hash functions and m is the size of the hash table.</p>
+<p>h<sub>1</sub> (k) = k mod m or h<sub>2</sub> (k) = k mod m'. Here m' is slightly less than m (say m-1 or m-2).</p>
+<p><strong>Example:</strong> Consider inserting the keys 76, 26, 37,59,21,65 into a hash table of size m = 11 using double hashing. Consider that the auxiliary hash functions are h<sub>1</sub> (k)=k mod 11 and h<sub>2</sub>(k) = k mod 9.</p>
+<p><strong>Solution:</strong> Initial state of Hash table is</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/double-hashing.png" alt="DAA Open Addressing Techniques">
+<div class="codeblock"><pre><strong>1. Insert 76.</strong>
+         h<sub>1</sub>(76) = 76 mod 11 = 10
+         h<sub>2</sub>(76) = 76 mod 9 = 4
+                    h (76, 0) = (10 + 0 x 4) mod 11
+			      = 10 mod 11 = 10
+T [10] is free, so insert key 76 at this place.
+
+<strong>2. Insert 26.</strong>
+	h<sub>1</sub>(26) = 26 mod 11 = 4
+          h<sub>2</sub>(26) = 26 mod 9 = 8
+                     h (26, 0) = (4 + 0 x 8) mod 11
+			      = 4 mod 11 = 4
+T [4] is free, so insert key 26 at this place.
+
+<strong>3. Insert 37.</strong>
+	h<sub>1</sub>(37) = 37 mod 11 = 4
+          h<sub>2</sub>(37) = 37 mod 9 = 1
+                       h (37, 0) = (4 + 0 x 1) mod 11 = 4 mod 11 = 4
+T [4] is not free, the next probe sequence is 
+		     h (37, 1) = (4 + 1 x 1) mod 11 = 5 mod 11 = 5
+T [5] is free, so insert key 37 at this place.
+
+<strong>4. Insert 59.</strong>
+	h<sub>1</sub>(59) = 59 mod 11 = 4
+          h<sub>2</sub>(59) = 59 mod 9 = 5
+                        h (59, 0) = (4 + 0 x 5) mod 11 = 4 mod 11 = 4
+Since, T [4] is not free, the next probe sequence is 
+                        h (59, 1) = (4 + 1 x 5) mod 11 = 9 mod 11 = 9
+T [9] is free, so insert key 59 at this place.
+
+
+<strong>5. Insert 21.</strong>
+	  h<sub>1</sub>(21) = 21 mod 11 = 10
+	  h<sub>2</sub>(21) = 21 mod 9 = 3
+		      h (21, 0) = (10 + 0 x 3) mod 11 = 10 mod 11 = 10
+T [10] is not free, the next probe sequence is
+		      h (21, 1) = (10 + 1 x 3) mod 11 = 13 mod 11 = 2
+T [2] is free, so insert key 21 at this place.
+
+<strong>6. Insert 65.</strong>
+	    h<sub>1</sub>(65) = 65 mod 11 = 10
+              h<sub>2</sub>(65) = 65 mod 9 = 2
+			h (65, 0) = (10 + 0 x 2) mod 11 = 10 mod 11 = 10
+T [10] is not free, the next probe sequence is
+			h (65, 1) = (10 + 1 x 2) mod 11 = 12 mod 11 = 1
+T [1] is free, so insert key 65 at this place.
+Thus, after insertion of all keys the final hash table is
+</pre></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/double-hashing2.png" alt="DAA Open Addressing Techniques">
+
+<hr>
+
+<br><br>
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

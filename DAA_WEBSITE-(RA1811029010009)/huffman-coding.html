@@ -1,0 +1,67 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+<h1 class="h1">Huffman Codes</h1>
+<ul class="points">
+<li>(i) Data can be encoded efficiently using Huffman Codes. </li>
+<li>(ii) It is a widely used and beneficial technique for compressing data.</li>
+<li>(iii) Huffman's greedy algorithm uses a table of the frequencies of occurrences of each character to build up an optimal way of representing each character as a binary string.</li>
+</ul>
+<p>Suppose we have 10<sup>5</sup> characters in a data file. Normal Storage: 8 bits per character (ASCII) - 8 x 10<sup>5</sup> bits in a file. But we want to compress the file and save it compactly. Suppose only six characters appear in the file:</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/huffman-codes.png" alt="Huffman Codes">
+<p>How can we represent the data in a Compact way?</p>
+<p><strong>(i) Fixed length Code:</strong> Each letter represented by an equal number of bits. With a fixed length code, at least 3 bits per character:</p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585401149902" data-refresh-time="1585401149903" data-timeout="12"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<p><strong>For example:</strong></p>
+<div class="codeblock"><pre>a			000
+
+b			001
+
+c			010
+
+d			011
+
+e			100
+
+f			101
+</pre></div>
+<p>For a file with 10<sup>5</sup> characters, we need 3 x 10<sup>5</sup> bits.</p>
+<p><strong>(ii) A variable-length code:</strong> It can do considerably better than a fixed-length code, by giving many characters short code words and infrequent character long codewords.</p>
+<p><strong>For example:</strong></p>
+<div class="codeblock"><pre>  a       0
+
+  b      101
+
+  c      100
+
+  d      111
+
+  e      1101
+
+  f      1100
+Number of bits = (45 x 1 + 13 x 3 + 12 x 3 + 16 x 3 + 9 x 4 + 5 x 4) x 1000
+<strong>= 2.24 x 10<sup>5</sup>bits</strong>
+</pre></div>
+<p>Thus, 224,000 bits to represent the file, a saving of approximately 25%.This is an optimal character code for this file.</p>
+<h2 class="h2">Prefix Codes:</h2>
+<p>The prefixes of an encoding of one character must not be equal to complete encoding of another character, e.g., 1100 and 11001 are not valid codes because 1100 is a prefix of some other code word is called prefix codes.</p>
+<p>Prefix codes are desirable because they clarify encoding and decoding. Encoding is always simple for any binary character code; we concatenate the code words describing each character of the file. Decoding is also quite comfortable with a prefix code. Since no codeword is a prefix of any other, the codeword that starts with an encoded data is unambiguous.</p>
+<h2 class="h2">Greedy Algorithm for constructing a Huffman Code:</h2>
+<p>Huffman invented a greedy algorithm that creates an optimal prefix code called a Huffman Code.</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/huffman-codes2.png" alt="Huffman Codes">
+<p>The algorithm builds the tree T analogous to the optimal code in a bottom-up manner. It starts with a set of |C| leaves (C is the number of characters) and performs |C| - 1 'merging' operations to create the final tree. In the Huffman algorithm 'n' denotes the quantity of a set of characters, z indicates the parent node, and x &amp; y are the left &amp; right child of z respectively.</p>
+
+<br><br>
+
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

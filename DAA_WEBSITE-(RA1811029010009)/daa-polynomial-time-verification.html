@@ -1,0 +1,50 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+
+<h1 class="h1">Polynomial Time Verification</h1>
+<p>Before talking about the class of NP-complete problems, it is essential to introduce the notion of a verification algorithm.</p>
+<p>Many problems are hard to solve, but they have the property that it easy to authenticate the solution if one is provided.</p>
+<h2 class="h2">Hamiltonian cycle problem:-</h2>
+<p>Consider the Hamiltonian cycle problem. Given an undirected graph G, does G have a cycle that visits each vertex exactly once? There is no known polynomial time algorithm for this dispute.</p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585402241978" data-refresh-time="1585402241980" data-timeout="8"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<h4 class="n">Note: - It means you can't build a Hamiltonian cycle in a graph with a polynomial time even if there is no specific path is given for the Hamiltonian cycle with the particular vertex, yet you can't verify the Hamiltonian cycle within the polynomial time</h4>
+<img src="https://static.javatpoint.com/tutorial/daa/images/polynomial-time-verification.png" alt="Polynomial Time Verification">
+<p style="margin-left:80px"><strong>Fig: Hamiltonian Cycle</strong></p>
+<p>Let us understand that a graph did have a Hamiltonian cycle. It would be easy for someone to convince of this. They would similarly say: "the period is hv3, v7, v1....v13i.</p>
+<p>We could then inspect the graph and check that this is indeed a legal cycle and that it visits all of the vertices of the graph exactly once. Thus, even though we know of no efficient way to solve the Hamiltonian cycle problem, there is a beneficial way to verify that a given cycle is indeed a Hamiltonian cycle.</p>
+<h4 class="n">Note:-For the verification in the Polynomial-time of an undirected Hamiltonian cycle graph G. There must be exact/specific/definite path must be given of Hamiltonian cycle then you can verify in the polynomial time.</h4>
+<p><strong>Definition of Certificate:</strong> - A piece of information which contains in the given path of a vertex is known as certificate</p>
+<h2 class="h2">Relation of P and NP classes</h2>
+<ol class="points">
+<li>P contains in NP</li>
+<li>P=NP</li>
+</ol>
+<ol class="points">
+<li>Observe that P contains in NP. In other words, if we can solve a problem in polynomial time, we can indeed verify the solution in polynomial time. More formally, we do not need to see a certificate (there is no need to specify the vertex/intermediate of the specific path) to solve the problem; we can explain it in polynomial time anyway.</li>
+<li>However, it is not known whether P = NP. It seems you can verify and produce an output of the set of decision-based problems in NP classes in a polynomial time which is impossible because according to the definition of NP classes you can verify the solution within the polynomial time. So this relation can never be held.</li>
+</ol>
+<h2 class="h2">Reductions:</h2>
+<p>The class NP-complete (NPC) problems consist of a set of decision problems (a subset of class NP) that no one knows how to solve efficiently. But if there were a polynomial solution for even a single NP-complete problem, then every problem in NPC will be solvable in polynomial time. For this, we need the concept of reductions.</p>
+<p>Suppose there are two problems, A and B. You know that it is impossible to solve problem A in polynomial time. You want to prove that B cannot be explained in polynomial time. We want to show that (A ? P) =&gt; (B ? P)</p>
+<p>Consider an example to illustrate reduction: The following problem is well-known to be NPC:</p>
+<p><strong>3-color:</strong> Given a graph G, can each of its vertices be labeled with one of 3 different colors such that two adjacent vertices do not have the same label (color).</p>
+<p>Coloring arises in various partitioning issues where there is a constraint that two objects cannot be assigned to the same set of partitions. The phrase "coloring" comes from the original application which was in map drawing. Two countries that contribute a common border should be colored with different colors.</p>
+<p>It is well known that planar graphs can be colored (maps) with four colors. There exists a polynomial time algorithm for this. But deciding whether this can be done with 3 colors is hard, and there is no polynomial time algorithm for it.</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/polynomial-time-verification2.png" alt="Polynomial Time Verification">
+<p><strong>Fig: Example of 3-colorable and non-3-colorable graphs.</strong></p>
+<h2 class="h2">Polynomial Time Reduction:</h2>
+<p>We say that Decision Problem L<sub>1</sub> is Polynomial time Reducible to decision Problem L<sub>2</sub> (L<sub>1=p</sub> L<sub>2</sub>) if there is a polynomial time computation function f such that of all x, x?L<sub>1</sub> if and only if  x?L<sub>2</sub>.</p>
+
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

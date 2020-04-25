@@ -1,0 +1,210 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+
+<h1 class="h1">Counting Sort</h1>
+<p>It is a linear time sorting algorithm which works faster by not making a comparison. It assumes that the number to be sorted is in range 1 to k where k is small.</p>
+<p>Basic idea is to determine the "rank" of each number in the final sorted array.</p>
+<h2 class="h2">Counting Sort uses three arrays:</h2>
+<ol class="points">
+<li>A [1, n] holds initial input.</li>
+<li>B [1, n] holds sorted output.</li>
+<li>C [1, k] is the array of integer. C [x] is the rank of x in A where x ? [1, k]</li>
+</ol>
+<p>Firstly C [x] to be a number of elements of A [j] that is equal to x</p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585399540960" data-refresh-time="1585399540962" data-timeout="8"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<ul class="points">
+<li>Initialize C to zero</li>
+<li>For each j from 1 to n increment C [A[j]] by 1</li>
+</ul>
+<p>We set B[C [x]] =A[j]</p>
+<p>If there are duplicates, we decrement C [i] after copying.</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>Counting&nbsp;Sort&nbsp;(array&nbsp;P,&nbsp;array&nbsp;Q,&nbsp;</span><span class="keyword">int</span><span>&nbsp;k)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;<span class="number">1</span><span>.&nbsp;For&nbsp;i&nbsp;?&nbsp;</span><span class="number">1</span><span>&nbsp;to&nbsp;k&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;<span class="number">2</span><span>.&nbsp;</span><span class="keyword">do</span><span>&nbsp;C&nbsp;[i]&nbsp;?&nbsp;</span><span class="number">0</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;?(k)&nbsp;times]&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;<span class="number">3</span><span>.&nbsp;</span><span class="keyword">for</span><span>&nbsp;j&nbsp;&nbsp;?&nbsp;</span><span class="number">1</span><span>&nbsp;to&nbsp;length&nbsp;[A]&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;<span class="number">4</span><span>.&nbsp;</span><span class="keyword">do</span><span>&nbsp;C[A[j]]&nbsp;?&nbsp;C&nbsp;[A&nbsp;[j]]+</span><span class="number">1</span><span>&nbsp;&nbsp;&nbsp;&nbsp;[?(n)&nbsp;times]&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;<span class="number">5</span><span>.&nbsp;</span><span class="comment">//&nbsp;C&nbsp;[i]&nbsp;now&nbsp;contain&nbsp;the&nbsp;number&nbsp;of&nbsp;elements&nbsp;equal&nbsp;to&nbsp;i</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;<span class="number">6</span><span>.&nbsp;</span><span class="keyword">for</span><span>&nbsp;i&nbsp;&nbsp;?&nbsp;</span><span class="number">2</span><span>&nbsp;to&nbsp;k&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;<span class="number">7</span><span>.&nbsp;</span><span class="keyword">do</span><span>&nbsp;C&nbsp;[i]&nbsp;&nbsp;?&nbsp;&nbsp;C&nbsp;[i]&nbsp;+&nbsp;C[i-</span><span class="number">1</span><span>]&nbsp;[?(k)&nbsp;times]&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;<span class="number">8</span><span>.&nbsp;</span><span class="comment">//C[i]&nbsp;now&nbsp;contain&nbsp;the&nbsp;number&nbsp;of&nbsp;elements&nbsp;=&nbsp;i</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;<span class="number">9</span><span>.&nbsp;</span><span class="keyword">for</span><span>&nbsp;j&nbsp;?&nbsp;length&nbsp;[A]&nbsp;down&nbsp;to&nbsp;</span><span class="number">1</span><span>&nbsp;[?(n)&nbsp;times]&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;<span class="number">10</span><span>.&nbsp;</span><span class="keyword">do</span><span>&nbsp;B[C[A[j]&nbsp;&nbsp;?&nbsp;&nbsp;A&nbsp;[j]&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;<span class="number">11</span><span>.&nbsp;C[A[j]&nbsp;&nbsp;?&nbsp;&nbsp;C[A[j]-</span><span class="number">1</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">Counting Sort (array P, array Q, int k)
+ 1. For i ? 1 to k
+ 2. do C [i] ? 0     [ ?(k) times]
+ 3. for j  ? 1 to length [A]
+ 4. do C[A[j]] ? C [A [j]]+1	[?(n) times]
+ 5. // C [i] now contain the number of elements equal to i
+ 6. for i  ? 2 to k
+ 7. do C [i]  ?  C [i] + C[i-1]	[?(k) times]
+ 8. //C[i] now contain the number of elements = i
+ 9. for j ? length [A] down to 1 [?(n) times]
+ 10. do B[C[A[j]  ?  A [j]
+ 11. C[A[j]  ?  C[A[j]-1
+</textarea></div>
+<p><strong>Explanation:</strong></p>
+<p><strong>Step1:</strong> for loop initialize the array R to 'o'. But there is a contradict in the first step initialize of loop variable 1 to k or 0 to k. As 0&amp;1 are based on the minimum value comes in array A (input array). Basically, we start I with the value which is minimum in input array 'A'</p>
+<p>For loops of steps <strong>3 to 4</strong> inspects each input element. If the value of an input element is 'i', we increment C [i]. Thus, after step 5, C [i] holds the number of input element equal to I for each integer i=0, 1, 2.....k</p>
+<p>Step <strong>6 to 8</strong> for loop determines for each i=0, 1.....how many input elements are less than or equal to i</p>
+<p>For loop of step <strong>9 to 11</strong> place each element A [j] into its correct sorted position in the output array B. for each A [j],the value C [A[j]] is the correct final position of A [j] in the output array B, since there are C [A[j]] element less than or equal to A [i].</p>
+<p>Because element might not be distinct, so we decrement C[A[j]  each time we place a value A [j] into array B decrement C[A[j] causes the next input element with a value equal to A [j], to go to the position immediately before A [j] in the output array. </p>
+<h2 class="h3">Analysis of Running Time:</h2>
+<ul class="points">
+<li>For a loop of step 1 to 2 take ?(k) times</li>
+<li>For a loop of step 3 to 4 take ?(n) times</li>
+<li>For a loop of step 6 to 7 take ?(k) times</li>
+<li>For a loop of step 9 to 11 take ?(n) times</li>
+</ul>
+<p>Overall time is <strong>?(k+n)</strong> time.</p>
+<p><strong>Note:</strong></p>
+<ol class="points">
+<li>Counting Sort has the important property that it is stable: numbers with the same value appears in the output array in the same order as they do in the input array.</li>
+<li>Counting Sort is used as a subroutine in Radix Sort.</li>
+</ol>
+<p><strong>Example:</strong> Illustration the operation of Counting Sort in the array.</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>A=&nbsp;(&nbsp;</span><span class="number">7</span><span>,</span><span class="number">1</span><span>,</span><span class="number">3</span><span>,</span><span class="number">1</span><span>,</span><span class="number">2</span><span>,</span><span class="number">4</span><span>,</span><span class="number">5</span><span>,</span><span class="number">7</span><span>,</span><span class="number">2</span><span>,</span><span class="number">4</span><span>,</span><span class="number">3</span><span>)&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">A= ( 7,1,3,1,2,4,5,7,2,4,3)
+</textarea></div>
+<p><strong>Solution:</strong></p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/initial-a-and-c-arrays.png" alt="DAA Counting Sort">
+<p class="center"><strong>Fig: Initial A and C Arrays</strong></p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>For&nbsp;j=</span><span class="number">1</span><span>&nbsp;to&nbsp;</span><span class="number">11</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>J=<span class="number">1</span><span>,&nbsp;C&nbsp;[</span><span class="number">1</span><span>,&nbsp;k]&nbsp;=&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">For j=1 to 11
+J=1, C [1, k] =
+</textarea></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/a-1-7-processed.png" alt="DAA Counting Sort">
+<p class="center"><strong>Fig: A [1] = 7 Processed</strong></p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>J=</span><span class="number">2</span><span>,&nbsp;C&nbsp;[</span><span class="number">1</span><span>,&nbsp;k]&nbsp;=&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">J=2, C [1, k] =
+</textarea></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/a-2-1-processed.png" alt="DAA Counting Sort">
+<p class="center"><strong>	Fig: A [2] = 1 Processed</strong></p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>J=</span><span class="number">3</span><span>,&nbsp;C&nbsp;[</span><span class="number">1</span><span>,&nbsp;k]&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">J=3, C [1, k]
+</textarea></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/a-3-3-processed.png" alt="DAA Counting Sort">
+<p class="center"><strong>Fig: A [3] = 3 Processed</strong></p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>J=</span><span class="number">4</span><span>,&nbsp;C&nbsp;[</span><span class="number">1</span><span>,&nbsp;k]&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">J=4, C [1, k]
+</textarea></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/a-4-1-processed.png" alt="DAA Counting Sort">
+<p class="center"><strong>Fig: A [4] = 1 Processed</strong></p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>J=</span><span class="number">5</span><span>,&nbsp;C&nbsp;[</span><span class="number">1</span><span>,&nbsp;k]&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">J=5, C [1, k]
+</textarea></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/a-5-2-processed.png" alt="DAA Counting Sort">
+<p class="center"><strong>Fig: A [5] = 2 Processed</strong></p>
+<h3 class="h3">UPDATED C is:</h3>
+<img src="https://static.javatpoint.com/tutorial/daa/images/updated-c.png" alt="DAA Counting Sort">
+<p class="center"><strong>Fig: C now contains a count of elements of A </strong></p>
+<h3 class="n">Note: here the item of 'A' one by one get scanned and will become a position in 'C' and how many times the item get accessed will be mentioned in an item in 'C' Array and it gets updated or counter increased by 1 if any item gets accessed again.</h3>
+<p>Now, the for loop i= 2 to 7 will be executed having statement:</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>C&nbsp;[i]&nbsp;=&nbsp;C&nbsp;[i]&nbsp;+&nbsp;C&nbsp;[i-</span><span class="number">1</span><span>]&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">C [i] = C [i] + C [i-1]
+</textarea></div>
+<p>By applying these conditions we will get C updated as i stated from 2 up to 7</p>
+<div class="codeblock"><pre>C [2] = C [2] + C [1]      C [3] = C [3] + C [2]
+C [2] = 2 + 2              C [3] = 2 + 4
+<strong>C [2] = 4</strong>                  <strong>C [3] = 6</strong>
+
+C [4] = C [4] + C [3]	   C [5] = C [5] + C [4]
+C [4] = 2 + 6              C [5] = 1 +8
+<strong>C [4] = 8</strong>                  <strong>C [5] = 9</strong>
+
+C [6] = C [6] + C [5]      C [7] = C [7] + C [6]
+C [6] = 0 + 9              C [7] = 2 + 9
+<strong>C [6] = 9</strong>                  <strong>C [7] = 11</strong>
+</pre></div>
+<h3 class="h3">Thus the Updated C is:</h3>
+<img src="https://static.javatpoint.com/tutorial/daa/images/updated-c2.png" alt="DAA Counting Sort">
+<p class="center"><strong>Fig: C set to rank each number of A</strong></p>
+<br>
+<p>Now, we will find the new array B</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/counting-sort3.png" alt="DAA Counting Sort">
+<p>Now two Conditions will apply:</p>
+<ol class="points">
+<li>B[C[A[j] ? A [j]</li>
+<li>C[A[j]  ? C[A[j]-1</li>
+</ol>
+<p>We decrease counter one by one by '1'<br>
+We start scanning of the element in A from the last position.<br>
+Element in A became a position in C</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>For&nbsp;j&nbsp;&nbsp;?&nbsp;&nbsp;</span><span class="number">11</span><span>&nbsp;to&nbsp;</span><span class="number">1</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">   For j  ?  11 to 1
+</textarea></div>
+<h4 class="h4">Step 1</h4>
+<div class="codeblock"><pre>B [C [A [11]]] = A [11]     C [A [11] = C [A [11]-1
+B [C [3] = 3                C [3] = C [3] -1
+<strong>B [6] = 3</strong>                   <strong>C [3] = 5</strong>
+</pre></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/placed-in-output-array-b.png" alt="DAA Counting Sort">
+<p class="center"><strong>Fig: A [11] placed in Output array B</strong></p>
+<h4 class="h4">Step 2</h4>
+<div class="codeblock"><pre>B [C [A [10]]] = A [10]     C [A [10]] = C [A [10]]-1
+B [C [4]] =4                C [4] = C [4] -1
+<strong>B [8] = 4</strong>                   <strong>C [4] = 7</strong>
+</pre></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/placed-in-output-array-b-step2.png" alt="DAA Counting Sort">
+<p class="center"><strong>Fig: A [10] placed in Output array B</strong></p>
+<h4 class="h4">Step 3</h4>
+<div class="codeblock"><pre>B [C [A [9]] = A [9]        C [A [9] = C [A [9]]-1
+B [C [2]] = A [2]           C [2] = C [2]-1
+<strong>B [4] = 2</strong>                   <strong>C [2] = 3</strong>
+</pre></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/placed-in-output-array-b-step3.png" alt="DAA Counting Sort">
+<p class="center"><strong>Fig: A [9] placed in Output array B</strong></p>
+<h4 class="h4">Step 4</h4>
+<div class="codeblock"><pre>B [C [A [8]]] = A [8]       C [A [8]] =C [A [8]] -1 
+B [C [7]] =7                C [A [8]] = C [7]-1
+<strong>B [11] =7</strong>                   <strong>C [7] = 10</strong>
+</pre></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/placed-in-output-array-b-step4.png" alt="DAA Counting Sort">
+<p class="center"><strong>Fig: A [8] placed in Output array B</strong></p>
+<h4 class="h4">Step 5</h4>
+<div class="codeblock"><pre>B [C [A [7]]] = A [7]       C [A [7]] = C [A [7]] - 1 
+B [C [5]] = 5               C [5] = C [5] - 1
+<strong>B [9] = 5</strong>                   <strong>C [5] =8</strong>
+</pre></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/placed-in-output-array-b-step5.png" alt="DAA Counting Sort">
+<p class="center"><strong>Fig: A [7] placed in Output array B</strong></p>
+<h4 class="h4">Step 6</h4>
+<div class="codeblock"><pre>B [C [A [6]]] = A [6]       C [A [6]] = C [A [6]] - 1
+B [C [4]] = 4               C [4] = C [4] - 1
+<strong>B [7] = 4</strong>                   <strong>C [4] = 6</strong>
+</pre></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/placed-in-output-array-b-step6.png" alt="DAA Counting Sort">
+<p class="center"><strong>Fig: A [6] placed in Output array B</strong></p>
+<h4 class="h4">Step 7</h4>
+<div class="codeblock"><pre>B [C [A [5]]] = A [5]       C [A [5] = C [A [5]] -1
+B [C [2] =2                 C [2] = C [2] - 1
+<strong>B [3] = 2</strong>                   <strong>C [2] = 2</strong>
+</pre></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/placed-in-output-array-b-step7.png" alt="DAA Counting Sort">
+<p class="center"><strong>Fig: A [5] placed in Output array B</strong></p>
+<h4 class="h4">Step 8</h4>
+<div class="codeblock"><pre>B [C [A [4]]] = A [4]       C [A [4]] = C [A [4]] - 1
+B [C [1] = 1                C [1] = C [1] - 1
+<strong>B [2] = 1</strong>                   <strong>C [1] = 1</strong>
+</pre></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/placed-in-output-array-b-step8.png" alt="DAA Counting Sort">
+<p class="center"><strong>Fig: A [4] placed in Output array B</strong></p>
+<h4 class="h4">Step 9</h4>
+<div class="codeblock"><pre>B [C [A [3]]] = A [3]       C [A [3]] = C [A [3]] - 1
+B [C [3] = 3                C [3] = C [3] - 1
+<strong>B [5] = 3</strong>                   <strong>C [3] = 4</strong>
+</pre></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/placed-in-output-array-b-step9.png" alt="DAA Counting Sort">
+<p class="center"><strong>Fig: A [3] placed in Output array B</strong></p>
+<h4 class="h4">Step 10</h4>
+<div class="codeblock"><pre>B [C [A [2]]] = A [2]       C [A [2]] = C [A [2]] - 1
+B [C [1]] = 1               C [1] = C [1] - 1	
+<strong>B [1] = 1</strong>                   <strong>C [1] = 0</strong>
+</pre></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/placed-in-output-array-b-step10.png" alt="DAA Counting Sort">
+<p class="center"><strong>Fig: A [2] placed in Output array B</strong></p>
+<h4 class="h4">Step 11</h4>
+<div class="codeblock"><pre>B [C [A [1]]] = A [1]       C [A [1]] = C [A [1]] - 1
+B [C [7]] = 7               C [7] = C [7] - 1
+<strong>B [10] = 7</strong>                  <strong>C [7] = 9</strong>
+</pre></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/placed-in-output-array-b-step11.png" alt="DAA Counting Sort">
+<p class="center"><strong>Fig: B now contains the final sorted data.</strong></p>
+
+
+<hr>
+
+<br><br>
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

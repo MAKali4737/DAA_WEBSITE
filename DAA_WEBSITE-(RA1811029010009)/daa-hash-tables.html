@@ -1,0 +1,82 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+<h1 class="h1">Hash Tables</h1>
+<p>It is a collection of items which are stored in such a way as to make it easy to find them later.</p>
+<p>Each position in the hash table is called slot, can hold an item and is named by an integer value starting at 0.</p>
+<p>The mapping between an item and a slot where the item belongs in a hash table is called a Hash Function. A hash Function accepts a key and returns its hash coding, or hash value.</p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585399972704" data-refresh-time="1585399972707" data-timeout="13"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<p>Assume we have a set of integers 54, 26, 93, 17, 77, 31. Our first hash function required to be as "remainder method" simply takes the item and divide it by table size, returning remainder as its hash value i.e.</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>&nbsp;&nbsp;&nbsp;h&nbsp;item&nbsp;=&nbsp;item&nbsp;%&nbsp;(size&nbsp;of&nbsp;table)&nbsp;&nbsp;&nbsp;</span></span></li><li class=""><span>Let&nbsp;us&nbsp;say&nbsp;the&nbsp;size&nbsp;of&nbsp;table&nbsp;=&nbsp;<span class="number">11</span><span>,&nbsp;then&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="number">54</span><span>&nbsp;%&nbsp;</span><span class="number">11</span><span>&nbsp;=&nbsp;</span><span class="number">10</span><span>&nbsp;&nbsp;&nbsp;</span><span class="number">26</span><span>&nbsp;%&nbsp;</span><span class="number">11</span><span>&nbsp;=&nbsp;</span><span class="number">4</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="number">93</span><span>&nbsp;%&nbsp;</span><span class="number">11</span><span>&nbsp;=&nbsp;</span><span class="number">5</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="number">17</span><span>&nbsp;%&nbsp;</span><span class="number">11</span><span>&nbsp;=&nbsp;</span><span class="number">6</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="number">77</span><span>&nbsp;%&nbsp;</span><span class="number">11</span><span>&nbsp;=&nbsp;</span><span class="number">0</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="number">31</span><span>&nbsp;%&nbsp;</span><span class="number">11</span><span>&nbsp;=&nbsp;</span><span class="number">9</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">   h item = item % (size of table) 
+Let us say the size of table = 11, then
+54 % 11 = 10   26 % 11 = 4    93 % 11 = 5
+17 % 11 = 6	   77 % 11 = 0    31 % 11 = 9	
+</textarea></div>
+<br>
+<table class="alt">
+<tbody><tr>
+	<th>ITEM</th>
+	<th>HASH VALUE</th>
+</tr>
+<tr>
+	<td>54</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>26</td>
+	<td>4</td>
+</tr>
+<tr>
+	<td>93</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>17</td>
+	<td>6</td>
+</tr>
+<tr>
+	<td>77</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>31</td>
+	<td>9</td>
+</tr>
+</tbody></table>
+<br>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-hash-table.png" alt="DAA Hash Tables">
+<p>Now when we need to search any element, we just need to divide it by the table size, and we get the hash value. So we get the O (1) search time.</p>
+<p>Now taking one more element 44 when we apply the hash function on 44, we get (44 % 11 = 0), But 0 hash value already has an element 77. This Problem is called as Collision. </p>
+<p><strong>Collision:</strong> According to the Hash Function, two or more item would need in the same slot. This is said to be called as Collision.</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-hash-table-collision.png" alt="DAA Hash Tables">
+<p><strong>Figure:</strong> using a hash function h to map keys to hash-table slots. Because keys K2 and k5 map to the same slot, they collide.</p>
+<h2 class="h2">Why use HashTable?</h2>
+<ol class="points">
+<li>If <strong>U</strong> (Universe of keys) is large, storing a table T of size [U] may be impossible.</li>
+<li>Set <strong>k</strong> of keys may be small relative to <strong>U</strong> so space allocated for <strong>T</strong> will waste.</li>
+</ol>
+<p>So Hash Table requires less storage. Indirect addressing element with key k is stored in slot k with hashing it is stored in h (k) where h is a hash f<sup>n</sup> and hash (k) is the value of key k. Hash f<sup>n</sup> required array range.</p>
+<h2 class="h2">Application of Hash Tables:</h2>
+<p>Some application of Hash Tables are: </p>
+<ol class="points">
+<li><strong>Database System:</strong> Specifically, those that are required efficient random access. Usually, database systems try to develop between two types of access methods: sequential and random. Hash Table is an integral part of efficient random access because they provide a way to locate data in a constant amount of time.</li>
+<li><strong>Symbol Tables:</strong> The tables utilized by compilers to maintain data about symbols from a program. Compilers access information about symbols frequently. Therefore, it is essential that symbol tables be implemented very efficiently.</li>
+<li><strong>Data Dictionaries:</strong> Data Structure that supports adding, deleting, and searching for data. Although the operation of hash tables and a data dictionary are similar, other Data Structures may be used to implement data dictionaries.</li>
+<li><strong>Associative Arrays:</strong> Associative Arrays consist of data arranged so that n<sup>th</sup> elements of one array correspond to the n<sup>th</sup> element of another. Associative Arrays are helpful for indexing a logical grouping of data by several key fields.</li>
+</ol>
+
+<hr>
+
+<br><br>
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

@@ -1,0 +1,54 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+
+<h1 class="h1">Negative Weight Edges</h1>
+<p>It is a weighted graph in which the total weight of an edge is negative. If a graph has a negative edge, then it produces a chain. After executing the chain if the output is negative then it will give - 8 weight and condition get discarded. If weight is less than negative and - 8 then we can't have the shortest path in it.</p>
+<p>Briefly, if the output is -ve, then both condition get discarded.</p>
+<ol class="points">
+<li>- 8</li>
+<li>Not less than 0.</li>
+</ol>
+<p>And we cannot have the shortest Path.</p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585402063455" data-refresh-time="1585402063457" data-timeout="12"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<h3 class="h3">Example: </h3>
+<img src="https://static.javatpoint.com/tutorial/daa/images/negative-weight-edges.png" alt="Negative Weight Edges">
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>Beginning&nbsp;from&nbsp;s&nbsp;&nbsp;</span></span></li><li class=""><span>Adj&nbsp;[s]&nbsp;=&nbsp;[a,&nbsp;c,&nbsp;e]&nbsp;&nbsp;</span></li><li class="alt"><span>Weight&nbsp;from&nbsp;s&nbsp;to&nbsp;a&nbsp;is&nbsp;<span class="number">3</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">Beginning from s
+Adj [s] = [a, c, e]
+Weight from s to a is 3
+</textarea></div>
+<p>Suppose we want to calculate a path from s?c. So We have 2 paths /weight</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>s&nbsp;to&nbsp;c&nbsp;=&nbsp;</span><span class="number">5</span><span>,&nbsp;s?c?d?c=</span><span class="number">8</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>But&nbsp;s?c&nbsp;is&nbsp;minimum&nbsp;&nbsp;</span></li><li class="alt"><span>So&nbsp;s?c&nbsp;=&nbsp;<span class="number">5</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">s to c = 5,	s?c?d?c=8
+But s?c is minimum
+So s?c = 5
+</textarea></div>
+<p>Suppose we want to calculate a path from s?e. So we have two paths again</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>s?e&nbsp;=&nbsp;</span><span class="number">2</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;s?e?f?e=-</span><span class="number">1</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>As&nbsp;-<span class="number">1</span><span>&nbsp;&lt;&nbsp;</span><span class="number">0</span><span>&nbsp;?&nbsp;Condition&nbsp;gets&nbsp;discarded.&nbsp;If&nbsp;we&nbsp;execute&nbsp;</span><span class="keyword">this</span><span>&nbsp;chain,&nbsp;we&nbsp;will&nbsp;get&nbsp;-&nbsp;8.&nbsp;So&nbsp;we&nbsp;can't&nbsp;get&nbsp;the&nbsp;shortest&nbsp;path&nbsp;?&nbsp;e&nbsp;=&nbsp;8.&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">s?e = 2,	s?e?f?e=-1
+As -1 &lt; 0 ? Condition gets discarded. If we execute this chain, we will get - 8. So we can't get the shortest path ? e = 8.
+</textarea></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/negative-weight-edges2.png" alt="Negative Weight Edges">
+<br>
+<p>This figure illustrates the effects of negative weights and negative weight cycle on the shortest path weights.</p>
+<p>Because there is only one path from "s to a" (the path &lt;s, a&gt;), d (s, a) = w (s, a) = 3.</p>
+<p>Furthermore, there is only one path from "s to b", so d (s, b) = w (s, a) + w (a, b) = 3 + (-4) = - 1.</p>
+<p>There are infinite many path from "s to c" : &lt;s, c&gt; : &lt;s, c, d, c&gt;, &lt;s, c, d, c, d, c&gt; and so on. Because the cycle &lt;c, d, c&gt; has weight  d (c, d) = w (c, d) + w (d, c) = 6 + (-3) = 3, which is greater than 0, the shortest path from s to c is &lt;s, c&gt; with weight  d (s, c) = 5.</p>
+<p>Similarly, the shortest path from "s to d" is &lt;s, c, d&gt; with weight d (s, d) = w (s, c) + w (s, d) = 11.</p>
+<p>Analogously, there are infinite many paths from s to e: &lt;s, e&gt;, &lt;s, e, f, e&gt;, &lt;s, e, f, e, f, e&gt; and so on. Since the cycle &lt;e, f, e&gt; has weight d (e, f) = w (e, f) + w (f, e) = 3 + (-6) = -3. So - 3 &lt; 0, however there is no shortest path from s to e. B8y traversing the negative weight cycle &lt;e, f, e&gt;. This means path from s to e has arbitrary large negative weights and so d (s, e) = - 8.</p>
+<p>Similarly d (s, f) = - 8 because g is reachable from f, we can also find a path with arbitrary large negative weight from s to g and d (s, g) = - 8</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/negative-weight-edges3.png" alt="Negative Weight Edges">
+<br>
+<p>Vertices h, i, g also from negative weight cycle. They are also not reachable from the source node, so distance from the source is - 8 to three of nodes (h, i, j).</p>
+
+
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

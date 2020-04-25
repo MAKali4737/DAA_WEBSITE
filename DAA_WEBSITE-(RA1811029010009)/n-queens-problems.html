@@ -1,0 +1,72 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+<h1 class="h1">N-Queens Problem</h1>
+<p>N - Queens problem is to place n - queens in such a manner on an n x n chessboard that no queens attack each other by being in the same row, column or diagonal.</p>
+<p>It can be seen that for n =1, the problem has a trivial solution, and no solution exists for n =2 and n =3. So first we will consider the 4 queens problem and then generate it to n - queens problem.</p>
+<p>Given a 4 x 4 chessboard and number the rows and column of the chessboard 1 through 4.</p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585401748673" data-refresh-time="1585401748678" data-timeout="9"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/n-queens-problems.png" alt="N-Queens Problem">
+<br>
+<p>Since, we have to place 4 queens such as q<sub>1</sub> q<sub>2</sub> q<sub>3</sub> and q<sub>4</sub> on the chessboard, such that no two queens attack each other. In such a conditional each queen must be placed on a different row, i.e., we put queen "i" on row "i."</p>
+<p>Now, we place queen q<sub>1</sub> in the very first acceptable position (1, 1). Next, we put queen q<sub>2</sub> so that both these queens do not attack each other. We find that if we place q<sub>2</sub> in column 1 and 2, then the dead end is encountered. Thus the first acceptable position for q<sub>2</sub> in column 3, i.e. (2, 3) but then no position is left for placing queen 'q<sub>3</sub>' safely. So we backtrack one step and place the queen 'q<sub>2</sub>' in (2, 4), the next best possible solution. Then we obtain the position for placing 'q<sub>3</sub>' which is (3, 2). But later this position also leads to a dead end, and no place is found where 'q<sub>4</sub>' can be placed safely. Then we have to backtrack till 'q<sub>1</sub>' and place it to (1, 2) and then all other queens are placed safely by moving q<sub>2</sub> to (2, 4), q<sub>3</sub> to (3, 1) and q<sub>4</sub> to (4, 3). That is, we get the solution (2, 4, 1, 3). This is one possible solution for the 4-queens problem. For another possible solution, the whole method is repeated for all partial solutions. The other solutions for 4 - queens problems is (3, 1, 4, 2) i.e.</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/n-queens-problems2.png" alt="N-Queens Problem">
+<br>
+<p>The implicit tree for 4 - queen problem for a solution (2, 4, 1, 3) is as follows:</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/n-queens-problems3.png" alt="N-Queens Problem">
+<br>
+<p>Fig shows the complete state space for 4 - queens problem. But we can use backtracking method to generate the necessary node and stop if the next node violates the rule, i.e., if two queens are attacking.</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/n-queens-problems4.png" alt="N-Queens Problem">
+<p class="center"><strong>4 - Queens solution space with nodes numbered in DFS</strong></p>
+<p>It can be seen that all the solutions to the 4 queens problem can be represented as 4 - tuples (x<sub>1</sub>, x<sub>2</sub>, x<sub>3</sub>, x<sub>4</sub>) where x<sub>i</sub> represents the column on which queen "q<sub>i</sub>" is placed.</p>
+<p>One possible solution for 8 queens problem is shown in fig:</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/n-queens-problems5.png" alt="N-Queens Problem">
+<br>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>Thus,&nbsp;the&nbsp;solution&nbsp;</span><span class="keyword">for</span><span>&nbsp;</span><span class="number">8</span><span>&nbsp;-queen&nbsp;problem&nbsp;</span><span class="keyword">for</span><span>&nbsp;(</span><span class="number">4</span><span>,&nbsp;</span><span class="number">6</span><span>,&nbsp;</span><span class="number">8</span><span>,&nbsp;</span><span class="number">2</span><span>,&nbsp;</span><span class="number">7</span><span>,&nbsp;</span><span class="number">1</span><span>,&nbsp;</span><span class="number">3</span><span>,&nbsp;</span><span class="number">5</span><span>).&nbsp;&nbsp;</span></span></li><li class=""><span>If&nbsp;two&nbsp;queens&nbsp;are&nbsp;placed&nbsp;at&nbsp;position&nbsp;(i,&nbsp;j)&nbsp;and&nbsp;(k,&nbsp;l).&nbsp;&nbsp;</span></li><li class="alt"><span>Then&nbsp;they&nbsp;are&nbsp;on&nbsp;same&nbsp;diagonal&nbsp;only&nbsp;<span class="keyword">if</span><span>&nbsp;(i&nbsp;-&nbsp;j)&nbsp;=&nbsp;k&nbsp;-&nbsp;l&nbsp;or&nbsp;i&nbsp;+&nbsp;j&nbsp;=&nbsp;k&nbsp;+&nbsp;l.&nbsp;&nbsp;</span></span></li><li class=""><span>The&nbsp;first&nbsp;equation&nbsp;implies&nbsp;that&nbsp;j&nbsp;-&nbsp;l&nbsp;=&nbsp;i&nbsp;-&nbsp;k.&nbsp;&nbsp;</span></li><li class="alt"><span>The&nbsp;second&nbsp;equation&nbsp;implies&nbsp;that&nbsp;j&nbsp;-&nbsp;l&nbsp;=&nbsp;k&nbsp;-&nbsp;i.&nbsp;&nbsp;</span></li><li class=""><span>Therefore,&nbsp;two&nbsp;queens&nbsp;lie&nbsp;on&nbsp;the&nbsp;duplicate&nbsp;diagonal&nbsp;<span class="keyword">if</span><span>&nbsp;and&nbsp;only&nbsp;</span><span class="keyword">if</span><span>&nbsp;|j-l|=|i-k|&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">Thus, the solution for 8 -queen problem for (4, 6, 8, 2, 7, 1, 3, 5).
+If two queens are placed at position (i, j) and (k, l).
+Then they are on same diagonal only if (i - j) = k - l or i + j = k + l.
+The first equation implies that j - l = i - k.
+The second equation implies that j - l = k - i.
+Therefore, two queens lie on the duplicate diagonal if and only if |j-l|=|i-k|
+</textarea></div>
+<br>
+<p>Place (k, i) returns a Boolean value that is true if the kth queen can be placed in column i. It tests both whether i is distinct from all previous costs x<sub>1</sub>, x<sub>2</sub>,....x<sub>k-1</sub> and whether there is no other queen on the same diagonal.</p>
+<p>Using place, we give a precise solution to then n- queens problem.</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>Place&nbsp;(k,&nbsp;i)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For&nbsp;j&nbsp;&nbsp;?&nbsp;&nbsp;<span class="number">1</span><span>&nbsp;to&nbsp;k&nbsp;-&nbsp;</span><span class="number">1</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">do</span><span>&nbsp;</span><span class="keyword">if</span><span>&nbsp;(x&nbsp;[j]&nbsp;=&nbsp;i)&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;(Abs&nbsp;x&nbsp;[j])&nbsp;-&nbsp;i)&nbsp;=&nbsp;(Abs&nbsp;(j&nbsp;-&nbsp;k))&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;then&nbsp;<span class="keyword">return</span><span>&nbsp;</span><span class="keyword">false</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;</span><span class="keyword">true</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><textarea name="code" class="java" style="display: none;">Place (k, i)
+   {
+     For j  ?  1 to k - 1
+      do if (x [j] = i)
+       or (Abs x [j]) - i) = (Abs (j - k))
+    then return false;
+     return true;
+}
+</textarea></div>
+<p>Place (k, i) return true if a queen can be placed in the kth row and ith column otherwise return is false.</p>
+<p>x [] is a global array whose final k - 1 values have been set. Abs (r) returns the absolute value of r.</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>N&nbsp;-&nbsp;Queens&nbsp;(k,&nbsp;n)&nbsp;&nbsp;</span></span></li><li class=""><span>{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;For&nbsp;i&nbsp;&nbsp;?&nbsp;&nbsp;<span class="number">1</span><span>&nbsp;to&nbsp;n&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">do</span><span>&nbsp;</span><span class="keyword">if</span><span>&nbsp;Place&nbsp;(k,&nbsp;i)&nbsp;then&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;[k]&nbsp;&nbsp;?&nbsp;&nbsp;i;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(k&nbsp;==n)&nbsp;then&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write&nbsp;(x&nbsp;[<span class="number">1</span><span>....n));&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N&nbsp;-&nbsp;Queens&nbsp;(k&nbsp;+&nbsp;<span class="number">1</span><span>,&nbsp;n);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><textarea name="code" class="java" style="display: none;">N - Queens (k, n)
+{
+   For i  ?  1 to n
+        do if Place (k, i) then
+   {
+      x [k]  ?  i;
+      if (k ==n) then
+        write (x [1....n));
+      else
+      N - Queens (k + 1, n);
+   }
+}
+</textarea></div>
+
+
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

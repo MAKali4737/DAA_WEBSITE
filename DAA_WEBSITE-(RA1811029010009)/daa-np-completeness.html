@@ -1,0 +1,50 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+
+<h1 class="h1">NP-Completeness</h1>
+<p>A decision problem L is NP-Hard if </p>
+<p>L' =p L for all L' ? NP.</p>
+<p><strong>Definition:</strong> L is NP-complete if</p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585402279143" data-refresh-time="1585402279145" data-timeout="12"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<ol class="points">
+<li>L ? NP and </li>
+<li> L' = p L for some known NP-complete problem L.' Given this formal definition, the complexity classes are:</li>
+</ol>
+<p><strong>P:</strong> is the set of decision problems that are solvable in polynomial time. </p>
+<p><strong>NP:</strong> is the set of decision problems that can be verified in polynomial time. </p>
+<p><strong>NP-Hard:</strong> L is NP-hard if for all L' ? NP, L' =p L. Thus if we can solve L in polynomial time, we can solve all NP problems in polynomial time. </p>
+<p><strong>NP-Complete</strong> L is NP-complete if</p>
+<ol class="points">
+<li>L ? NP and </li>
+<li>L is NP-hard</li>
+</ol>
+<p>If any NP-complete problem is solvable in polynomial time, then every NP-Complete problem is also solvable in polynomial time. Conversely, if we can prove that any NP-Complete problem cannot be solved in polynomial time, every NP-Complete problem cannot be solvable in polynomial time.</p>
+<h2 class="h2">Reductions</h2>
+<p><strong>Concept:</strong> - If the solution of NPC problem does not exist then the conversion from one NPC problem to another NPC problem within the polynomial time. For this, you need the concept of reduction. If a solution of the one NPC problem exists within the polynomial time, then the rest of the problem can also give the solution in polynomial time (but it's hard to believe). For this, you need the concept of reduction. </p>
+<p><strong>Example:</strong> - Suppose there are two problems, <strong>A</strong> and <strong>B</strong>. You know that it is impossible to solve problem <strong>A</strong> in polynomial time. You want to prove that B cannot be solved in polynomial time. So you can convert the problem <strong>A</strong> into problem <strong>B</strong> in polynomial time.</p>
+<h2 class="h2">Example of NP-Complete problem</h2>
+<p><strong>NP problem:</strong> - Suppose a DECISION-BASED problem is provided in which a set of inputs/high inputs you can get high output.</p>
+<p><strong>Criteria to come either in NP-hard or NP-complete.</strong></p>
+<ol class="points">
+<li>The point to be noted here, the output is already given, and you can verify the output/solution within the polynomial time but can't produce an output/solution in polynomial time.</li>
+<li>Here we need the concept of reduction because when you can't produce an output of the problem according to the given input then in case you have to use an emphasis on the concept of reduction in which you can convert one problem into another problem.</li>
+</ol>
+<h4 class="n">Note1:- If you satisfy both points then your problem comes into the category of NP-complete class</h4>
+<h4 class="n">Note2:- If you satisfy the only 2nd points then your problem comes into the category of NP-hard class</h4>
+<p>So according to the given decision-based NP problem, you can decide in the form of yes or no. If, yes then you have to do verify and convert into another problem via reduction concept. If you are being performed, both then decision-based NP problems are in NP compete.</p>
+<p><strong>Here we will emphasize NPC.</strong></p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/np-completeness.png" alt="NP-Completeness">
+
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

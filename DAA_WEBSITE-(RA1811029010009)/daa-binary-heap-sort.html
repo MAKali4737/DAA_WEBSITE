@@ -1,0 +1,219 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+
+<h1 class="h1">Heap Sort</h1>
+<h2 class="h2">Binary Heap:</h2>
+<p>Binary Heap is an array object can be viewed as Complete Binary Tree. Each node of the Binary Tree corresponds to an element in an array.</p>
+<ol class="points">
+<li>Length [A],number of elements in array</li>
+<li>Heap-Size[A], number of elements in a heap stored within array A.</li>
+</ol>
+<p>The root of tree A [1] and gives index 'i' of a node that indices of its parents, left child, and the right child can be computed.</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-cpp" start="1"><li class="alt"><span><span>PARENT&nbsp;(i)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;Return&nbsp;floor&nbsp;(i/2)&nbsp;&nbsp;</span></li><li class="alt"><span>LEFT&nbsp;(i)&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;Return&nbsp;2i&nbsp;&nbsp;</span></li><li class="alt"><span>RIGHT&nbsp;(i)&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;Return&nbsp;2i+1&nbsp;&nbsp;</span></li></ol></div><textarea name="code" class="cpp" style="display: none;">PARENT (i)
+	Return floor (i/2)
+LEFT (i)
+	Return 2i
+RIGHT (i)
+	Return 2i+1
+</textarea></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-binary-heap.png" alt="DAA Heap Sort">
+<p><strong>Representation of an array of the above figure is given below:</strong></p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585399050155"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div><br>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-binary-heap2.png" alt="DAA Heap Sort">
+<p>The index of 20 is 1</p>
+<p>To find the index of the left child, we calculate 1*2=2</p>
+<p>This takes us (correctly) to the 14.</p>
+<p>Now, we go right, so we calculate 2*2+1=5</p>
+<p>This takes us (again, correctly) to the 6.</p>
+<p>Now, 4's index is 7, we want to go to the parent, so we calculate 7/2 =3 which takes us to the 17. </p>
+
+
+<h2 class="h2">Heap Property:</h2>
+<p>A binary heap can be classified as Max Heap or Min Heap</p>
+<p><strong>1. Max Heap:</strong> In a Binary Heap, for every node I other than the root, the value of the node is greater than or equal to the value of its highest child</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>A&nbsp;[PARENT&nbsp;(i)&nbsp;=A[i]&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">A [PARENT (i) =A[i]
+</textarea></div>
+<p>Thus, the highest element in a heap is stored at the root. Following is an example of MAX-HEAP</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-heap-property.png" alt="DAA Heap Sort">
+<p><strong>2. MIN-HEAP:</strong> In MIN-HEAP, the value of the node is lesser than or equal to the value of its lowest child.</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>A&nbsp;[PARENT&nbsp;(i)&nbsp;=A[i]&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">A [PARENT (i) =A[i]
+</textarea></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-min-heap.png" alt="DAA Heap Sort">
+
+
+<h2 class="h2">Heapify Method:</h2>
+<p><strong>1. Maintaining the Heap Property:</strong> Heapify is a procedure for manipulating heap Data Structure. It is given an array A and index I into the array. The subtree rooted at the children of A [i] are heap but node A [i] itself may probably violate the heap property i.e. A [i] &lt; A [2i] or A [2i+1]. The procedure 'Heapify' manipulates the tree rooted as A [i] so it becomes a heap.</p>
+<div class="codeblock"><pre><strong>MAX-HEAPIFY (A, i)</strong>
+ 1. l ? left [i]
+ 2. r ? right [i]
+ 3. if l= heap-size [A] and A[l] &gt; A [i]
+ 4. then largest ? l
+ 5. Else largest ? i
+ 6. If r= heap-size [A] and A [r] &gt; A[largest]
+ 7. Then largest ? r
+ 8. If largest ? i
+ 9. Then exchange A [i]    A [largest]
+ 10. MAX-HEAPIFY (A, largest)
+</pre></div>
+<h3 class="h3">Analysis:</h3>
+<p>The maximum levels an element could move up are T (log n) levels. At each level, we do simple comparison which O (1). The total time for heapify is thus O (log n). </p>
+
+<h2 class="h2">Building a Heap:</h2>
+<div class="codeblock"><pre>BUILDHEAP (array A, int n)
+ 1 for i ? n/2 down to 1
+ 2 do
+ 3 HEAPIFY (A, i, n)
+</pre></div>
+
+<h2 class="h2">HEAP-SORT ALGORITHM:</h2>
+<div class="codeblock"><pre><strong>HEAP-SORT (A)</strong>
+ 1. BUILD-MAX-HEAP (A)
+ 2. For I ? length[A] down to Z
+ 3. Do exchange A [1] ?? A [i]
+ 4. Heap-size [A] ? heap-size [A]-1
+ 5. MAX-HEAPIFY (A,1)
+</pre></div>
+<p><strong>Analysis:</strong> Build max-heap takes O (n) running time. The Heap Sort algorithm makes a call to 'Build Max-Heap' which we take O (n) time &amp; each of the (n-1) calls to Max-heap to fix up a new heap. We know 'Max-Heapify' takes time O (log n)</p>
+<p><strong>The total running time of Heap-Sort is O (n log n).	</strong></p>
+<p><strong>Example:</strong> Illustrate the Operation of BUILD-MAX-HEAP on the array.</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>A&nbsp;=&nbsp;(</span><span class="number">5</span><span>,&nbsp;</span><span class="number">3</span><span>,&nbsp;</span><span class="number">17</span><span>,&nbsp;</span><span class="number">10</span><span>,&nbsp;</span><span class="number">84</span><span>,&nbsp;</span><span class="number">19</span><span>,&nbsp;</span><span class="number">6</span><span>,&nbsp;</span><span class="number">22</span><span>,&nbsp;</span><span class="number">9</span><span>)&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">    A = (5, 3, 17, 10, 84, 19, 6, 22, 9)
+</textarea></div>
+<p><strong>Solution: Originally:</strong></p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>Heap-Size&nbsp;(A)&nbsp;=</span><span class="number">9</span><span>,&nbsp;so&nbsp;first&nbsp;we&nbsp;call&nbsp;MAX-HEAPIFY&nbsp;(A,&nbsp;</span><span class="number">4</span><span>)&nbsp;&nbsp;</span></span></li><li class=""><span>And&nbsp;I&nbsp;=&nbsp;<span class="number">4.5</span><span>=&nbsp;</span><span class="number">4</span><span>&nbsp;to&nbsp;</span><span class="number">1</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">Heap-Size (A) =9, so first we call MAX-HEAPIFY (A, 4)
+And I = 4.5= 4 to 1
+</textarea></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-build-max-heap.png" alt="DAA Heap Sort">
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>After&nbsp;MAX-HEAPIFY&nbsp;(A,&nbsp;</span><span class="number">4</span><span>)&nbsp;and&nbsp;i=</span><span class="number">4</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;L&nbsp;?&nbsp;<span class="number">8</span><span>,&nbsp;r&nbsp;?&nbsp;</span><span class="number">9</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;l=&nbsp;heap-size[A]&nbsp;and&nbsp;A&nbsp;[l]&nbsp;&gt;A&nbsp;[i]&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;<span class="number">8</span><span>&nbsp;=</span><span class="number">9</span><span>&nbsp;and&nbsp;</span><span class="number">22</span><span>&gt;</span><span class="number">10</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;Then&nbsp;Largest&nbsp;?&nbsp;<span class="number">8</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;If&nbsp;r=&nbsp;heap-size&nbsp;[A]&nbsp;and&nbsp;A&nbsp;[r]&nbsp;&gt;&nbsp;A&nbsp;[largest]&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;<span class="number">9</span><span>=</span><span class="number">9</span><span>&nbsp;and&nbsp;</span><span class="number">9</span><span>&gt;</span><span class="number">22</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;If&nbsp;largest&nbsp;(<span class="number">8</span><span>)&nbsp;?</span><span class="number">4</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;Then&nbsp;exchange&nbsp;A&nbsp;[<span class="number">4</span><span>]&nbsp;??&nbsp;A&nbsp;[</span><span class="number">8</span><span>]&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;MAX-HEAPIFY&nbsp;(A,&nbsp;<span class="number">8</span><span>)&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">After MAX-HEAPIFY (A, 4) and i=4
+ L ? 8, r ? 9
+ l= heap-size[A] and A [l] &gt;A [i]
+ 8 =9 and 22&gt;10
+ Then Largest ? 8
+ If r= heap-size [A] and A [r] &gt; A [largest]
+  9=9 and 9&gt;22
+ If largest (8) ?4
+ Then exchange A [4] ?? A [8]
+ MAX-HEAPIFY (A, 8)
+</textarea></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-build-max-heap2.png" alt="DAA Heap Sort">
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>After&nbsp;MAX-HEAPIFY&nbsp;(A,&nbsp;</span><span class="number">3</span><span>)&nbsp;and&nbsp;i=</span><span class="number">3</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>l?&nbsp;<span class="number">6</span><span>,&nbsp;r&nbsp;?&nbsp;</span><span class="number">7</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>l=&nbsp;heap-size[A]&nbsp;and&nbsp;A&nbsp;[l]&nbsp;&gt;A&nbsp;[i]&nbsp;&nbsp;</span></li><li class=""><span><span class="number">6</span><span>=&nbsp;</span><span class="number">9</span><span>&nbsp;and&nbsp;</span><span class="number">19</span><span>&gt;</span><span class="number">17</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>Largest&nbsp;?&nbsp;<span class="number">6</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>If&nbsp;r=&nbsp;heap-size&nbsp;[A]&nbsp;and&nbsp;A&nbsp;[r]&nbsp;&gt;&nbsp;A&nbsp;[largest]&nbsp;&nbsp;</span></li><li class="alt"><span><span class="number">7</span><span>=</span><span class="number">9</span><span>&nbsp;and&nbsp;</span><span class="number">6</span><span>&gt;</span><span class="number">19</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>If&nbsp;largest&nbsp;(<span class="number">6</span><span>)&nbsp;?</span><span class="number">3</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>Then&nbsp;Exchange&nbsp;A&nbsp;[<span class="number">3</span><span>]&nbsp;??&nbsp;A&nbsp;[</span><span class="number">6</span><span>]&nbsp;&nbsp;</span></span></li><li class=""><span>MAX-HEAPIFY&nbsp;(A,&nbsp;<span class="number">6</span><span>)&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">After MAX-HEAPIFY (A, 3) and i=3
+l? 6, r ? 7
+l= heap-size[A] and A [l] &gt;A [i]
+6= 9 and 19&gt;17
+Largest ? 6
+If r= heap-size [A] and A [r] &gt; A [largest]
+7=9 and 6&gt;19
+If largest (6) ?3
+Then Exchange A [3] ?? A [6]
+MAX-HEAPIFY (A, 6)
+</textarea></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-build-max-heap3.png" alt="DAA Heap Sort">
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>After&nbsp;MAX-HEAPIFY&nbsp;(A,&nbsp;</span><span class="number">2</span><span>)&nbsp;and&nbsp;i=</span><span class="number">2</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>l&nbsp;?&nbsp;<span class="number">4</span><span>,&nbsp;r&nbsp;?&nbsp;</span><span class="number">5</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>l=&nbsp;heap-size[A]&nbsp;and&nbsp;A&nbsp;[l]&nbsp;&gt;A&nbsp;[i]&nbsp;&nbsp;</span></li><li class=""><span><span class="number">4</span><span>=</span><span class="number">9</span><span>&nbsp;and&nbsp;</span><span class="number">22</span><span>&gt;</span><span class="number">3</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>Largest&nbsp;?&nbsp;<span class="number">4</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>If&nbsp;r=&nbsp;heap-size&nbsp;[A]&nbsp;and&nbsp;A&nbsp;[r]&nbsp;&gt;&nbsp;A&nbsp;[largest]&nbsp;&nbsp;</span></li><li class="alt"><span><span class="number">5</span><span>=</span><span class="number">9</span><span>&nbsp;and&nbsp;</span><span class="number">84</span><span>&gt;</span><span class="number">22</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>Largest&nbsp;?&nbsp;<span class="number">5</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>If&nbsp;largest&nbsp;(<span class="number">4</span><span>)&nbsp;?</span><span class="number">2</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>Then&nbsp;Exchange&nbsp;A&nbsp;[<span class="number">2</span><span>]&nbsp;??&nbsp;A&nbsp;[</span><span class="number">5</span><span>]&nbsp;&nbsp;</span></span></li><li class="alt"><span>MAX-HEAPIFY&nbsp;(A,&nbsp;<span class="number">5</span><span>)&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">After MAX-HEAPIFY (A, 2) and i=2
+l ? 4, r ? 5
+l= heap-size[A] and A [l] &gt;A [i]
+4=9 and 22&gt;3
+Largest ? 4
+If r= heap-size [A] and A [r] &gt; A [largest]
+5=9 and 84&gt;22
+Largest ? 5
+If largest (4) ?2
+Then Exchange A [2] ?? A [5]
+MAX-HEAPIFY (A, 5)
+</textarea></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-build-max-heap4.png" alt="DAA Heap Sort">
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>After&nbsp;MAX-HEAPIFY&nbsp;(A,&nbsp;</span><span class="number">1</span><span>)&nbsp;and&nbsp;i=</span><span class="number">1</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>l&nbsp;?&nbsp;<span class="number">2</span><span>,&nbsp;r&nbsp;?&nbsp;</span><span class="number">3</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>l=&nbsp;heap-size[A]&nbsp;and&nbsp;A&nbsp;[l]&nbsp;&gt;A&nbsp;[i]&nbsp;&nbsp;</span></li><li class=""><span><span class="number">2</span><span>=</span><span class="number">9</span><span>&nbsp;and&nbsp;</span><span class="number">84</span><span>&gt;</span><span class="number">5</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>Largest&nbsp;?&nbsp;<span class="number">2</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>If&nbsp;r=&nbsp;heap-size&nbsp;[A]&nbsp;and&nbsp;A&nbsp;[r]&nbsp;&gt;&nbsp;A&nbsp;[largest]&nbsp;&nbsp;</span></li><li class="alt"><span><span class="number">3</span><span>=</span><span class="number">9</span><span>&nbsp;and&nbsp;</span><span class="number">19</span><span>&lt;</span><span class="number">84</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>If&nbsp;largest&nbsp;(<span class="number">2</span><span>)&nbsp;?</span><span class="number">1</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>Then&nbsp;Exchange&nbsp;A&nbsp;[<span class="number">1</span><span>]&nbsp;??&nbsp;A&nbsp;[</span><span class="number">2</span><span>]&nbsp;&nbsp;</span></span></li><li class=""><span>MAX-HEAPIFY&nbsp;(A,&nbsp;<span class="number">2</span><span>)&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;">After MAX-HEAPIFY (A, 1) and i=1
+l ? 2, r ? 3
+l= heap-size[A] and A [l] &gt;A [i]
+2=9 and 84&gt;5
+Largest ? 2
+If r= heap-size [A] and A [r] &gt; A [largest]
+3=9 and 19&lt;84
+If largest (2) ?1
+Then Exchange A [1] ?? A [2]
+MAX-HEAPIFY (A, 2)
+</textarea></div>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-build-max-heap5.png" alt="DAA Heap Sort">
+
+<h2 class="h2">Priority Queue:</h2>
+<p>As with heaps, priority queues appear in two forms: max-priority queue and min-priority queue.</p>
+<p>A priority queue is a data structure for maintaining a set S of elements, each with a combined value called a key. A max-priority queue guides the following operations:</p>
+<p><strong>INSERT(S, x):</strong> inserts the element x into the set S, which is proportionate to the operation S=S?[x].</p>
+<p><strong>MAXIMUM (S)</strong> returns the element of S with the highest key. </p>
+<p><strong>EXTRACT-MAX (S)</strong> removes and returns the element of S with the highest key. </p>
+<p><strong>INCREASE-KEY(S, x, k)</strong> increases the value of element x's key to the new value k, which is considered to be at least as large as x's current key value.</p>
+<p>Let us discuss how to implement the operations of a max-priority queue. The procedure HEAP-MAXIMUM consider the MAXIMUM operation in ? (1) time.</p>
+
+<h2 class="h2">HEAP-MAXIMUM (A)</h2>
+<p>1. return A [1]</p> 
+<p>The procedure HEAP-EXTRACT-MAX implements the EXTRACT-MAX operation. It is similar to the for loop of Heap-Sort procedure.</p>
+<div class="codeblock"><pre><strong>HEAP-EXTRACT-MAX (A)</strong>
+ 1 if A. heap-size &lt; 1
+ 2 error "heap underflow"
+ 3 max ? A [1]
+ 4 A [1] ? A [heap-size [A]]
+ 5 heap-size [A] ? heap-size [A]-1
+ 6 MAX-HEAPIFY (A, 1)
+ 7 return max
+</pre></div>
+<p>The procedure HEAP-INCREASE-KEY implements the INCREASE-KEY operation. An index i into the array identify the priority-queue element whose key we wish to increase.</p>
+<div class="codeblock"><pre><strong>HEAP-INCREASE-KEY.A, i, key)</strong>
+ 1 if key &lt; A[i]
+ 2 errors "new key is smaller than current key"
+ 3 A[i] = key 
+ 4 while i&gt;1 and A [Parent (i)] &lt; A[i] 
+ 5 exchange A [i] with A [Parent (i)] 
+ 6 i =Parent [i]
+</pre></div>
+<p>The running time of HEAP-INCREASE-KEY on an n-element heap is O (log n) since the path traced from the node updated in line 3 to the root has length O (log n).</p>
+<p>The procedure MAX-HEAP-INSERT implements the INSERT operation. It takes as an input the key of the new item to be inserted into max-heap A. The procedure first expands the max-heap by calculating to the tree a new leaf whose key is - 8. Then it calls HEAP-INCREASE-KEY to set the key of this new node to its right value and maintain the max-heap property</p>	
+<div class="codeblock"><pre><strong>MAX-HEAP-INSERT (A, key)</strong>
+ 1 A. heap-size = A. heap-size + 1 
+ 2 A [A. heap-size] = - 8
+ 3 HEAP-INCREASE-KEY (A, A. heap-size, key)
+</pre></div>
+<p><strong>The running time of MAX-HEAP-INSERT on an n-element heap is O (log n).</strong></p>
+<p><strong>Example:</strong> Illustrate the operation of HEAP-EXTRACT-MAX on the heap </p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>A=&nbsp;(</span><span class="number">15</span><span>,</span><span class="number">13</span><span>,</span><span class="number">9</span><span>,</span><span class="number">5</span><span>,</span><span class="number">12</span><span>,</span><span class="number">8</span><span>,</span><span class="number">7</span><span>,</span><span class="number">4</span><span>,</span><span class="number">0</span><span>,</span><span class="number">6</span><span>,</span><span class="number">2</span><span>,</span><span class="number">1</span><span>)&nbsp;&nbsp;</span></span></li></ol></div><textarea name="code" class="java" style="display: none;"> A= (15,13,9,5,12,8,7,4,0,6,2,1)
+</textarea></div>
+<p><strong>Fig:</strong> Operation of HEAP-INCREASE-KEY</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-heap-increase-key.png" alt="DAA Heap Sort">
+<p><strong>Fig: (a)</strong></p>
+<br>
+<p>In this figure, that max-heap with a node whose index is 'i' heavily shaded</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-heap-increase-key2.png" alt="DAA Heap Sort">
+<p><strong>Fig: (b)</strong></p>
+<br>
+<p>In this Figure, this node has its key increased to 15.</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-heap-increase-key3.png" alt="DAA Heap Sort">
+<p><strong>Fig: (c)</strong></p>
+<br>
+<p>After one iteration of the while loop of lines 4-6, the node and its parent have exchanged keys, and the index i moves up to the parent.</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/daa-heap-increase-key4.png" alt="DAA Heap Sort">
+<p><strong>Fig: (d)</strong></p>
+<br>
+<p>The max-heap after one more iteration of the while loops, the A [PARENT (i) =A (i)] the max-heap property now holds and the procedure terminates.</p>
+
+<h2 class="h2">Heap-Delete:</h2>
+<p>Heap-DELETE (A, i) is the procedure, which deletes the item in node 'i' from heap A, HEAP-DELETE runs in O (log n) time for n-element max heap.</p>
+<div class="codeblock"><pre><strong>HEAP-DELETE (A, i)</strong>
+ 1. A [i] ? A [heap-size [A]]
+ 2. Heap-size [A] ? heap-size [A]-1
+ 3. MAX-HEAPIFY (A, i)
+</pre></div>
+
+
+
+<br><br>
+
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

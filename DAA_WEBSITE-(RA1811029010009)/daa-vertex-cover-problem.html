@@ -1,0 +1,34 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+<h1 class="h1">Approximate Algorithms</h1>
+<h2 class="h2">Introduction:</h2>
+<p>An Approximate Algorithm is a way of approach <strong>NP-COMPLETENESS</strong> for the optimization problem. This technique does not guarantee the best solution. The goal of an approximation algorithm is to come as close as possible to the optimum value in a reasonable amount of time which is at the most polynomial time. Such algorithms are called approximation algorithm or heuristic algorithm.</p>
+<ul class="points">
+<li>For the traveling salesperson problem, the optimization problem is to find the shortest cycle, and the approximation problem is to find a short cycle.</li>
+<li>For the vertex cover problem, the optimization problem is to find the vertex cover with fewest vertices, and the approximation problem is to find the vertex cover with few vertices.</li>
+</ul>
+<h2 class="h2">Performance Ratios</h2>
+<p>Suppose we work on an optimization problem where every solution carries a cost. An Approximate Algorithm returns a legal solution, but the cost of that legal solution may not be optimal.</p>
+<p>&nbsp; &nbsp; &nbsp; For Example, suppose we are considering for a <strong>minimum size vertex-cover (VC)</strong>.  An approximate algorithm returns a VC for us, but the size (cost) may not be minimized.</p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585402373249"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<p>&nbsp; &nbsp; &nbsp; Another Example is we are considering for a <strong>maximum size Independent set (IS)</strong>. An approximate Algorithm returns an IS for us, but the size (cost) may not be maximum. Let C be the cost of the solution returned by an approximate algorithm, and C* is the cost of the optimal solution.</p>
+<p>We say the approximate algorithm has an approximate ratio P (n) for an input size n, where</p>
+<img src="https://static.javatpoint.com/tutorial/daa/images/approximate-algorithms.png" alt="Approximate Algorithm">
+<br>
+<p>Intuitively, the approximation ratio measures how bad the approximate solution is distinguished with the optimal solution. A large (small) approximation ratio measures the solution is much worse than (more or less the same as) an optimal solution.</p>
+<p>&nbsp; &nbsp; &nbsp; Observe that P (n) is always = 1, if the ratio does not depend on n, we may write P. Therefore, a 1-approximation algorithm gives an optimal solution. Some problems have polynomial-time approximation algorithm with small constant approximate ratios, while others have best-known polynomial time approximation algorithms whose approximate ratios grow with n.</p>
+
+
+
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>

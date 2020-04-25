@@ -1,0 +1,60 @@
+<div id="city">
+<table>
+<tbody><tr><td>
+
+
+<h1 class="h1">Max - Min Problem </h1>
+<p><strong>Problem:</strong> Analyze the algorithm to find the maximum and minimum element from an array.</p>
+<div class="codeblock"><pre><strong>Algorithm: Max ?Min Element (a [])</strong>
+Max:  a [i]
+Min:   a [i]
+For i= 2 to n do
+If a[i]&gt; max then
+max = a[i]
+if a[i] &lt; min then
+min: a[i]
+return (max, min)
+</pre></div>	
+<h3 class="h3">Analysis:</h3>
+<p><strong>Method 1:</strong> if we apply the general approach to the array of size n, the number of comparisons required are 2n-2.</p>
+<p><strong>Method-2:</strong> In another approach, we will divide the problem into sub-problems and find the max and min of each group, now max. Of each group will compare with the only max of another group and min with min.</p><div style="display: block; clear: both; text-align: center; margin: 0px auto 40px; position: relative;" id="1bd7736f-7392-442c-8af5-f7439cb63894" data-section="1bd7736f-7392-442c-8af5-f7439cb63894" class="_ap_apex_ad" data-xpath="#city > table:eq(0) > tbody:eq(0) > tr:eq(0) > td:eq(0) > p:eq(2)" data-section-id="" data-render-time="1585396379199"><div id="ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894" style="margin: 0 auto">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_37780_336X280_1bd7736f-7392-442c-8af5-f7439cb63894");
+});
+</script>
+</div></div>
+<p>Let n = is the size of items in an array</p><p>
+</p><p>Let T (n) = time required to apply the algorithm on an array of size n. Here we divide the terms as T(n/2).</p>
+<p>2 here tends to the comparison of the minimum with minimum and maximum with maximum as in above example.</p>
+<p><img src="https://static.javatpoint.com/tutorial/daa/images/daa-max-min-problem1_2.png" alt="Max - Min Problem"> </p>
+<p>T (n) = 2 T <img src="https://static.javatpoint.com/tutorial/daa/images/daa-max-min-problem2.png" style="margin:5px 4px -18px 0px" alt="Max - Min Problem"> ? Eq (i)</p>
+<p>T (2) = 1, time required to compare two elements/items. (Time is measured in units of the number of comparisons)</p>
+<p><img src="https://static.javatpoint.com/tutorial/daa/images/daa-max-min-problem2_2.png" style="margin:5px 4px -15px 0px" alt="Max - Min Problem">? Eq (ii)</p>
+<p>Put eq (ii) in eq (i)</p>
+<p><img src="https://static.javatpoint.com/tutorial/daa/images/daa-max-min-problem2_3.png" alt="Max - Min Problem"></p>
+
+<p>Similarly, apply the same procedure recursively on each subproblem or anatomy</p>
+<p>{Use recursion means, we will use some stopping condition to stop the algorithm}</p>
+<p><img src="https://static.javatpoint.com/tutorial/daa/images/daa-max-min-problem2_4.png" alt="Max - Min Problem"></p>
+<p>Recursion will stop, when <img src="https://static.javatpoint.com/tutorial/daa/images/daa-max-min-problem2_5.png" style="margin:5px 4px -15px 0px" alt="Max - Min Problem"> ? (Eq. 4)</p>
+<p>Put the equ.4 into equation3.</p>
+<p><img src="https://static.javatpoint.com/tutorial/daa/images/daa-max-min-problem2_6.png" alt="Max - Min Problem"> </p>
+
+<p>Number of comparisons requires applying the divide and conquering algorithm on n elements/items = <img src="https://static.javatpoint.com/tutorial/daa/images/daa-max-min-problem2_11.png" style="margin:5px 4px -15px 0px" alt="Max - Min Problem"> </p>
+<p>Number of comparisons requires applying general approach on n elements = (n-1) + (n-1) = 2n-2</p>
+<p>From this example, we can analyze, that how to reduce the number of comparisons by using this technique.</p>
+<p><strong>Analysis:</strong> suppose we have the array of size 8 elements.</p>
+<p><strong>Method1:</strong> requires (2n-2), (2x8)-2=14 comparisons<br>
+<strong>Method2:</strong> requires <img src="https://static.javatpoint.com/tutorial/daa/images/daa-max-min-problem12.png" style="margin:5px 4px -15px 0px" alt="Max - Min Problem"></p>
+<p>It is evident; we can reduce the number of comparisons (complexity) by using a proper technique.</p>
+
+<hr>
+
+<br><br>
+
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>
